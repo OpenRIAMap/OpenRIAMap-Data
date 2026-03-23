@@ -1,0 +1,11 @@
+{
+  "chunkSize": 200,
+  "timezone": "+08:00",
+  "reportFormat": [
+    "md",
+    "json"
+  ],
+  "validation": {
+    "allowWarningsToContinue": true
+  }
+}
