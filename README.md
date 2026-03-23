@@ -1,0 +1,2 @@
+# OpenRIAMap-Data
+存放OpenRIAMap所使用显示数据的主仓库，同时包含用于手动更新时维护其结构的工具
