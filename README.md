@@ -1,4 +1,8 @@
-# RelayPackage 与新数据仓库规范
+# RelayPackage 与新数据仓库规范（Phase 0 协议冻结版）
+
+> 版本：v1  
+> 状态：Phase 0 冻结协议  
+> 范围：仓库结构、RelayPackage 结构、INDEX / Delete 格式、图片命名、Merge 分片、校验规则、组件职责边界
 
 ---
 
