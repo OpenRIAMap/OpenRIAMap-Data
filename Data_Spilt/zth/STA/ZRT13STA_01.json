@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT13STA_01",
+  "Name": "连东站",
+  "coordinate": {
+    "x": 1828.5,
+    "z": 7057.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT13PLF_01_D"
+    },
+    {
+      "ID": "ZRT13PLF_01_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

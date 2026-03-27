@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT7STA_09",
+  "Name": "庇所站",
+  "coordinate": {
+    "x": 5280.5,
+    "z": 5416.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT7PLF_09_D"
+    },
+    {
+      "ID": "ZRT7PLF_09_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

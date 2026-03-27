@@ -1,0 +1,25 @@
+{
+  "ID": "ZRT4PLF_23_U",
+  "Name": "新桥站-2站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 1263.5,
+    "z": 6877.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT4_01C_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

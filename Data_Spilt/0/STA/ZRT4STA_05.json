@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT4STA_05",
+  "Name": "天门站",
+  "coordinate": {
+    "x": 5879.5,
+    "z": 4615.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT4PLF_05_D"
+    },
+    {
+      "ID": "ZRT4PLF_05_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

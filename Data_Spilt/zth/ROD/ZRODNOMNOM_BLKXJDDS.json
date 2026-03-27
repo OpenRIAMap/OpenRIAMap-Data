@@ -1,0 +1,33 @@
+{
+  "ID": "ZRODNOMNOM_BLKXJDDS",
+  "Name": "科学家大道（南）",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "Level": 0,
+  "Oneway": false,
+  "Linepoints": [
+    [
+      4941,
+      -64,
+      4565
+    ],
+    [
+      4950,
+      -64,
+      4569
+    ],
+    [
+      5121,
+      -64,
+      4569
+    ]
+  ],
+  "tags": {
+    "nomenclator": "639"
+  },
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260226",
+  "CreateBy": "639"
+}

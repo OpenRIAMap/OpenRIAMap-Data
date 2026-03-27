@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT7STA_01",
+  "Name": "花森北山站",
+  "coordinate": {
+    "x": 6141.5,
+    "z": 3898.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT7PLF_01_D"
+    },
+    {
+      "ID": "ZRT7PLF_01_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

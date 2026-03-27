@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_05",
+  "Name": "东屿站",
+  "coordinate": {
+    "x": 2900.5,
+    "z": 3121.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_05_D"
+    },
+    {
+      "ID": "ZRT1PLF_05_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

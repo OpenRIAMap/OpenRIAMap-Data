@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT7STA_03",
+  "Name": "花森站",
+  "coordinate": {
+    "x": 6066.5,
+    "z": 4189.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT7PLF_03_D"
+    },
+    {
+      "ID": "ZRT7PLF_03_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

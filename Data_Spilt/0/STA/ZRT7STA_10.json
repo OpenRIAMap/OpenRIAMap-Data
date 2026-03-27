@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT7STA_10",
+  "Name": "提岛花机站",
+  "coordinate": {
+    "x": 5207.5,
+    "z": 5899.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT7PLF_10_D"
+    },
+    {
+      "ID": "ZRT7PLF_10_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

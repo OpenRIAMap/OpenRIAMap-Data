@@ -1,0 +1,9 @@
+{
+  "_comment": "World code -> 仓库目录名映射。后续如果 Web 侧有变更，可通过 sync-web-schema 更新。",
+  "0": "zth",
+  "1": "naraku",
+  "2": "houtu",
+  "3": "eden",
+  "4": "laputa",
+  "5": "yunduan"
+}

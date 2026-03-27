@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT4STA_06",
+  "Name": "湾北站",
+  "coordinate": {
+    "x": 5733.5,
+    "z": 4615.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT4PLF_06_D"
+    },
+    {
+      "ID": "ZRT4PLF_06_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

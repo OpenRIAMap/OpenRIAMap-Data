@@ -1,0 +1,26 @@
+{
+  "ID": "ZRTL1_01B",
+  "Name": "星台联络线南接口",
+  "bureau": "T",
+  "color": "63707E",
+  "direction": 4,
+  "startplf": "连东",
+  "endplf": "连东东分离口",
+  "PLpoints": [
+    [
+      1828.5,
+      -64,
+      7045.5
+    ],
+    [
+      1916.5,
+      -64,
+      7045.5
+    ]
+  ],
+  "Type": "Polyline",
+  "Class": "RLE",
+  "World": 0,
+  "CreateTime": "20251224",
+  "CreateBy": "639"
+}

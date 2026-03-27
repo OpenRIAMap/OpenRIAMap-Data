@@ -1,0 +1,35 @@
+{
+  "ID": "Test4",
+  "Name": "刷轨机",
+  "NofFloor": "1F",
+  "Kind": "TTS",
+  "SKind": "TTS",
+  "BuildingID": "Test1",
+  "Flrpoints": [
+    [
+      5278,
+      -63,
+      4687.5
+    ],
+    [
+      5278.5,
+      -63,
+      4705
+    ],
+    [
+      5287.5,
+      -63,
+      4704.5
+    ],
+    [
+      5287.5,
+      -63,
+      4686.5
+    ]
+  ],
+  "Type": "Polygon",
+  "Class": "FLR",
+  "World": 0,
+  "CreateTime": "20251231",
+  "CreateBy": "639"
+}

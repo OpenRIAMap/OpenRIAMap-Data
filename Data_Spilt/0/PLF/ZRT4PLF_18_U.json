@@ -1,0 +1,25 @@
+{
+  "ID": "ZRT4PLF_18_U",
+  "Name": "幕沼站-2站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 2885.5,
+    "z": 6642.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT4_01C_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

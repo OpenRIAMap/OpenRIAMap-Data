@@ -1,0 +1,26 @@
+{
+  "ID": "ZRH7PLF_2_D",
+  "Name": "会展中心-2站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 9019.5,
+    "z": 7983.5
+  },
+  "lines": [
+    {
+      "ID": "ZRH7_A_01_D",
+      "stationCode": 2,
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251231",
+  "CreateBy": "HyperBird_"
+}

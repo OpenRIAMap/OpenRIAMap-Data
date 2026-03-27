@@ -1,0 +1,20 @@
+{
+  "ID": "ZTPPNOMNOM_MLD-XYPNJ",
+  "Name": "主岛->鳕鱼贫鸟居",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "hub": "zthspawn",
+  "TGTWarp": "xypnj",
+  "coordinate": {
+    "x": -770,
+    "z": -1583
+  },
+  "elevation": 0,
+  "tags": {},
+  "extensions": {},
+  "Type": "Points",
+  "Class": "TPP",
+  "World": 0,
+  "CreateTime": "20260202",
+  "CreateBy": "639"
+}

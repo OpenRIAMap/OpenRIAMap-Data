@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT7STA_11",
+  "Name": "南滨站",
+  "coordinate": {
+    "x": 5191.5,
+    "z": 6305.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT7PLF_11_D"
+    },
+    {
+      "ID": "ZRT7PLF_11_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

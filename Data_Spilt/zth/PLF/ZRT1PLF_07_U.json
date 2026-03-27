@@ -1,0 +1,24 @@
+{
+  "ID": "ZRT1PLF_07_U",
+  "Name": "乡谷站-2站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 3965.5,
+    "z": 3121.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT1_01C_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225"
+}

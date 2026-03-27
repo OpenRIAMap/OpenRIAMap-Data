@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_14",
+  "Name": "北城外站",
+  "coordinate": {
+    "x": 4987.5,
+    "z": 4783.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_14_D"
+    },
+    {
+      "ID": "ZRT1PLF_14_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

@@ -1,0 +1,28 @@
+{
+  "ID": "ZRODNOMNOM_BLKDXCSD",
+  "Name": "科道下穿隧道",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "Level": -1,
+  "Oneway": false,
+  "Linepoints": [
+    [
+      5073,
+      -64,
+      4560
+    ],
+    [
+      5073,
+      -64,
+      4621
+    ]
+  ],
+  "tags": {
+    "nomenclator": "639"
+  },
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260226",
+  "CreateBy": "639"
+}

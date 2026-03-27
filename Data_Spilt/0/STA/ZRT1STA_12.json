@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_12",
+  "Name": "白霖教堂站",
+  "coordinate": {
+    "x": 4879.5,
+    "z": 4508.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_12_D"
+    },
+    {
+      "ID": "ZRT1PLF_12_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

@@ -1,0 +1,24 @@
+{
+  "ID": "ZRT7PLF_15_U",
+  "Name": "终点站-2站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 5278.5,
+    "z": 8099.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT7_01C_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225"
+}

@@ -1,0 +1,24 @@
+{
+  "ID": "ZRT1PLF_22_D",
+  "Name": "幽南高架东站-1站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 5982.5,
+    "z": 4896.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT1_01D_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225"
+}

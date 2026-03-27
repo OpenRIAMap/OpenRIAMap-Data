@@ -1,0 +1,39 @@
+{
+  "ID": "ZRTSTB_GLNJ",
+  "Name": "格兰南角站",
+  "Conpoints": [
+    [
+      4545.5,
+      -63,
+      5799.5
+    ],
+    [
+      4545.5,
+      -63,
+      5835.5
+    ],
+    [
+      4571.5,
+      -63,
+      5835.5
+    ],
+    [
+      4571.5,
+      -63,
+      5799.5
+    ]
+  ],
+  "Floors": [],
+  "Stations": [
+    {
+      "ID": "ZRT4STA_13"
+    }
+  ],
+  "Type": "Polygon",
+  "Class": "STB",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639",
+  "ModifityTime": "20251225",
+  "ModifityBy": "639"
+}

@@ -1,0 +1,1122 @@
+[
+  {
+    "ID": "ZRT7PLF_01_D",
+    "Name": "花森北山站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 6141.5,
+      "z": 3898.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_01_U",
+    "Name": "花森北山站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 6141.5,
+      "z": 3898.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_01",
+    "Name": "花森北山站",
+    "coordinate": {
+      "x": 6141.5,
+      "z": 3898.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_01_D"
+      },
+      {
+        "ID": "ZRT7PLF_01_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_02_D",
+    "Name": "花森居前站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 6141.5,
+      "z": 4080.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_02_U",
+    "Name": "花森居前站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 6141.5,
+      "z": 4080.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_02",
+    "Name": "花森居前站",
+    "coordinate": {
+      "x": 6141.5,
+      "z": 4080.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_02_D"
+      },
+      {
+        "ID": "ZRT7PLF_02_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_03_D",
+    "Name": "花森站-3站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 6066.5,
+      "z": 4189.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_03_U",
+    "Name": "花森站-4站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 6066.5,
+      "z": 4189.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_03",
+    "Name": "花森站",
+    "coordinate": {
+      "x": 6066.5,
+      "z": 4189.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_03_D"
+      },
+      {
+        "ID": "ZRT7PLF_03_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_04_D",
+    "Name": "北岿站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5663.5,
+      "z": 4384.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_04_U",
+    "Name": "北岿站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5663.5,
+      "z": 4384.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_04",
+    "Name": "北岿站",
+    "coordinate": {
+      "x": 5663.5,
+      "z": 4384.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_04_D"
+      },
+      {
+        "ID": "ZRT7PLF_04_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_05_D",
+    "Name": "沁洄川站-3站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5465.5,
+      "z": 4615.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_05_U",
+    "Name": "沁洄川站-4站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5465.5,
+      "z": 4615.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_05",
+    "Name": "沁洄川站",
+    "coordinate": {
+      "x": 5465.5,
+      "z": 4615.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_05_D"
+      },
+      {
+        "ID": "ZRT7PLF_05_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_06_D",
+    "Name": "溯东站-3站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5465.5,
+      "z": 4851.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      },
+      {
+        "ID": "ZRT7_01B_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_06_U",
+    "Name": "溯东站-4站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5465.5,
+      "z": 4851.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01A_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      },
+      {
+        "ID": "ZRT7_01B_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_06",
+    "Name": "溯东站",
+    "coordinate": {
+      "x": 5465.5,
+      "z": 4851.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_06_D"
+      },
+      {
+        "ID": "ZRT7PLF_06_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_07_D",
+    "Name": "空言海岸站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5465.5,
+      "z": 5202.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_07_U",
+    "Name": "空言海岸站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5465.5,
+      "z": 5202.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_07",
+    "Name": "空言海岸站",
+    "coordinate": {
+      "x": 5465.5,
+      "z": 5202.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_07_D"
+      },
+      {
+        "ID": "ZRT7PLF_07_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_08_D",
+    "Name": "外港站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5465.5,
+      "z": 5341.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_08_U",
+    "Name": "外港站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5465.5,
+      "z": 5341.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_08",
+    "Name": "外港站",
+    "coordinate": {
+      "x": 5465.5,
+      "z": 5341.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_08_D"
+      },
+      {
+        "ID": "ZRT7PLF_08_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_09_D",
+    "Name": "庇所站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5280.5,
+      "z": 5416.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_09_U",
+    "Name": "庇所站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5280.5,
+      "z": 5416.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_09",
+    "Name": "庇所站",
+    "coordinate": {
+      "x": 5280.5,
+      "z": 5416.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_09_D"
+      },
+      {
+        "ID": "ZRT7PLF_09_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_10_D",
+    "Name": "提岛花机站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5207.5,
+      "z": 5899.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_10_U",
+    "Name": "提岛花机站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5207.5,
+      "z": 5899.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_10",
+    "Name": "提岛花机站",
+    "coordinate": {
+      "x": 5207.5,
+      "z": 5899.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_10_D"
+      },
+      {
+        "ID": "ZRT7PLF_10_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_11_D",
+    "Name": "南滨站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5191.5,
+      "z": 6305.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_11_U",
+    "Name": "南滨站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5191.5,
+      "z": 6305.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_11",
+    "Name": "南滨站",
+    "coordinate": {
+      "x": 5191.5,
+      "z": 6305.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_11_D"
+      },
+      {
+        "ID": "ZRT7PLF_11_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_12_D",
+    "Name": "快镇花机站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5191.5,
+      "z": 6686.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      },
+      {
+        "ID": "ZRT7_01C_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_12_U",
+    "Name": "快镇花机站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5191.5,
+      "z": 6686.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01B_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      },
+      {
+        "ID": "ZRT7_01C_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_12",
+    "Name": "快镇花机站",
+    "coordinate": {
+      "x": 5191.5,
+      "z": 6686.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_12_D"
+      },
+      {
+        "ID": "ZRT7PLF_12_D"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_13_D",
+    "Name": "庐台站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5278.5,
+      "z": 7235.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01C_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_13_U",
+    "Name": "庐台站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5278.5,
+      "z": 7235.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01C_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_13",
+    "Name": "庐台站",
+    "coordinate": {
+      "x": 5278.5,
+      "z": 7235.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_13_D"
+      },
+      {
+        "ID": "ZRT7PLF_13_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_14_D",
+    "Name": "天柱山站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5278.5,
+      "z": 7445.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01C_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_14_U",
+    "Name": "天柱山站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5278.5,
+      "z": 7445.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01C_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_14",
+    "Name": "天柱山站",
+    "coordinate": {
+      "x": 5278.5,
+      "z": 7445.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_14_D"
+      },
+      {
+        "ID": "ZRT7PLF_14_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_15_D",
+    "Name": "终点站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5278.5,
+      "z": 8099.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01C_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_15_U",
+    "Name": "终点站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5278.5,
+      "z": 8099.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01C_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_15",
+    "Name": "终点站",
+    "coordinate": {
+      "x": 5278.5,
+      "z": 8099.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_15_D"
+      },
+      {
+        "ID": "ZRT7PLF_15_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_16_D",
+    "Name": "守望者站-1站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5105.5,
+      "z": 8152.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01C_D",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7PLF_16_U",
+    "Name": "守望者站-2站台",
+    "Situation": true,
+    "Connect": true,
+    "coordinate": {
+      "x": 5105.5,
+      "z": 8152.5
+    },
+    "lines": [
+      {
+        "ID": "ZRT7_01C_U",
+        "Avaliable": true,
+        "Overtaking": false,
+        "getin": true,
+        "getout": true,
+        "NextOT": false
+      }
+    ],
+    "Type": "Points",
+    "Class": "PLF",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_16",
+    "Name": "守望者站",
+    "coordinate": {
+      "x": 5105.5,
+      "z": 8152.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_16_D"
+      },
+      {
+        "ID": "ZRT7PLF_16_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  }
+]

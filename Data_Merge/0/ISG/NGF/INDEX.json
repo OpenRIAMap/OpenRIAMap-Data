@@ -1,0 +1,19 @@
+{
+  "version": 3,
+  "itemCount": 1,
+  "updatedAt": "2026-03-25T20:21:50+08:00",
+  "items": [
+    "ZNGFLADISD_GLLD"
+  ],
+  "chunkSize": 200,
+  "chunkCount": 1,
+  "chunks": [
+    {
+      "file": "chunk_001.json",
+      "itemCount": 1,
+      "items": [
+        "ZNGFLADISD_GLLD"
+      ]
+    }
+  ]
+}

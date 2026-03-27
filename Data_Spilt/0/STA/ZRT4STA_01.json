@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT4STA_01",
+  "Name": "北庭站",
+  "coordinate": {
+    "x": 7459.5,
+    "z": 3967.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT4PLF_01_D"
+    },
+    {
+      "ID": "ZRT4PLF_01_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

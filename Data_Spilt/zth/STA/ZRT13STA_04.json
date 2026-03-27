@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT13STA_04",
+  "Name": "沙船站",
+  "coordinate": {
+    "x": 1150.5,
+    "z": 8436.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT13PLF_04_D"
+    },
+    {
+      "ID": "ZRT13PLF_04_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT7STA_04",
+  "Name": "北岿站",
+  "coordinate": {
+    "x": 5663.5,
+    "z": 4384.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT7PLF_04_D"
+    },
+    {
+      "ID": "ZRT7PLF_04_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT4STA_15",
+  "Name": "快乐小镇站",
+  "coordinate": {
+    "x": 3718.5,
+    "z": 6175.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT4PLF_15_D"
+    },
+    {
+      "ID": "ZRT4PLF_15_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

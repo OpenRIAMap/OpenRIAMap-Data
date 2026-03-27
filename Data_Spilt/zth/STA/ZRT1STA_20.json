@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_20",
+  "Name": "漪泱居前站",
+  "coordinate": {
+    "x": 5727.5,
+    "z": 4896.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_20_D"
+    },
+    {
+      "ID": "ZRT1PLF_20_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

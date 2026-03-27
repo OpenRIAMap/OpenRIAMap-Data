@@ -1,0 +1,36 @@
+{
+  "ID": "ZRODNOMNOM_ZhichunRDW1",
+  "Name": "知春路",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "Level": 0,
+  "Oneway": true,
+  "Enter": true,
+  "Linepoints": [
+    [
+      9104.5,
+      -64,
+      8339.5
+    ],
+    [
+      8925.5,
+      -64,
+      8339.5
+    ],
+    [
+      8912.5,
+      -64,
+      8337.5
+    ],
+    [
+      8850.5,
+      -64,
+      8337.5
+    ]
+  ],
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260228",
+  "CreateBy": "HyperBird_"
+}

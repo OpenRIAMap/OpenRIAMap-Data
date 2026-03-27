@@ -1,0 +1,25 @@
+{
+  "ID": "ZRT4PLF_15_D",
+  "Name": "快乐小镇站-1站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 3718.5,
+    "z": 6175.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT4_01A_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

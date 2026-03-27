@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT7STA_08",
+  "Name": "外港站",
+  "coordinate": {
+    "x": 5465.5,
+    "z": 5341.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT7PLF_08_D"
+    },
+    {
+      "ID": "ZRT7PLF_08_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

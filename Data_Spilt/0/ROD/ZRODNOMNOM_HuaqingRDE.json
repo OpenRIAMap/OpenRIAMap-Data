@@ -1,0 +1,35 @@
+{
+  "ID": "ZRODNOMNOM_HuaqingRDE",
+  "Name": "画青路",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "Level": 0,
+  "Oneway": false,
+  "Enter": true,
+  "Linepoints": [
+    [
+      8571.5,
+      -64,
+      8175.5
+    ],
+    [
+      8575.5,
+      -64,
+      8175.5
+    ],
+    [
+      9104.5,
+      -64,
+      8175.5
+    ]
+  ],
+  "tags": {
+    "UAdm": "海华",
+    "UAdmG": "北辰区"
+  },
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260228",
+  "CreateBy": "HyperBird_"
+}

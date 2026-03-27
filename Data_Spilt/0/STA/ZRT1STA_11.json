@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_11",
+  "Name": "岚岸站",
+  "coordinate": {
+    "x": 4791.5,
+    "z": 4385.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_11_D"
+    },
+    {
+      "ID": "ZRT1PLF_11_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_06",
+  "Name": "山岸站",
+  "coordinate": {
+    "x": 3515.5,
+    "z": 3121.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_06_D"
+    },
+    {
+      "ID": "ZRT1PLF_06_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

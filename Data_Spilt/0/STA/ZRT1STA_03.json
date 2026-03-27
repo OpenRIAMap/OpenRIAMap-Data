@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_03",
+  "Name": "峡西站",
+  "coordinate": {
+    "x": 2030.5,
+    "z": 3121.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_03_D"
+    },
+    {
+      "ID": "ZRT1PLF_03_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

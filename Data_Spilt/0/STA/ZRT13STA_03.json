@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT13STA_03",
+  "Name": "狭原站",
+  "coordinate": {
+    "x": 1441.5,
+    "z": 7691.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT13PLF_03_D"
+    },
+    {
+      "ID": "ZRT13PLF_03_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

@@ -1,0 +1,28 @@
+{
+  "ID": "ZRODNOMNOM_BLHBR",
+  "Name": "湖滨路",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "Level": 0,
+  "Oneway": false,
+  "Linepoints": [
+    [
+      5073,
+      -64,
+      4483
+    ],
+    [
+      5073,
+      -64,
+      4560
+    ]
+  ],
+  "tags": {
+    "nomenclator": "639"
+  },
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260226",
+  "CreateBy": "639"
+}

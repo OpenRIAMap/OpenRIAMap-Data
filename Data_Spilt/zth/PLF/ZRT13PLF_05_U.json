@@ -1,0 +1,25 @@
+{
+  "ID": "ZRT13PLF_05_U",
+  "Name": "白风站-2站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 1152.5,
+    "z": 9412.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT13_01B_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

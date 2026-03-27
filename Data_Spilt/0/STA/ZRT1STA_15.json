@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_15",
+  "Name": "西城港站",
+  "coordinate": {
+    "x": 5014.5,
+    "z": 4875.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_15_D"
+    },
+    {
+      "ID": "ZRT1PLF_15_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

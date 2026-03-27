@@ -1,0 +1,24 @@
+{
+  "ID": "ZRT1PLF_15_U",
+  "Name": "西城港站-2站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 5014.5,
+    "z": 4875.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT1_01A_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225"
+}

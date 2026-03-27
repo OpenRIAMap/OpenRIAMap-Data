@@ -1,0 +1,25 @@
+{
+  "ID": "ZRT4PLF_11_D",
+  "Name": "三灯站-1站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 4558.5,
+    "z": 4818.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT4_01A_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

@@ -1,0 +1,20 @@
+{
+  "ID": "ZWRPNOMNOM_ZDMT",
+  "WRPointI2D": "zdmt",
+  "Name": "主岛码头",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "hub": "zthspawn",
+  "elevation": 0,
+  "coordinate": {
+    "x": -732,
+    "z": -1614
+  },
+  "tags": {},
+  "extensions": {},
+  "Type": "Points",
+  "Class": "WRP",
+  "World": 0,
+  "CreateTime": "20260202",
+  "CreateBy": "123"
+}

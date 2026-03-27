@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT13STA_02",
+  "Name": "连西站",
+  "coordinate": {
+    "x": 1558.5,
+    "z": 7057.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT13PLF_02_D"
+    },
+    {
+      "ID": "ZRT13PLF_02_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

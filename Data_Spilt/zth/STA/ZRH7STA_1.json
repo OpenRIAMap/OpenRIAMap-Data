@@ -1,0 +1,22 @@
+{
+  "ID": "ZRH7STA_1",
+  "Name": "海华北站",
+  "STBuilding": "ZRHSTB_HHBZ",
+  "coordinate": {
+    "x": 8790.5,
+    "z": 8247.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRH7PLF_1_D"
+    },
+    {
+      "ID": "ZRH7PLF_1_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251231",
+  "CreateBy": "HyperBird_"
+}

@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_16",
+  "Name": "南麓广场站",
+  "coordinate": {
+    "x": 5079.5,
+    "z": 4981.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_16_D"
+    },
+    {
+      "ID": "ZRT1PLF_16_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

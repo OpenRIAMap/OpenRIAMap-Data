@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_04",
+  "Name": "西屿站",
+  "coordinate": {
+    "x": 2675.5,
+    "z": 3121.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_04_D"
+    },
+    {
+      "ID": "ZRT1PLF_04_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

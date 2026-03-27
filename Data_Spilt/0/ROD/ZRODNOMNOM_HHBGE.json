@@ -1,0 +1,42 @@
+{
+  "ID": "ZRODNOMNOM_HHBGE",
+  "Name": "海华北东地面连接线",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "Level": 0,
+  "Oneway": true,
+  "Enter": false,
+  "Exit": false,
+  "Linepoints": [
+    [
+      8762.5,
+      -64,
+      8374.5
+    ],
+    [
+      8762.5,
+      -64,
+      8358.5
+    ],
+    [
+      8764.5,
+      -64,
+      8355.5
+    ],
+    [
+      8772.5,
+      -64,
+      8351.5
+    ],
+    [
+      8784.5,
+      -64,
+      8347.5
+    ]
+  ],
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260228",
+  "CreateBy": "HyperBird_"
+}

@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT7STA_02",
+  "Name": "花森居前站",
+  "coordinate": {
+    "x": 6141.5,
+    "z": 4080.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT7PLF_02_D"
+    },
+    {
+      "ID": "ZRT7PLF_02_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

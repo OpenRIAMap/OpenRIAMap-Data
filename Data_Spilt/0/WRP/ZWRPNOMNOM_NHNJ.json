@@ -1,0 +1,19 @@
+{
+  "ID": "ZWRPNOMNOM_NHNJ",
+  "WRPointI2D": "nhnj",
+  "Name": "南海鸟居",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "elevation": 0,
+  "coordinate": {
+    "x": -104.2,
+    "z": 372.4
+  },
+  "tags": {},
+  "extensions": {},
+  "Type": "Points",
+  "Class": "WRP",
+  "World": 0,
+  "CreateTime": "20260202",
+  "CreateBy": "123"
+}

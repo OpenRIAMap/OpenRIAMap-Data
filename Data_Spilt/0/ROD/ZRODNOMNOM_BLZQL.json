@@ -1,0 +1,28 @@
+{
+  "ID": "ZRODNOMNOM_BLZQL",
+  "Name": "站前路",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "Level": 0,
+  "Oneway": false,
+  "Linepoints": [
+    [
+      4895.5,
+      -64,
+      4588.5
+    ],
+    [
+      4895.5,
+      -64,
+      4646.5
+    ]
+  ],
+  "tags": {
+    "nomenclator": "639"
+  },
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260226",
+  "CreateBy": "639"
+}

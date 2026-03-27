@@ -1,0 +1,19 @@
+{
+  "ID": "ZWRPNOMNOM_XYPNJ",
+  "WRPointI2D": "xypnj",
+  "Name": "鳕鱼贫鸟居",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "elevation": 0,
+  "coordinate": {
+    "x": -558.4,
+    "z": 922.4
+  },
+  "tags": {},
+  "extensions": {},
+  "Type": "Points",
+  "Class": "WRP",
+  "World": 0,
+  "CreateTime": "20260202",
+  "CreateBy": "123"
+}

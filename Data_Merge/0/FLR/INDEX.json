@@ -1,0 +1,27 @@
+{
+  "version": 3,
+  "itemCount": 5,
+  "updatedAt": "2026-03-25T20:21:48+08:00",
+  "items": [
+    "FLRtest",
+    "TEST2",
+    "Test3",
+    "Test4",
+    "Test5"
+  ],
+  "chunkSize": 200,
+  "chunkCount": 1,
+  "chunks": [
+    {
+      "file": "chunk_001.json",
+      "itemCount": 5,
+      "items": [
+        "FLRtest",
+        "TEST2",
+        "Test3",
+        "Test4",
+        "Test5"
+      ]
+    }
+  ]
+}

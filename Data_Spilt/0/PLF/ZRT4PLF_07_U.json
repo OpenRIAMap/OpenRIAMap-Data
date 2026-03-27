@@ -1,0 +1,33 @@
+{
+  "ID": "ZRT4PLF_07_U",
+  "Name": "沁洄川站-2站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 5450.5,
+    "z": 4615.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT4_01B_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    },
+    {
+      "ID": "ZRT4_01A_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

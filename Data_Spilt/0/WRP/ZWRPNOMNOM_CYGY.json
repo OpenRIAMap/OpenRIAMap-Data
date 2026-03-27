@@ -1,0 +1,26 @@
+{
+  "ID": "ZWRPNOMNOM_cygy",
+  "WRPointI2D": "zygy朝阳工业",
+  "Name": "朝阳工业",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "hub": "zthspawn",
+  "elevation": 72,
+  "coordinate": {
+    "x": 9199.5,
+    "z": 8408.5
+  },
+  "tags": {
+    "UAdmG": "海华"
+  },
+  "extensions": {
+    "link": {
+      "wiki": "https://wiki.ria.red/wiki/%E6%9C%9D%E9%98%B3%E5%B7%A5%E4%B8%9A"
+    }
+  },
+  "Type": "Points",
+  "Class": "WRP",
+  "World": 0,
+  "CreateTime": "20260203",
+  "CreateBy": "Aut_moon_white"
+}

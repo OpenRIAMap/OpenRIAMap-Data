@@ -1,0 +1,36 @@
+[
+  {
+    "ID": "ZRT1_01D_U",
+    "Name": "溯铁1号线湾东段-上行",
+    "bureau": "T",
+    "line": "1",
+    "color": "ED1C24",
+    "direction": 1,
+    "startplf": "幽南高架东",
+    "endplf": "溯东",
+    "PLpoints": [
+      [
+        5982.5,
+        -64,
+        4896.5
+      ],
+      [
+        5692,
+        -64,
+        4896.5
+      ],
+      [
+        5468.5,
+        -64,
+        4896.5
+      ]
+    ],
+    "Type": "Polyline",
+    "Class": "RLE",
+    "World": 0,
+    "CreateTime": "20251223",
+    "CreateBy": "639",
+    "ModifityTime": "20251224",
+    "ModifityBy": "639"
+  }
+]

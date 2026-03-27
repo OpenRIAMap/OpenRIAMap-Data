@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_10",
+  "Name": "海原站",
+  "coordinate": {
+    "x": 4760.5,
+    "z": 4090.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_10_D"
+    },
+    {
+      "ID": "ZRT1PLF_10_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

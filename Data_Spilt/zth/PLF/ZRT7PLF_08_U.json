@@ -1,0 +1,24 @@
+{
+  "ID": "ZRT7PLF_08_U",
+  "Name": "外港站-2站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 5465.5,
+    "z": 5341.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT7_01B_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225"
+}

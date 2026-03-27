@@ -1,0 +1,35 @@
+{
+  "ID": "Test3",
+  "Name": "刷石机（已废弃）",
+  "NofFloor": "1F",
+  "Kind": "TTS",
+  "SKind": "TTS",
+  "BuildingID": "Test1",
+  "Flrpoints": [
+    [
+      5306,
+      -63,
+      4631
+    ],
+    [
+      5305.5,
+      -63,
+      4684.5
+    ],
+    [
+      5327,
+      -63,
+      4684.5
+    ],
+    [
+      5327,
+      -63,
+      4631
+    ]
+  ],
+  "Type": "Polygon",
+  "Class": "FLR",
+  "World": 0,
+  "CreateTime": "20251231",
+  "CreateBy": "639"
+}

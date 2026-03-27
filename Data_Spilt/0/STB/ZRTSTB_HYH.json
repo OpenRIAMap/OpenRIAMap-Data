@@ -1,0 +1,39 @@
+{
+  "ID": "ZRTSTB_HYH",
+  "Name": "黄与红站",
+  "Conpoints": [
+    [
+      1004.5,
+      -63,
+      2715.5
+    ],
+    [
+      1004.5,
+      -63,
+      2777.5
+    ],
+    [
+      1058.5,
+      -63,
+      2777.5
+    ],
+    [
+      1058.5,
+      -63,
+      2715.5
+    ]
+  ],
+  "Floors": [],
+  "Stations": [
+    {
+      "ID": "ZRT1STA_01"
+    }
+  ],
+  "Type": "Polygon",
+  "Class": "STB",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639",
+  "ModifityTime": "20251225",
+  "ModifityBy": "639"
+}

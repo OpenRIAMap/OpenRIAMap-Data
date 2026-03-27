@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT1STA_08",
+  "Name": "守望之乡站",
+  "coordinate": {
+    "x": 4303.5,
+    "z": 3121.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_08_D"
+    },
+    {
+      "ID": "ZRT1PLF_08_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "ModifityTime": "20251225"
+}

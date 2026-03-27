@@ -1,0 +1,1109 @@
+[
+  {
+    "ID": "ZRODNOMNOM_BLBHDA",
+    "Name": "滨海大道",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Linepoints": [
+      [
+        4825.5,
+        -64,
+        4428.5
+      ],
+      [
+        4825.5,
+        -64,
+        4622.5
+      ]
+    ],
+    "tags": {
+      "nomenclator": "639"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260226",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRODNOMNOM_BLCDA",
+    "Name": "中央大道",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Linepoints": [
+      [
+        4901.5,
+        -64,
+        4564.5
+      ],
+      [
+        4825.5,
+        -64,
+        4564.5
+      ]
+    ],
+    "tags": {
+      "nomenclator": "639"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260226",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRODNOMNOM_BLCSPT",
+    "Name": "传送平台",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 1,
+    "Oneway": false,
+    "Linepoints": [
+      [
+        4940.5,
+        -64,
+        4564.5
+      ],
+      [
+        4901.5,
+        -64,
+        4564.5
+      ]
+    ],
+    "tags": {
+      "nomenclator": "639"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260226",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRODNOMNOM_BLHBR",
+    "Name": "湖滨路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Linepoints": [
+      [
+        5073,
+        -64,
+        4483
+      ],
+      [
+        5073,
+        -64,
+        4560
+      ]
+    ],
+    "tags": {
+      "nomenclator": "639"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260226",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRODNOMNOM_BLKDXCSD",
+    "Name": "科道下穿隧道",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": -1,
+    "Oneway": false,
+    "Linepoints": [
+      [
+        5073,
+        -64,
+        4560
+      ],
+      [
+        5073,
+        -64,
+        4621
+      ]
+    ],
+    "tags": {
+      "nomenclator": "639"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260226",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRODNOMNOM_BLKXJDDS",
+    "Name": "科学家大道（南）",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Linepoints": [
+      [
+        4941,
+        -64,
+        4565
+      ],
+      [
+        4950,
+        -64,
+        4569
+      ],
+      [
+        5121,
+        -64,
+        4569
+      ]
+    ],
+    "tags": {
+      "nomenclator": "639"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260226",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRODNOMNOM_BLKXUJDDN",
+    "Name": "科学家大道（北）",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Linepoints": [
+      [
+        5119,
+        -64,
+        4560
+      ],
+      [
+        4950,
+        -64,
+        4560
+      ],
+      [
+        4941,
+        -64,
+        4564
+      ]
+    ],
+    "tags": {
+      "nomenclator": "639"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260226",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRODNOMNOM_BLYDT",
+    "Name": "樱岛通",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Linepoints": [
+      [
+        5026,
+        -64,
+        4560
+      ],
+      [
+        5026,
+        -64,
+        4569
+      ]
+    ],
+    "tags": {
+      "nomenclator": "639"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260226",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRODNOMNOM_BLZQL",
+    "Name": "站前路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Linepoints": [
+      [
+        4895.5,
+        -64,
+        4588.5
+      ],
+      [
+        4895.5,
+        -64,
+        4646.5
+      ]
+    ],
+    "tags": {
+      "nomenclator": "639"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260226",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRODNOMNOM_BLZYBL",
+    "Name": "中央北路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Linepoints": [
+      [
+        4825.5,
+        -64,
+        4540.5
+      ],
+      [
+        4924.5,
+        -64,
+        4540.5
+      ]
+    ],
+    "tags": {
+      "nomenclator": "639"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260226",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRODNOMNOM_BLZYNL",
+    "Name": "中央南路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Linepoints": [
+      [
+        4825.5,
+        -64,
+        4588.5
+      ],
+      [
+        4924.5,
+        -64,
+        4588.5
+      ]
+    ],
+    "tags": {
+      "nomenclator": "639"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260226",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRODNOMNOM_HaibeiAVE_E",
+    "Name": "海北大道",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": true,
+    "Enter": true,
+    "Linepoints": [
+      [
+        8537.5,
+        -64,
+        8509.5
+      ],
+      [
+        8750.5,
+        -64,
+        8509.5
+      ],
+      [
+        8879.5,
+        -64,
+        8509.5
+      ],
+      [
+        9103.5,
+        -64,
+        8509.5
+      ],
+      [
+        9123.5,
+        -64,
+        8505.5
+      ],
+      [
+        9208.5,
+        -64,
+        8505.5
+      ],
+      [
+        9289.5,
+        -64,
+        8505.5
+      ],
+      [
+        9289.5,
+        -64,
+        8489.5
+      ]
+    ],
+    "tags": {
+      "UAdm": "海华",
+      "UAdmG": "北辰区"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_HaibeiAVE_W",
+    "Name": "海北大道",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": true,
+    "Enter": true,
+    "Linepoints": [
+      [
+        9289.5,
+        -64,
+        8489.5
+      ],
+      [
+        9208.5,
+        -64,
+        8489.5
+      ],
+      [
+        9123.5,
+        -64,
+        8489.5
+      ],
+      [
+        9103.5,
+        -64,
+        8485.5
+      ],
+      [
+        8879.5,
+        -64,
+        8485.5
+      ],
+      [
+        8750.5,
+        -64,
+        8485.5
+      ],
+      [
+        8537.5,
+        -64,
+        8485.5
+      ]
+    ],
+    "tags": {
+      "UAdm": "海华",
+      "UAdmG": "北辰区"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_HHBE",
+    "Name": "海华北东高架",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 1,
+    "Oneway": true,
+    "Enter": false,
+    "Exit": true,
+    "ConnectL": [
+      {
+        "mode": "endpoint",
+        "tgt": "ZRODNOMNOM_NanyeAVEN"
+      },
+      {
+        "mode": "endpoint",
+        "tgt": "ZRODNOMNOM_HuaqingRDW1"
+      }
+    ],
+    "Linepoints": [
+      [
+        8764.5,
+        -64,
+        8371.5
+      ],
+      [
+        8766.5,
+        -64,
+        8366.5
+      ],
+      [
+        8771.5,
+        -64,
+        8360.5
+      ],
+      [
+        8778.5,
+        -64,
+        8357.5
+      ],
+      [
+        8816.5,
+        -64,
+        8357.5
+      ],
+      [
+        8823.5,
+        -64,
+        8354.5
+      ],
+      [
+        8826.5,
+        -64,
+        8350.5
+      ],
+      [
+        8828.5,
+        -64,
+        8345.5
+      ],
+      [
+        8828.5,
+        -64,
+        8201.5
+      ],
+      [
+        8829.5,
+        -64,
+        8194.5
+      ],
+      [
+        8833.5,
+        -64,
+        8188.5
+      ],
+      [
+        8840.5,
+        -64,
+        8185.5
+      ],
+      [
+        8912.5,
+        -64,
+        8185.5
+      ],
+      [
+        8925.5,
+        -64,
+        8183.5
+      ]
+    ],
+    "tags": {
+      "UAdm": "海华",
+      "UAdmG": "北辰区"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_HHBGE",
+    "Name": "海华北东地面连接线",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": true,
+    "Enter": false,
+    "Exit": false,
+    "Linepoints": [
+      [
+        8762.5,
+        -64,
+        8374.5
+      ],
+      [
+        8762.5,
+        -64,
+        8358.5
+      ],
+      [
+        8764.5,
+        -64,
+        8355.5
+      ],
+      [
+        8772.5,
+        -64,
+        8351.5
+      ],
+      [
+        8784.5,
+        -64,
+        8347.5
+      ]
+    ],
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_HHBGLOOP",
+    "Name": "海华北地面环路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": true,
+    "Enter": true,
+    "Exit": false,
+    "Linepoints": [
+      [
+        8815.5,
+        -64,
+        8347.5
+      ],
+      [
+        8827.5,
+        -64,
+        8339.5
+      ],
+      [
+        8828.5,
+        -64,
+        8201.5
+      ],
+      [
+        8828.5,
+        -64,
+        8191.5
+      ],
+      [
+        8825.5,
+        -64,
+        8185.5
+      ],
+      [
+        8814.5,
+        -64,
+        8179.5
+      ],
+      [
+        8806.5,
+        -64,
+        8175.5
+      ],
+      [
+        8695.5,
+        -64,
+        8175.5
+      ],
+      [
+        8681.5,
+        -64,
+        8177.5
+      ],
+      [
+        8675.5,
+        -64,
+        8184.5
+      ],
+      [
+        8672.5,
+        -64,
+        8192.5
+      ],
+      [
+        8672.5,
+        -64,
+        8201.5
+      ],
+      [
+        8672.5,
+        -64,
+        8334.5
+      ],
+      [
+        8677.5,
+        -64,
+        8342.5
+      ],
+      [
+        8686.5,
+        -64,
+        8347.5
+      ]
+    ],
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_HHBGW",
+    "Name": "海华北西地面连接线",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Enter": false,
+    "Exit": false,
+    "Linepoints": [
+      [
+        8715.5,
+        -64,
+        8347.5
+      ],
+      [
+        8729.5,
+        -64,
+        8351.5
+      ],
+      [
+        8736.5,
+        -64,
+        8355.5
+      ],
+      [
+        8738.5,
+        -64,
+        8358.5
+      ],
+      [
+        8738.5,
+        -64,
+        8374.5
+      ]
+    ],
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_HHBW",
+    "Name": "海华北西高架",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 1,
+    "Oneway": true,
+    "Enter": false,
+    "Exit": true,
+    "ConnectL": [
+      {
+        "mode": "endpoint",
+        "tgt": "ZRODNOMNOM_NanyeAVES"
+      }
+    ],
+    "Linepoints": [
+      [
+        8571.5,
+        -64,
+        8185.5
+      ],
+      [
+        8575.5,
+        -64,
+        8185.5
+      ],
+      [
+        8660.5,
+        -64,
+        8185.5
+      ],
+      [
+        8667.5,
+        -64,
+        8188.5
+      ],
+      [
+        8670.5,
+        -64,
+        8193.5
+      ],
+      [
+        8672.5,
+        -64,
+        8201.5
+      ],
+      [
+        8672.5,
+        -64,
+        8345.5
+      ],
+      [
+        8675.5,
+        -64,
+        8352.5
+      ],
+      [
+        8680.5,
+        -64,
+        8355.5
+      ],
+      [
+        8687.5,
+        -64,
+        8357.5
+      ],
+      [
+        8722.5,
+        -64,
+        8357.5
+      ],
+      [
+        8729.5,
+        -64,
+        8360.5
+      ],
+      [
+        8735.5,
+        -64,
+        8369.5
+      ],
+      [
+        8736.5,
+        -64,
+        8372.5
+      ]
+    ],
+    "tags": {
+      "UAdm": "海华",
+      "UAdmG": "北辰区"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_HuaqingRDE",
+    "Name": "画青路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Enter": true,
+    "Linepoints": [
+      [
+        8571.5,
+        -64,
+        8175.5
+      ],
+      [
+        8575.5,
+        -64,
+        8175.5
+      ],
+      [
+        9104.5,
+        -64,
+        8175.5
+      ]
+    ],
+    "tags": {
+      "UAdm": "海华",
+      "UAdmG": "北辰区"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_HuaqingRDW1",
+    "Name": "画青路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": true,
+    "Enter": true,
+    "Linepoints": [
+      [
+        9104.5,
+        -64,
+        8183.5
+      ],
+      [
+        8925.5,
+        -64,
+        8183.5
+      ]
+    ],
+    "tags": {
+      "UAdm": "海华",
+      "UAdmG": "北辰区"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_NanyeAVEN",
+    "Name": "南夜大道",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": true,
+    "Enter": true,
+    "Linepoints": [
+      [
+        8762.5,
+        -64,
+        8674.5
+      ],
+      [
+        8762.5,
+        -64,
+        8374.5
+      ],
+      [
+        8764.5,
+        -64,
+        8371.5
+      ]
+    ],
+    "tags": {
+      "UAdm": "海华",
+      "UAdmG": "北辰区"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_NanyeAVES",
+    "Name": "南夜大道",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": true,
+    "Enter": true,
+    "Linepoints": [
+      [
+        8736.5,
+        -64,
+        8372.5
+      ],
+      [
+        8738.5,
+        -64,
+        8374.5
+      ],
+      [
+        8736.5,
+        -64,
+        8674.5
+      ]
+    ],
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_YunhaiRD",
+    "Name": "云海路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Enter": true,
+    "Linepoints": [
+      [
+        8879.5,
+        -64,
+        8912.5
+      ],
+      [
+        8879.5,
+        -64,
+        8688.5
+      ],
+      [
+        8879.5,
+        -64,
+        8509.5
+      ],
+      [
+        8879.5,
+        -64,
+        8485.5
+      ],
+      [
+        8879.5,
+        -64,
+        8473.5
+      ]
+    ],
+    "tags": {
+      "UAdm": "海华",
+      "UAdmG": "闻涛区"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_ZhichunRDE",
+    "Name": "知春路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": true,
+    "Enter": true,
+    "Linepoints": [
+      [
+        8571.5,
+        -64,
+        8347.5
+      ],
+      [
+        8588.5,
+        -64,
+        8347.5
+      ],
+      [
+        9104.5,
+        -64,
+        8347.5
+      ]
+    ],
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_ZhichunRDW1",
+    "Name": "知春路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": true,
+    "Enter": true,
+    "Linepoints": [
+      [
+        9104.5,
+        -64,
+        8339.5
+      ],
+      [
+        8925.5,
+        -64,
+        8339.5
+      ],
+      [
+        8912.5,
+        -64,
+        8337.5
+      ],
+      [
+        8850.5,
+        -64,
+        8337.5
+      ]
+    ],
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_ZhichunRDW2",
+    "Name": "知春路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": -1,
+    "Oneway": true,
+    "Enter": false,
+    "Linepoints": [
+      [
+        8850.5,
+        -64,
+        8337.5
+      ],
+      [
+        8650.5,
+        -64,
+        8337.5
+      ]
+    ],
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRODNOMNOM_ZhichunRDW3",
+    "Name": "知春路",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "Level": 0,
+    "Oneway": true,
+    "Enter": true,
+    "Linepoints": [
+      [
+        8571.5,
+        -64,
+        8337.5
+      ],
+      [
+        8588.5,
+        -64,
+        8337.5
+      ],
+      [
+        8650.5,
+        -64,
+        8337.5
+      ]
+    ],
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260228",
+    "CreateBy": "HyperBird_"
+  }
+]

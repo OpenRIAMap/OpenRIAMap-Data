@@ -1,0 +1,25 @@
+{
+  "ID": "ZRT13PLF_04_D",
+  "Name": "沙船站-1站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 1148.5,
+    "z": 8436.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT13_01B_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

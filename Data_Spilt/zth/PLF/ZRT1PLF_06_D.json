@@ -1,0 +1,24 @@
+{
+  "ID": "ZRT1PLF_06_D",
+  "Name": "山岸站-1站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 3515.5,
+    "z": 3121.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT1_01C_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225"
+}

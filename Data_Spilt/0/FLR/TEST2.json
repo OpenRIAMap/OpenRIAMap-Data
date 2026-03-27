@@ -1,0 +1,35 @@
+{
+  "ID": "TEST2",
+  "Name": "自动熔炉组（废弃）",
+  "NofFloor": "1F",
+  "Kind": "T",
+  "SKind": "T",
+  "BuildingID": "Test1",
+  "Flrpoints": [
+    [
+      5272.5,
+      -63,
+      4631.5
+    ],
+    [
+      5274,
+      -63,
+      4685
+    ],
+    [
+      5287.5,
+      -63,
+      4685.5
+    ],
+    [
+      5287.5,
+      -63,
+      4631.5
+    ]
+  ],
+  "Type": "Polygon",
+  "Class": "FLR",
+  "World": 0,
+  "CreateTime": "20251231",
+  "CreateBy": "639"
+}

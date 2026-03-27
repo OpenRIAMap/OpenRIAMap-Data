@@ -1,0 +1,1419 @@
+[
+  {
+    "ID": "ZRH7STA_1",
+    "Name": "海华北站",
+    "STBuilding": "ZRHSTB_HHBZ",
+    "coordinate": {
+      "x": 8790.5,
+      "z": 8247.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRH7PLF_1_D"
+      },
+      {
+        "ID": "ZRH7PLF_1_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251231",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRH7STA_2",
+    "Name": "会展中心",
+    "STBuilding": "ZRHSTB_HZZX",
+    "coordinate": {
+      "x": 9019.5,
+      "z": 8000.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRH7PLF_2_D"
+      },
+      {
+        "ID": "ZRH7PLF_2_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251231",
+    "CreateBy": "HyperBird_"
+  },
+  {
+    "ID": "ZRT13STA_01",
+    "Name": "连东站",
+    "coordinate": {
+      "x": 1828.5,
+      "z": 7057.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT13PLF_01_D"
+      },
+      {
+        "ID": "ZRT13PLF_01_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT13STA_02",
+    "Name": "连西站",
+    "coordinate": {
+      "x": 1558.5,
+      "z": 7057.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT13PLF_02_D"
+      },
+      {
+        "ID": "ZRT13PLF_02_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT13STA_03",
+    "Name": "狭原站",
+    "coordinate": {
+      "x": 1441.5,
+      "z": 7691.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT13PLF_03_D"
+      },
+      {
+        "ID": "ZRT13PLF_03_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT13STA_04",
+    "Name": "沙船站",
+    "coordinate": {
+      "x": 1150.5,
+      "z": 8436.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT13PLF_04_D"
+      },
+      {
+        "ID": "ZRT13PLF_04_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT13STA_05",
+    "Name": "白风站",
+    "coordinate": {
+      "x": 1150.5,
+      "z": 9412.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT13PLF_05_D"
+      },
+      {
+        "ID": "ZRT13PLF_05_D"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT13STA_06",
+    "Name": "桐山站",
+    "coordinate": {
+      "x": 817.5,
+      "z": 9730.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT13PLF_06_D"
+      },
+      {
+        "ID": "ZRT13PLF_06_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT1STA_01",
+    "Name": "黄与红站",
+    "coordinate": {
+      "x": 1031.5,
+      "z": 2746.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_01_D"
+      },
+      {
+        "ID": "ZRT1PLF_01_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251224"
+  },
+  {
+    "ID": "ZRT1STA_02",
+    "Name": "林前站",
+    "coordinate": {
+      "x": 1505.5,
+      "z": 3121.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_02_D"
+      },
+      {
+        "ID": "ZRT1PLF_02_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251224"
+  },
+  {
+    "ID": "ZRT1STA_03",
+    "Name": "峡西站",
+    "coordinate": {
+      "x": 2030.5,
+      "z": 3121.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_03_D"
+      },
+      {
+        "ID": "ZRT1PLF_03_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_04",
+    "Name": "西屿站",
+    "coordinate": {
+      "x": 2675.5,
+      "z": 3121.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_04_D"
+      },
+      {
+        "ID": "ZRT1PLF_04_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_05",
+    "Name": "东屿站",
+    "coordinate": {
+      "x": 2900.5,
+      "z": 3121.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_05_D"
+      },
+      {
+        "ID": "ZRT1PLF_05_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_06",
+    "Name": "山岸站",
+    "coordinate": {
+      "x": 3515.5,
+      "z": 3121.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_06_D"
+      },
+      {
+        "ID": "ZRT1PLF_06_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_07",
+    "Name": "乡谷站",
+    "coordinate": {
+      "x": 3965.5,
+      "z": 3121.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_07_D"
+      },
+      {
+        "ID": "ZRT1PLF_07_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_08",
+    "Name": "守望之乡站",
+    "coordinate": {
+      "x": 4303.5,
+      "z": 3121.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_08_D"
+      },
+      {
+        "ID": "ZRT1PLF_08_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "ModifityTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_09",
+    "Name": "海原北站",
+    "coordinate": {
+      "x": 4574.5,
+      "z": 3884.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_09_D"
+      },
+      {
+        "ID": "ZRT1PLF_09_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_10",
+    "Name": "海原站",
+    "coordinate": {
+      "x": 4760.5,
+      "z": 4090.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_10_D"
+      },
+      {
+        "ID": "ZRT1PLF_10_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_11",
+    "Name": "岚岸站",
+    "coordinate": {
+      "x": 4791.5,
+      "z": 4385.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_11_D"
+      },
+      {
+        "ID": "ZRT1PLF_11_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_12",
+    "Name": "白霖教堂站",
+    "coordinate": {
+      "x": 4879.5,
+      "z": 4508.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_12_D"
+      },
+      {
+        "ID": "ZRT1PLF_12_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_13",
+    "Name": "白霖站",
+    "coordinate": {
+      "x": 4930.5,
+      "z": 4624.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_13_D"
+      },
+      {
+        "ID": "ZRT1PLF_13_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_14",
+    "Name": "北城外站",
+    "coordinate": {
+      "x": 4987.5,
+      "z": 4783.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_14_D"
+      },
+      {
+        "ID": "ZRT1PLF_14_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_15",
+    "Name": "西城港站",
+    "coordinate": {
+      "x": 5014.5,
+      "z": 4875.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_15_D"
+      },
+      {
+        "ID": "ZRT1PLF_15_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_16",
+    "Name": "南麓广场站",
+    "coordinate": {
+      "x": 5079.5,
+      "z": 4981.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_16_D"
+      },
+      {
+        "ID": "ZRT1PLF_16_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_17",
+    "Name": "南山口站",
+    "coordinate": {
+      "x": 5118.5,
+      "z": 4981.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_17_D"
+      },
+      {
+        "ID": "ZRT1PLF_17_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_18",
+    "Name": "东坪站",
+    "coordinate": {
+      "x": 5213.5,
+      "z": 4896.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_18_D"
+      },
+      {
+        "ID": "ZRT1PLF_18_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_19",
+    "Name": "溯东站",
+    "coordinate": {
+      "x": 5468.5,
+      "z": 4896.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_19_D"
+      },
+      {
+        "ID": "ZRT1PLF_19_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT1STA_20",
+    "Name": "漪泱居前站",
+    "coordinate": {
+      "x": 5727.5,
+      "z": 4896.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_20_D"
+      },
+      {
+        "ID": "ZRT1PLF_20_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_21",
+    "Name": "漪泱站",
+    "coordinate": {
+      "x": 5847.5,
+      "z": 4896.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_21_D"
+      },
+      {
+        "ID": "ZRT1PLF_21_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT1STA_22",
+    "Name": "幽南高架东站",
+    "coordinate": {
+      "x": 5982.5,
+      "z": 4896.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT1PLF_22_D"
+      },
+      {
+        "ID": "ZRT1PLF_22_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT4STA_01",
+    "Name": "北庭站",
+    "coordinate": {
+      "x": 7459.5,
+      "z": 3967.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_01_D"
+      },
+      {
+        "ID": "ZRT4PLF_01_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_02",
+    "Name": "山滨站",
+    "coordinate": {
+      "x": 7077.5,
+      "z": 4193.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_02_D"
+      },
+      {
+        "ID": "ZRT4PLF_02_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_03",
+    "Name": "旧城站",
+    "coordinate": {
+      "x": 6793.5,
+      "z": 4377.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_03_D"
+      },
+      {
+        "ID": "ZRT4PLF_03_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_04",
+    "Name": "杉林站",
+    "coordinate": {
+      "x": 6521.5,
+      "z": 4615.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_04_D"
+      },
+      {
+        "ID": "ZRT4PLF_04_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_05",
+    "Name": "天门站",
+    "coordinate": {
+      "x": 5879.5,
+      "z": 4615.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_05_D"
+      },
+      {
+        "ID": "ZRT4PLF_05_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_06",
+    "Name": "湾北站",
+    "coordinate": {
+      "x": 5733.5,
+      "z": 4615.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_06_D"
+      },
+      {
+        "ID": "ZRT4PLF_06_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_07",
+    "Name": "沁洄川站",
+    "coordinate": {
+      "x": 5450.5,
+      "z": 4615.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_07_D"
+      },
+      {
+        "ID": "ZRT4PLF_07_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_08",
+    "Name": "北溯工站",
+    "coordinate": {
+      "x": 5296.5,
+      "z": 4615.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_08_D"
+      },
+      {
+        "ID": "ZRT4PLF_08_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_09",
+    "Name": "原央站",
+    "coordinate": {
+      "x": 5138.5,
+      "z": 4615.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_09_D"
+      },
+      {
+        "ID": "ZRT4PLF_09_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_10",
+    "Name": "白霖站",
+    "coordinate": {
+      "x": 4913.5,
+      "z": 4615.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_10_D"
+      },
+      {
+        "ID": "ZRT4PLF_10_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_11",
+    "Name": "三灯站",
+    "coordinate": {
+      "x": 4558.5,
+      "z": 4818.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_11_D"
+      },
+      {
+        "ID": "ZRT4PLF_11_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_12",
+    "Name": "四叶海岸站",
+    "coordinate": {
+      "x": 4558.5,
+      "z": 5458.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_12_D"
+      },
+      {
+        "ID": "ZRT4PLF_12_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_13",
+    "Name": "格兰南角站",
+    "coordinate": {
+      "x": 4558.5,
+      "z": 5817.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_13_D"
+      },
+      {
+        "ID": "ZRT4PLF_13_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_14",
+    "Name": "白令运河站",
+    "coordinate": {
+      "x": 4558.5,
+      "z": 6042.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_14_D"
+      },
+      {
+        "ID": "ZRT4PLF_14_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_15",
+    "Name": "快乐小镇站",
+    "coordinate": {
+      "x": 3718.5,
+      "z": 6175.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_15_D"
+      },
+      {
+        "ID": "ZRT4PLF_15_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_16",
+    "Name": "岭上神社站",
+    "coordinate": {
+      "x": 3425.5,
+      "z": 6175.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_16_D"
+      },
+      {
+        "ID": "ZRT4PLF_16_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_17",
+    "Name": "岭上西站",
+    "coordinate": {
+      "x": 3017.5,
+      "z": 6405.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_17_D"
+      },
+      {
+        "ID": "ZRT4PLF_17_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_18",
+    "Name": "幕沼站",
+    "coordinate": {
+      "x": 2885.5,
+      "z": 6642.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_18_D"
+      },
+      {
+        "ID": "ZRT4PLF_18_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_19",
+    "Name": "白给二号站",
+    "coordinate": {
+      "x": 2165.5,
+      "z": 6642.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_19_D"
+      },
+      {
+        "ID": "ZRT4PLF_19_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_20",
+    "Name": "星台站",
+    "coordinate": {
+      "x": 1931.5,
+      "z": 6773.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_20_D"
+      },
+      {
+        "ID": "ZRT4PLF_20_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_21",
+    "Name": "连东站",
+    "coordinate": {
+      "x": 1828.5,
+      "z": 7057.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_21_D"
+      },
+      {
+        "ID": "ZRT4PLF_21_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639",
+    "ModifityTime": "20251225",
+    "ModifityBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_22",
+    "Name": "连西站",
+    "coordinate": {
+      "x": 1563.5,
+      "z": 7057.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_22_D"
+      },
+      {
+        "ID": "ZRT4PLF_22_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT4STA_23",
+    "Name": "新桥站",
+    "coordinate": {
+      "x": 1263.5,
+      "z": 6869.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT4PLF_23_D"
+      },
+      {
+        "ID": "ZRT4PLF_23_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZRT7STA_01",
+    "Name": "花森北山站",
+    "coordinate": {
+      "x": 6141.5,
+      "z": 3898.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_01_D"
+      },
+      {
+        "ID": "ZRT7PLF_01_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_02",
+    "Name": "花森居前站",
+    "coordinate": {
+      "x": 6141.5,
+      "z": 4080.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_02_D"
+      },
+      {
+        "ID": "ZRT7PLF_02_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_03",
+    "Name": "花森站",
+    "coordinate": {
+      "x": 6066.5,
+      "z": 4189.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_03_D"
+      },
+      {
+        "ID": "ZRT7PLF_03_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_04",
+    "Name": "北岿站",
+    "coordinate": {
+      "x": 5663.5,
+      "z": 4384.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_04_D"
+      },
+      {
+        "ID": "ZRT7PLF_04_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_05",
+    "Name": "沁洄川站",
+    "coordinate": {
+      "x": 5465.5,
+      "z": 4615.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_05_D"
+      },
+      {
+        "ID": "ZRT7PLF_05_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_06",
+    "Name": "溯东站",
+    "coordinate": {
+      "x": 5465.5,
+      "z": 4851.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_06_D"
+      },
+      {
+        "ID": "ZRT7PLF_06_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_07",
+    "Name": "空言海岸站",
+    "coordinate": {
+      "x": 5465.5,
+      "z": 5202.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_07_D"
+      },
+      {
+        "ID": "ZRT7PLF_07_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_08",
+    "Name": "外港站",
+    "coordinate": {
+      "x": 5465.5,
+      "z": 5341.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_08_D"
+      },
+      {
+        "ID": "ZRT7PLF_08_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_09",
+    "Name": "庇所站",
+    "coordinate": {
+      "x": 5280.5,
+      "z": 5416.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_09_D"
+      },
+      {
+        "ID": "ZRT7PLF_09_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_10",
+    "Name": "提岛花机站",
+    "coordinate": {
+      "x": 5207.5,
+      "z": 5899.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_10_D"
+      },
+      {
+        "ID": "ZRT7PLF_10_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_11",
+    "Name": "南滨站",
+    "coordinate": {
+      "x": 5191.5,
+      "z": 6305.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_11_D"
+      },
+      {
+        "ID": "ZRT7PLF_11_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_12",
+    "Name": "快镇花机站",
+    "coordinate": {
+      "x": 5191.5,
+      "z": 6686.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_12_D"
+      },
+      {
+        "ID": "ZRT7PLF_12_D"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_13",
+    "Name": "庐台站",
+    "coordinate": {
+      "x": 5278.5,
+      "z": 7235.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_13_D"
+      },
+      {
+        "ID": "ZRT7PLF_13_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_14",
+    "Name": "天柱山站",
+    "coordinate": {
+      "x": 5278.5,
+      "z": 7445.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_14_D"
+      },
+      {
+        "ID": "ZRT7PLF_14_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_15",
+    "Name": "终点站",
+    "coordinate": {
+      "x": 5278.5,
+      "z": 8099.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_15_D"
+      },
+      {
+        "ID": "ZRT7PLF_15_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  },
+  {
+    "ID": "ZRT7STA_16",
+    "Name": "守望者站",
+    "coordinate": {
+      "x": 5105.5,
+      "z": 8152.5
+    },
+    "platforms": [
+      {
+        "ID": "ZRT7PLF_16_D"
+      },
+      {
+        "ID": "ZRT7PLF_16_U"
+      }
+    ],
+    "Type": "Points",
+    "Class": "STA",
+    "World": 0,
+    "CreateTime": "20251225"
+  }
+]

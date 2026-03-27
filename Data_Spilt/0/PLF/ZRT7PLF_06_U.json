@@ -1,0 +1,32 @@
+{
+  "ID": "ZRT7PLF_06_U",
+  "Name": "溯东站-4站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 5465.5,
+    "z": 4851.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT7_01A_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    },
+    {
+      "ID": "ZRT7_01B_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225"
+}

@@ -1,0 +1,44 @@
+{
+  "ID": "ZRTSTB_QHC",
+  "Name": "沁洄川站",
+  "Conpoints": [
+    [
+      5412.5,
+      -63,
+      4575.5
+    ],
+    [
+      5412.5,
+      -63,
+      4661.5
+    ],
+    [
+      5488.5,
+      -63,
+      4661.5
+    ],
+    [
+      5487.5,
+      -63,
+      4575.5
+    ]
+  ],
+  "Floors": [
+    {
+      "ID": "ZRTSTF_QHC_01"
+    }
+  ],
+  "Stations": [
+    {
+      "ID": "ZRT4STA_07"
+    },
+    {
+      "ID": "ZRT7STA_05"
+    }
+  ],
+  "Type": "Polygon",
+  "Class": "STB",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

@@ -1,0 +1,25 @@
+{
+  "ID": "ZRT4PLF_03_D",
+  "Name": "旧城站-1站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 6793.5,
+    "z": 4377.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT4_01B_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

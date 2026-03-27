@@ -1,0 +1,24 @@
+{
+  "ID": "ZRT7PLF_03_U",
+  "Name": "花森站-4站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 6066.5,
+    "z": 4189.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT7_01A_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225"
+}

@@ -1,0 +1,33 @@
+{
+  "ID": "ZRT4PLF_16_D",
+  "Name": "岭上神社站-1站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 3425.5,
+    "z": 6167.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT4_01A_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    },
+    {
+      "ID": "ZRT4_01C_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

@@ -1,0 +1,25 @@
+{
+  "ID": "ZRT4PLF_12_D",
+  "Name": "四叶海岸站-1站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 4558.5,
+    "z": 5458.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT4_01A_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

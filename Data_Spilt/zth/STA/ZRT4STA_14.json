@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT4STA_14",
+  "Name": "白令运河站",
+  "coordinate": {
+    "x": 4558.5,
+    "z": 6042.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT4PLF_14_D"
+    },
+    {
+      "ID": "ZRT4PLF_14_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

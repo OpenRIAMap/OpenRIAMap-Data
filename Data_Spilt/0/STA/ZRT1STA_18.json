@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_18",
+  "Name": "东坪站",
+  "coordinate": {
+    "x": 5213.5,
+    "z": 4896.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_18_D"
+    },
+    {
+      "ID": "ZRT1PLF_18_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

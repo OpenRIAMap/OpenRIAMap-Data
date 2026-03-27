@@ -1,0 +1,52 @@
+{
+  "_comment": "策略配置文件：建议优先修改本文件，而不是直接改代码。",
+  "conflict_policy": {
+    "_comment": "冲突等级策略。可选：warning / blocking",
+    "duplicate_same_structure": "warning",
+    "duplicate_cross_structure": "warning",
+    "invalid_id": "blocking",
+    "missing_world": "blocking",
+    "missing_kind_for_special_class": "blocking"
+  },
+  "world_policy": {
+    "_comment": "World 解析策略。允许数值 code->目录名映射，也允许直接使用字符串 worldId。",
+    "allow_numeric_world_code": true,
+    "allow_string_world_id": true,
+    "unknown_world": "blocking"
+  },
+  "image_binding_policy": {
+    "_comment": "图片自动绑定策略。",
+    "enable_auto_bind_by_suffix": true,
+    "fallback_to_manual_when_unmatched": true,
+    "allow_batch_accept_all": true
+  },
+  "scan_policy": {
+    "_comment": "扫描策略。",
+    "recursive_json_scan": true,
+    "recursive_image_scan": true,
+    "recursive_package_scan": true,
+    "package_require_index": true,
+    "package_require_split_dir": true,
+    "package_require_picture_dir": true
+  },
+  "progress_policy": {
+    "_comment": "终端输出策略。",
+    "enable_progress_output": true,
+    "show_relative_path": true,
+    "show_chunk_progress": true,
+    "enable_separator": true,
+    "separator_style": "arrow"
+  },
+  "report_policy": {
+    "_comment": "报告输出策略。",
+    "include_conflict_details": true,
+    "include_auto_bind_details": true,
+    "keep_report_history": true,
+    "log_level": "normal"
+  },
+  "id_policy": {
+    "_comment": "非法 ID 处理策略。",
+    "invalid_id": "blocking",
+    "allow_future_safe_key_mode": false
+  }
+}

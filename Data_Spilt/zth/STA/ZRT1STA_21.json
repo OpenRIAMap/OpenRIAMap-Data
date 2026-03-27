@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_21",
+  "Name": "漪泱站",
+  "coordinate": {
+    "x": 5847.5,
+    "z": 4896.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_21_D"
+    },
+    {
+      "ID": "ZRT1PLF_21_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

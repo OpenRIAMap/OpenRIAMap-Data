@@ -1,0 +1,32 @@
+{
+  "ID": "ZRT1PLF_19_D",
+  "Name": "溯东站-1站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 5468.5,
+    "z": 4896.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT1_01A_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    },
+    {
+      "ID": "ZRT1_01D_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225"
+}

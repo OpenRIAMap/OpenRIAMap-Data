@@ -1,0 +1,55 @@
+{
+  "ID": "ZRODNOMNOM_HaibeiAVE_W",
+  "Name": "海北大道",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "Level": 0,
+  "Oneway": true,
+  "Enter": true,
+  "Linepoints": [
+    [
+      9289.5,
+      -64,
+      8489.5
+    ],
+    [
+      9208.5,
+      -64,
+      8489.5
+    ],
+    [
+      9123.5,
+      -64,
+      8489.5
+    ],
+    [
+      9103.5,
+      -64,
+      8485.5
+    ],
+    [
+      8879.5,
+      -64,
+      8485.5
+    ],
+    [
+      8750.5,
+      -64,
+      8485.5
+    ],
+    [
+      8537.5,
+      -64,
+      8485.5
+    ]
+  ],
+  "tags": {
+    "UAdm": "海华",
+    "UAdmG": "北辰区"
+  },
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260228",
+  "CreateBy": "HyperBird_"
+}

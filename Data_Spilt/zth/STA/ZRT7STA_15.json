@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT7STA_15",
+  "Name": "终点站",
+  "coordinate": {
+    "x": 5278.5,
+    "z": 8099.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT7PLF_15_D"
+    },
+    {
+      "ID": "ZRT7PLF_15_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}

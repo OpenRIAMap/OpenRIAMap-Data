@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT4STA_09",
+  "Name": "原央站",
+  "coordinate": {
+    "x": 5138.5,
+    "z": 4615.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT4PLF_09_D"
+    },
+    {
+      "ID": "ZRT4PLF_09_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

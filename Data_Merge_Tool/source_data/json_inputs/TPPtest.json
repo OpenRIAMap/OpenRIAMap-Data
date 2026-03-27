@@ -1,0 +1,81 @@
+[
+  {
+    "ID": "ZTPPNOMNOM_MLD-XYPNJ",
+    "Name": "主岛->鳕鱼贫鸟居",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "hub": "zthspawn",
+    "TGTWarp": "xypnj",
+    "coordinate": {
+      "x": -770,
+      "z": -1583
+    },
+    "elevation": 0,
+    "tags": {},
+    "extensions": {},
+    "Type": "Points",
+    "Class": "TPP",
+    "World": 0,
+    "CreateTime": "20260202",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZTPPNOMNOM_MLD-XYSS",
+    "Name": "主岛->鳕鱼神社",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "hub": "zthspawn",
+    "TGTWarp": "xyss",
+    "coordinate": {
+      "x": -770,
+      "z": -1586
+    },
+    "elevation": 0,
+    "tags": {},
+    "extensions": {},
+    "Type": "Points",
+    "Class": "TPP",
+    "World": 0,
+    "CreateTime": "20260202",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZTPPNOMNOM_MLD-NHNJ",
+    "Name": "主岛->南海鸟居",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "hub": "zthspawn",
+    "TGTWarp": "nhnj",
+    "coordinate": {
+      "x": -770,
+      "z": -1589
+    },
+    "elevation": 0,
+    "tags": {},
+    "extensions": {},
+    "Type": "Points",
+    "Class": "TPP",
+    "World": 0,
+    "CreateTime": "20260202",
+    "CreateBy": "639"
+  },
+  {
+    "ID": "ZTPPNOMNOM_HHY-CYGY",
+    "Name": "海华屿->朝阳工业",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "TGTWarp": "cygy",
+    "coordinate": {
+      "x": 9389,
+      "z": 8942
+    },
+    "elevation": 0,
+    "tags": {},
+    "extensions": {},
+    "Type": "Points",
+    "Class": "TPP",
+    "World": 0,
+    "CreateTime": "20260203",
+    "CreateBy": "639"
+  }
+]

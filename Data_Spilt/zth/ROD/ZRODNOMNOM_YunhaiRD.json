@@ -1,0 +1,45 @@
+{
+  "ID": "ZRODNOMNOM_YunhaiRD",
+  "Name": "云海路",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "Level": 0,
+  "Oneway": false,
+  "Enter": true,
+  "Linepoints": [
+    [
+      8879.5,
+      -64,
+      8912.5
+    ],
+    [
+      8879.5,
+      -64,
+      8688.5
+    ],
+    [
+      8879.5,
+      -64,
+      8509.5
+    ],
+    [
+      8879.5,
+      -64,
+      8485.5
+    ],
+    [
+      8879.5,
+      -64,
+      8473.5
+    ]
+  ],
+  "tags": {
+    "UAdm": "海华",
+    "UAdmG": "闻涛区"
+  },
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260228",
+  "CreateBy": "HyperBird_"
+}

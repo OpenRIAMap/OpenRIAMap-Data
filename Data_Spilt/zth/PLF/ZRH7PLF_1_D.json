@@ -1,0 +1,26 @@
+{
+  "ID": "ZRH7PLF_1_D",
+  "Name": "海华北站-2站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 8785.5,
+    "z": 8247.5
+  },
+  "lines": [
+    {
+      "ID": "ZRH7_A_01_D",
+      "stationCode": 1,
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251231",
+  "CreateBy": "HyperBird_"
+}

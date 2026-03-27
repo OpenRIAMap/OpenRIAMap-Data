@@ -1,0 +1,8 @@
+{
+  "_comment": "特殊类规则：这些 Class 在仓库目录中需要继续按 Kind 分层。",
+  "special_classes": [
+    "ISG",
+    "ISL",
+    "ISP"
+  ]
+}

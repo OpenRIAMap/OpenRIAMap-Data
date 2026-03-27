@@ -1,0 +1,21 @@
+{
+  "ID": "ZRT4STA_22",
+  "Name": "连西站",
+  "coordinate": {
+    "x": 1563.5,
+    "z": 7057.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT4PLF_22_D"
+    },
+    {
+      "ID": "ZRT4PLF_22_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

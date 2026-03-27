@@ -1,0 +1,28 @@
+{
+  "ID": "ZRODNOMNOM_BLZYBL",
+  "Name": "中央北路",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "Level": 0,
+  "Oneway": false,
+  "Linepoints": [
+    [
+      4825.5,
+      -64,
+      4540.5
+    ],
+    [
+      4924.5,
+      -64,
+      4540.5
+    ]
+  ],
+  "tags": {
+    "nomenclator": "639"
+  },
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260226",
+  "CreateBy": "639"
+}

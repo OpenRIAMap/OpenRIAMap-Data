@@ -1,0 +1,12 @@
+{
+  "_comment": "基础运行配置：主要控制路径、chunk 大小与 web_schema 目录位置。",
+  "repository_root": "..",
+  "chunk_size": 200,
+  "time_format": "%Y-%m-%dT%H:%M:%S+08:00",
+  "paths": {
+    "source_data": "source_data",
+    "workspace": "workspace",
+    "logs": "logs",
+    "web_schema": "web_schema"
+  }
+}

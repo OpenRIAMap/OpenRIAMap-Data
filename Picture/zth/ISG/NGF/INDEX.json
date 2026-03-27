@@ -1,6 +1,18 @@
 {
-  "version": 1,
-  "itemCount": 0,
-  "updatedAt": "2026-03-23T20:00:00+08:00",
-  "mapping": {}
+  "version": 4,
+  "itemCount": 1,
+  "updatedAt": "2026-03-27T23:37:50+08:00",
+  "mapping": {
+    "ZNGFLADISD_GLLD": [
+      "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_1.png",
+      "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_2.png",
+      "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_3.png",
+      "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_4.png",
+      "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_5.png",
+      "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_6.png",
+      "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_7.png",
+      "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_8.png",
+      "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_9.png"
+    ]
+  }
 }

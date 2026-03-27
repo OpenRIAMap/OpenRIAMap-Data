@@ -1,0 +1,25 @@
+{
+  "ID": "ZRT4PLF_10_U",
+  "Name": "白霖站-4站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 4913.5,
+    "z": 4615.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT4_01A_U",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

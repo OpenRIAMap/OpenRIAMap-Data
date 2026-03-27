@@ -1,0 +1,33 @@
+{
+  "ID": "ZRTL1PLF_01_D",
+  "Name": "连东东分离口",
+  "Situation": true,
+  "Connect": false,
+  "coordinate": {
+    "x": 1916.5,
+    "z": 7045.5
+  },
+  "lines": [
+    {
+      "ID": "ZRTL1_01B",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    },
+    {
+      "ID": "ZRTL1_01A",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

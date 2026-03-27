@@ -1,0 +1,25 @@
+{
+  "ID": "ZWRPNOMNOM_hhy",
+  "WRPointI2D": "h海南n",
+  "Name": "海华屿",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "elevation": 68,
+  "coordinate": {
+    "x": 9388.5,
+    "z": 8939.5
+  },
+  "tags": {
+    "UAdmG": "海华"
+  },
+  "extensions": {
+    "link": {
+      "wiki": "https://wiki.ria.red/wiki/%E6%B5%B7%E5%8D%8E%E5%B1%BF"
+    }
+  },
+  "Type": "Points",
+  "Class": "WRP",
+  "World": 0,
+  "CreateTime": "20260203",
+  "CreateBy": "Aut_moon_white"
+}

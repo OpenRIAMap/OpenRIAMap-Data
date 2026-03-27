@@ -1,0 +1,25 @@
+{
+  "ID": "ZRT13PLF_06_D",
+  "Name": "桐山站-1站台",
+  "Situation": true,
+  "Connect": true,
+  "coordinate": {
+    "x": 817.5,
+    "z": 9728.5
+  },
+  "lines": [
+    {
+      "ID": "ZRT13_01B_D",
+      "Avaliable": true,
+      "Overtaking": false,
+      "getin": true,
+      "getout": true,
+      "NextOT": false
+    }
+  ],
+  "Type": "Points",
+  "Class": "PLF",
+  "World": 0,
+  "CreateTime": "20251225",
+  "CreateBy": "639"
+}

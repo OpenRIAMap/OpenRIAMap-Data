@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT1STA_02",
+  "Name": "林前站",
+  "coordinate": {
+    "x": 1505.5,
+    "z": 3121.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT1PLF_02_D"
+    },
+    {
+      "ID": "ZRT1PLF_02_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251224"
+}

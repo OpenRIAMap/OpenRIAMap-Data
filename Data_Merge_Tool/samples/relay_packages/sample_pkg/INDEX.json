@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "packageId": "PKG_SAMPLE_001",
+  "createdAt": "2026-03-24T20:00:00+08:00",
+  "operator": "sample",
+  "splitFileCount": 1,
+  "pictureFileCount": 0,
+  "deleteCount": 0,
+  "toolVersion": "1.0",
+  "note": "sample relay package"
+}

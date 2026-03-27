@@ -1,0 +1,20 @@
+{
+  "ID": "ZRT7STA_14",
+  "Name": "天柱山站",
+  "coordinate": {
+    "x": 5278.5,
+    "z": 7445.5
+  },
+  "platforms": [
+    {
+      "ID": "ZRT7PLF_14_D"
+    },
+    {
+      "ID": "ZRT7PLF_14_U"
+    }
+  ],
+  "Type": "Points",
+  "Class": "STA",
+  "World": 0,
+  "CreateTime": "20251225"
+}
