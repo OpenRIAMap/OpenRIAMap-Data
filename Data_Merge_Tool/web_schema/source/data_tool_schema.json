@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.1.0",
+  "worlds": {
+    "zth": 0,
+    "naraku": 1,
+    "houtu": 2,
+    "eden": 3,
+    "laputa": 4,
+    "yunduan": 5
+  },
+  "featureClasses": [
+    "RLE",
+    "STA",
+    "STB",
+    "PLF",
+    "PFB",
+    "SBP",
+    "ISG",
+    "ISL",
+    "ISP"
+  ],
+  "specialClasses": [
+    "ISG",
+    "ISL",
+    "ISP"
+  ],
+  "workflowKinds": {},
+  "workflowSubKinds": {},
+  "classToDrawMode": {},
+  "classToGeometry": {}
+}

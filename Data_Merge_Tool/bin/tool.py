@@ -76,6 +76,7 @@ class SessionState:
         self.warnings = []
         self.blocking = []
         self.last_report = None
+        self.last_precheck_report = None
         self.session_dir = None
         self.stats = {
             "json_total_objects": 0,
@@ -167,6 +168,8 @@ class ToolShell(cmd.Cmd):
         report_path = self.state.session_dir / "reports" / name
         report_path.write_text(text, encoding="utf-8")
         self.state.last_report = report_path
+        if "precheck" in name:
+            self.state.last_precheck_report = report_path
         (self.logs / name).write_text(text, encoding="utf-8")
         return report_path
 
@@ -450,6 +453,9 @@ class ToolShell(cmd.Cmd):
             "world": world, "class": class_name, "kind": kind, "source": source
         })
 
+    def _is_picture_file(self, path: Path):
+        return path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".gif", ".tif", ".tiff"}
+
     def _parse_json_file(self, target):
         try:
             data = read_json(target)
@@ -656,40 +662,71 @@ class ToolShell(cmd.Cmd):
                 rel = p.relative_to(split_dir)
                 parts = rel.parts
                 if len(parts) < 3:
-                    self.state.blocking.append(f"包内 Split 路径层级错误：{p}"); continue
+                    self.state.blocking.append(f"包内 Split 路径层级错误：{p}")
+                    continue
                 world, class_name = parts[0], parts[1]
                 kind = parts[2] if self._is_special_class(class_name) and len(parts) >= 4 else None
                 try:
                     data = read_json(p)
                 except Exception as e:
-                    self.state.blocking.append(f"包内 JSON 解析失败：{p.name} -> {e}"); continue
+                    self.state.blocking.append(f"包内 JSON 解析失败：{p.name} -> {e}")
+                    continue
                 fid = normalize_text(get_field(data, "ID", "id")) or p.stem
                 ok, reason = is_safe_filename_component(fid)
                 if not ok:
-                    self._apply_severity(self._policy("conflict_policy", "invalid_id", "blocking"), f"包内非法 ID：{fid}（{reason}，来源 {p.name}）"); continue
+                    self._apply_severity(self._policy("conflict_policy", "invalid_id", "blocking"), f"包内非法 ID：{fid}（{reason}，来源 {p.name}）")
+                    continue
                 item = {"id": fid, "world": world, "class": class_name, "kind": kind, "data": data, "source": str(p)}
                 self._append_unique(self.state.pending_split, item, key=lambda x: x["id"])
+
         pic_dir = target / "Picture"
+        picture_groups = {}
         if pic_dir.exists():
             for p in pic_dir.rglob("*"):
                 if not p.is_file():
                     continue
+                if p.name == "INDEX.json":
+                    continue
+                if not self._is_picture_file(p):
+                    self.state.warnings.append(f"包内非图片文件已跳过：{p}")
+                    continue
                 rel = p.relative_to(pic_dir)
                 parts = rel.parts
                 if len(parts) < 4:
-                    self.state.blocking.append(f"包内图片路径层级错误：{p}"); continue
+                    self.state.blocking.append(f"包内图片路径层级错误：{p}")
+                    continue
                 world, class_name = parts[0], parts[1]
                 if self._is_special_class(class_name):
                     if len(parts) < 5:
-                        self.state.blocking.append(f"特殊类图片路径层级错误：{p}"); continue
+                        self.state.blocking.append(f"特殊类图片路径层级错误：{p}")
+                        continue
                     kind, fid = parts[2], parts[3]
                 else:
                     kind, fid = None, parts[2]
                 ok, reason = is_safe_filename_component(str(fid))
                 if not ok:
-                    self.state.blocking.append(f"包内图片目标 ID 非法：{fid}（{reason}，来源 {p.name}）"); continue
-                item = {"source": str(p), "world": world, "class": class_name, "kind": kind, "id": fid, "filename": p.name}
-                self._append_unique(self.state.pending_pictures, item, key=lambda x: (x["id"], x["filename"], x["source"]))
+                    self.state.blocking.append(f"包内图片目标 ID 非法：{fid}（{reason}，来源 {p.name}）")
+                    continue
+                group_key = (str(world), class_name, kind or "", str(fid))
+                if group_key not in picture_groups:
+                    picture_groups[group_key] = {
+                        "world": world,
+                        "class": class_name,
+                        "kind": kind,
+                        "id": str(fid),
+                        "group_mode": "replace_group",
+                        "files": [],
+                    }
+                picture_groups[group_key]["files"].append({"source": str(p), "filename": p.name})
+
+            for group in picture_groups.values():
+                group["files"].sort(key=lambda x: x["filename"])
+                self._append_unique(
+                    self.state.pending_pictures,
+                    group,
+                    key=lambda x: (x.get("group_mode", "append"), x["id"], x.get("world"), x.get("class"), x.get("kind") or "")
+                )
+
         delete_json = target / "Delete.json"
         if delete_json.exists():
             try:
@@ -698,7 +735,8 @@ class ToolShell(cmd.Cmd):
                     fid = str(fid)
                     ok, reason = is_safe_filename_component(fid)
                     if not ok:
-                        self.state.blocking.append(f"Delete.json 中非法 ID：{fid}（{reason}）"); continue
+                        self.state.blocking.append(f"Delete.json 中非法 ID：{fid}（{reason}）")
+                        continue
                     self._append_unique(self.state.pending_delete, fid)
             except Exception:
                 self.state.blocking.append(f"Delete.json 解析失败：{target.name}")
@@ -742,8 +780,11 @@ class ToolShell(cmd.Cmd):
             world_dir = self.resolve_world_dir_name(x.get("world"))
             key = f"{world_dir}/{x.get('class','?')}/{x.get('kind') or '-'}"
             split_groups[key] = split_groups.get(key, 0) + 1
+        picture_replace_groups = [x for x in self.state.pending_pictures if x.get("group_mode") == "replace_group"]
+        picture_file_count = sum(len(x.get("files", [])) for x in picture_replace_groups)
         text = ["# 变更摘要","",f"时间：{now_iso()}",f"模式：{self.state.mode or '-'}","",
                 "## 源数据层待提交",f"- Split：{len(self.state.pending_split)}",f"- 图片：{len(self.state.pending_pictures)}",f"- 删除：{len(self.state.pending_delete)}","",
+                "## 图片组覆盖统计",f"- 整体覆盖图片组：{len(picture_replace_groups)}",f"- 覆盖图片文件数：{picture_file_count}","",
                 "## Split 分组统计"]
         if split_groups:
             for k,v in sorted(split_groups.items()):
@@ -759,13 +800,20 @@ class ToolShell(cmd.Cmd):
 
     def do_report(self, arg):
         self.print_section("report")
-        if not self.state.last_report or not self.state.last_report.exists():
+        report_path = None
+        if self.state.blocking and self.state.last_precheck_report and self.state.last_precheck_report.exists():
+            report_path = self.state.last_precheck_report
+        elif self.state.last_report and self.state.last_report.exists():
+            report_path = self.state.last_report
+        elif self.state.last_precheck_report and self.state.last_precheck_report.exists():
+            report_path = self.state.last_precheck_report
+        if not report_path:
             print("当前没有可用报告。")
             self.print_section("report done")
             return
-        print(f"最近一次报告：{self.state.last_report}")
+        print(f"最近一次报告：{report_path}")
         print("-"*60)
-        print(self.state.last_report.read_text(encoding="utf-8"))
+        print(report_path.read_text(encoding="utf-8"))
         self.print_section("report done")
 
     def _commit_source(self):
@@ -782,6 +830,19 @@ class ToolShell(cmd.Cmd):
             changed_split_worlds.add(self.resolve_world_dir_name(item["world"]))
         total_pic = len(self.state.pending_pictures)
         for i,item in enumerate(self.state.pending_pictures,1):
+            if item.get("group_mode") == "replace_group":
+                self.print_progress(i, total_pic, f"正在整体覆盖图片组: {item['id']} ({len(item.get('files', []))} 张)")
+                leaf = self._picture_leaf_dir(item["world"], item["class"], item.get("kind"))
+                id_dir = leaf / item["id"]
+                if id_dir.exists():
+                    shutil.rmtree(id_dir, ignore_errors=True)
+                ensure_dir(id_dir)
+                for idx, file_item in enumerate(item.get("files", []), 1):
+                    ext = Path(file_item.get("filename", "")).suffix or Path(file_item["source"]).suffix or ".jpg"
+                    shutil.copy2(file_item["source"], id_dir / f"{item['id']}_{idx}{ext}")
+                changed_picture_dirs.add(leaf)
+                changed_picture_worlds.add(self.resolve_world_dir_name(item["world"]))
+                continue
             self.print_progress(i, total_pic, f"正在写入图片: {item['filename']} -> {item['id']}")
             if item.get("world") is None:
                 found = self._find_feature_by_id(item["id"])
@@ -950,14 +1011,65 @@ class ToolShell(cmd.Cmd):
 
     def do_sync_web_schema(self, arg):
         self.print_section("sync-web-schema")
+        schema_file = self.web_schema_source / "data_tool_schema.json"
+        if schema_file.exists():
+            try:
+                schema = read_json(schema_file)
+                worlds = schema.get("worlds", {})
+                if isinstance(worlds, dict) and worlds:
+                    data = {"_comment": "由 data_tool_schema.json 自动解析生成。world code -> worldId 映射。"}
+                    for world_id, code in worlds.items():
+                        data[str(code)] = str(world_id)
+                    write_json(self.world_map_path, data)
+                    self.world_map = {k: v for k, v in data.items() if not k.startswith("_")}
+                    print(f"已解析 world_map，共 {len(self.world_map)} 项。")
+
+                feature_classes = schema.get("featureClasses", [])
+                if isinstance(feature_classes, list):
+                    write_json(self.web_schema_cache / "feature_classes.json", {
+                        "_comment": "由 data_tool_schema.json 自动解析生成。当前 Web 注册的合法要素类型列表。",
+                        "feature_classes": sorted([str(x) for x in feature_classes if str(x).strip()])
+                    })
+
+                special_classes = schema.get("specialClasses", [])
+                if isinstance(special_classes, list):
+                    data = {
+                        "_comment": "由 data_tool_schema.json 自动解析生成。当前这些 Class 需要再按 Kind 分层。",
+                        "special_classes": sorted([str(x) for x in special_classes if str(x).strip()])
+                    }
+                    write_json(self.special_class_rules_path, data)
+                    self.special_class_set = set(data["special_classes"])
+                    print(f"已解析特殊类规则，共 {len(self.special_class_set)} 项。")
+
+                workflow_kinds = schema.get("workflowKinds", {})
+                if isinstance(workflow_kinds, dict):
+                    write_json(self.web_schema_cache / "workflow_kind_registry.json", {
+                        "_comment": "由 data_tool_schema.json 自动解析生成。记录每个 Class 的合法 Kind。",
+                        "workflow_kinds": workflow_kinds
+                    })
+
+                workflow_subkinds = schema.get("workflowSubKinds", {})
+                if isinstance(workflow_subkinds, dict):
+                    write_json(self.web_schema_cache / "workflow_subkind_registry.json", {
+                        "_comment": "由 data_tool_schema.json 自动解析生成。记录每个 Class / Kind 下的二级分类。",
+                        "workflow_subkinds": workflow_subkinds
+                    })
+
+                print("同步完成。")
+                self.print_section("sync-web-schema done")
+                return
+            except Exception as e:
+                self.state.warnings.append(f"data_tool_schema.json 解析失败，将回退到 featureFormats.ts：{e}")
+
         source_file = self.web_schema_source / "featureFormats.ts"
         if not source_file.exists():
-            print("未找到 web_schema/source/featureFormats.ts，无法同步。")
-            self.print_section("sync-web-schema done"); return
+            print("未找到 web_schema/source/data_tool_schema.json 或 featureFormats.ts，无法同步。")
+            self.print_section("sync-web-schema done")
+            return
         text = source_file.read_text(encoding="utf-8")
-        pairs = re.findall(r"(\\w+)\\s*:\\s*(\\d+)", text)
+        pairs = re.findall(r"(\w+)\s*:\s*(\d+)", text)
         if pairs:
-            data = {"_comment": "由 featureFormats.ts 自动解析生成。可手动检查，但建议重新同步。"}
+            data = {"_comment": "由 featureFormats.ts 自动解析生成。可手动检查，但建议使用 data_tool_schema.json。"}
             for world_id, code in pairs:
                 data[str(code)] = world_id
             write_json(self.world_map_path, data)
@@ -994,7 +1106,7 @@ class ToolShell(cmd.Cmd):
         print("  rebuild          重建指定范围的 Data_Merge")
         print("  discard          丢弃当前暂存结果")
         print("  clear            清空当前命令上下文")
-        print("  sync-web-schema  同步并解析 web_schema/source/featureFormats.ts")
+        print("  sync-web-schema  优先同步 data_tool_schema.json，缺失时回退解析 featureFormats.ts")
         print("  exit             退出工具")
         print("")
         print("增强点：")
@@ -1009,6 +1121,10 @@ class ToolShell(cmd.Cmd):
         print(f"  模式: {self.state.mode or '-'}")
         print(f"  待写入 Split 数量: {len(self.state.pending_split)}")
         print(f"  待写入图片数量: {len(self.state.pending_pictures)}")
+        replace_group_count = len([x for x in self.state.pending_pictures if x.get("group_mode") == "replace_group"])
+        replace_group_files = sum(len(x.get("files", [])) for x in self.state.pending_pictures if x.get("group_mode") == "replace_group")
+        print(f"  图片组整体覆盖数量: {replace_group_count}")
+        print(f"  图片组整体覆盖文件数: {replace_group_files}")
         print(f"  待删除数量: {len(self.state.pending_delete)}")
         print(f"  待重建 Merge 数量: {len(self.state.pending_merge)}")
         print(f"  警告数量: {len(self.state.warnings)}")

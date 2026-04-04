@@ -1,5 +1,5 @@
 {
-  "_comment": "特殊类规则：这些 Class 在仓库目录中需要继续按 Kind 分层。",
+  "_comment": "由 data_tool_schema.json 自动解析生成。当前这些 Class 需要再按 Kind 分层。",
   "special_classes": [
     "ISG",
     "ISL",

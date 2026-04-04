@@ -1,5 +1,5 @@
 {
-  "_comment": "World code -> 仓库目录名映射。后续如果 Web 侧有变更，可通过 sync-web-schema 更新。",
+  "_comment": "由 data_tool_schema.json 自动解析生成。用于 World code -> worldId 映射。",
   "0": "zth",
   "1": "naraku",
   "2": "houtu",

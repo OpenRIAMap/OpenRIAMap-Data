@@ -1,0 +1,75 @@
+{
+  "_comment": "由 data_tool_schema.json 自动解析生成。当前 workflow 对应的二级分类注册表。",
+  "workflow_subkinds": {
+    "BUD": {
+      "NOM": [
+        "NOM"
+      ],
+      "SPE": [
+        "SPE"
+      ]
+    },
+    "FLR": {
+      "NOM": [
+        "NOM"
+      ],
+      "SPE": [
+        "SPE"
+      ]
+    },
+    "ISG": {
+      "ADM": [
+        "DBZ",
+        "PLZ"
+      ],
+      "NGF": [
+        "LAD",
+        "LIS",
+        "WTB"
+      ]
+    },
+    "ISL": {
+      "ADM": [
+        "DBL",
+        "PLL"
+      ],
+      "NGF": [
+        "BOD",
+        "WTR"
+      ]
+    },
+    "ISP": {
+      "ADM": [
+        "DBP",
+        "PLP"
+      ],
+      "NGF": [
+        "SCP"
+      ]
+    },
+    "TPP": {
+      "NOM": [
+        "NOM"
+      ],
+      "SPE": [
+        "SPE"
+      ]
+    },
+    "TRP": {
+      "NOM": [
+        "NOM"
+      ],
+      "SPE": [
+        "SPE"
+      ]
+    },
+    "WRP": {
+      "NOM": [
+        "NOM"
+      ],
+      "SPE": [
+        "SPE"
+      ]
+    }
+  }
+}

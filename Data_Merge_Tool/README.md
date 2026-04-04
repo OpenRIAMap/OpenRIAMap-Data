@@ -34,3 +34,12 @@ python bin\tool.py
   "updatedAt": "2026-03-26T22:12:18+08:00"
 }
 ```
+
+
+## 本次增量修复
+
+- `load-package` 现在会跳过包内各级 `INDEX.json`，避免把索引文件误判成图片路径错误。
+- 标准包中的图片会按 `world + class + kind + id` 聚合成图片组，并以“整体覆盖”语义 staged。
+- `commit` 时，若包中明确包含某个 ID 的图片组，则会先删除旧图片目录，再按新包顺序整体重建。
+- `report` 在存在阻断问题时，会优先显示 `precheck_report.md`，避免被 `preview_report.md` 覆盖。
+- `sync-web-schema` 现在会优先读取 `web_schema/source/data_tool_schema.json`，缺失时再回退解析 `featureFormats.ts`。

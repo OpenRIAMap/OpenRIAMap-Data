@@ -48,5 +48,14 @@
     "_comment": "非法 ID 处理策略。",
     "invalid_id": "blocking",
     "allow_future_safe_key_mode": false
+  },
+  "schema_policy": {
+    "_comment": "Schema 校验策略。可选：warning / blocking",
+    "unknown_class": "blocking",
+    "unknown_kind": "blocking"
+  },
+  "package_policy": {
+    "_comment": "标准包相关策略。当前模式：仅当包中明确包含某 ID 的完整图片组时，才覆盖旧图片组。",
+    "package_picture_mode": "replace_group_when_present"
   }
 }

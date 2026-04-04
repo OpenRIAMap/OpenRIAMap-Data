@@ -1,0 +1,20 @@
+{
+  "_comment": "由 data_tool_schema.json 自动解析生成。当前 Web 注册的合法要素类型列表。",
+  "feature_classes": [
+    "BUD",
+    "FLR",
+    "ISG",
+    "ISL",
+    "ISP",
+    "PFB",
+    "PLF",
+    "RLE",
+    "ROD",
+    "SBP",
+    "STA",
+    "STB",
+    "TPP",
+    "TRP",
+    "WRP"
+  ]
+}
