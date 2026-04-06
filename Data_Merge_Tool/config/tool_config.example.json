@@ -7,5 +7,16 @@
   ],
   "validation": {
     "allowWarningsToContinue": true
+  },
+  "github": {
+    "cold_repo": "OpenRIAMap/ColdToolArchive",
+    "cold_token_env": "OPENRIAMAP_COLD_PAT",
+    "data_remote_name": "origin",
+    "data_branch": "main"
+  },
+  "push": {
+    "clean_source_data_after_push": true,
+    "clean_workspace_after_push": true,
+    "verify_release_asset": true
   }
 }
