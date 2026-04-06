@@ -43,7 +43,7 @@ TOOL_CONFIG_PATH = CONFIG_DIR / "tool_config.json"
 POLICY_CONFIG_PATH = CONFIG_DIR / "policy_config.json"
 TZ_8 = timezone(timedelta(hours=8))
 INVALID_WINDOWS_CHARS = set('\\/:*?"<>|')
-TOOL_VERSION = "v5.0"
+TOOL_VERSION = "v5.3"
 
 DEFAULT_RUNTIME = {
     "github": {
@@ -771,46 +771,93 @@ class ToolShell(cmd.Cmd):
     def _collect_leaf_jsons(self, leaf_dir: Path):
         return sorted([p for p in leaf_dir.glob("*.json") if p.name != "INDEX.json"])
 
+    def _next_index_version(self, index_path: Path) -> int:
+        try:
+            if index_path.exists():
+                obj = read_json(index_path)
+                if isinstance(obj, dict):
+                    ver = obj.get("version")
+                    if isinstance(ver, int):
+                        return ver + 1
+        except Exception:
+            pass
+        return 1
+
+    def _write_simple_version_index(self, dir_path: Path):
+        write_json(dir_path / "INDEX.json", {
+            "version": self._next_index_version(dir_path / "INDEX.json"),
+            "updatedAt": now_iso(),
+        })
+
     def _rebuild_leaf_index(self, leaf_dir: Path):
         files = self._collect_leaf_jsons(leaf_dir)
         data = {
-            "version": 1,
-            "updated": now_iso(),
-            "count": len(files),
-            "files": [p.name for p in files],
+            "version": self._next_index_version(leaf_dir / "INDEX.json"),
+            "itemCount": len(files),
+            "updatedAt": now_iso(),
+            "items": [p.stem for p in files],
         }
         write_json(leaf_dir / "INDEX.json", data)
 
     def _rebuild_picture_leaf_index(self, leaf_dir: Path):
-        files = sorted([p for p in leaf_dir.iterdir() if p.is_file() and p.name != "INDEX.json"])
+        mapping = {}
+        if leaf_dir.exists():
+            for child in sorted([p for p in leaf_dir.iterdir() if p.is_dir()]):
+                # 清理旧版本工具遗留的按 ID 目录下 INDEX.json
+                legacy_index = child / "INDEX.json"
+                if legacy_index.exists():
+                    legacy_index.unlink(missing_ok=True)
+                files = sorted([p for p in child.iterdir() if p.is_file() and p.name != "INDEX.json"])
+                if files:
+                    mapping[child.name] = [f"{child.name}/{p.name}" for p in files]
         data = {
-            "version": 1,
-            "updated": now_iso(),
-            "count": len(files),
-            "files": [p.name for p in files],
+            "version": self._next_index_version(leaf_dir / "INDEX.json"),
+            "itemCount": len(mapping),
+            "updatedAt": now_iso(),
+            "mapping": mapping,
         }
         write_json(leaf_dir / "INDEX.json", data)
 
     def _rebuild_merge_index(self, leaf_dir: Path, chunk_size: int):
         files = sorted([p for p in leaf_dir.glob("chunk_*.json")])
+        items = []
+        chunk_entries = []
+        for fp in files:
+            chunk_items = []
+            try:
+                data = read_json(fp)
+                if isinstance(data, list):
+                    for obj in data:
+                        if isinstance(obj, dict):
+                            item_id = get_field(obj, "ID", "id")
+                            if item_id is not None:
+                                chunk_items.append(str(item_id))
+            except Exception:
+                chunk_items = []
+            items.extend(chunk_items)
+            chunk_entries.append({
+                "file": fp.name,
+                "itemCount": len(chunk_items),
+                "items": chunk_items,
+            })
         data = {
-            "version": 1,
-            "updated": now_iso(),
-            "count": len(files),
-            "chunk_size": chunk_size,
-            "files": [p.name for p in files],
+            "version": self._next_index_version(leaf_dir / "INDEX.json"),
+            "itemCount": len(items),
+            "updatedAt": now_iso(),
+            "items": items,
+            "chunkSize": chunk_size,
+            "chunkCount": len(files),
+            "chunks": chunk_entries,
         }
         write_json(leaf_dir / "INDEX.json", data)
 
     def _bump_root_index(self, root_dir: Path):
-        count = sum(1 for p in root_dir.rglob("*.json") if p.name != "INDEX.json")
-        write_json(root_dir / "INDEX.json", {"version": 1, "updated": now_iso(), "count": count})
+        self._write_simple_version_index(root_dir)
 
     def _bump_world_index(self, root_dir: Path, world_dir_name: str):
         world_dir = root_dir / world_dir_name
         if world_dir.exists():
-            count = sum(1 for p in world_dir.rglob("*.json") if p.name != "INDEX.json")
-            write_json(world_dir / "INDEX.json", {"version": 1, "updated": now_iso(), "count": count})
+            self._write_simple_version_index(world_dir)
 
     def _queue_rebuild_target(self, world, class_name, kind):
         self._append_unique(self.state.pending_merge, {"world": world, "class": class_name, "kind": kind}, key=lambda x: (str(x["world"]), x["class"], x.get("kind")))
@@ -903,7 +950,8 @@ class ToolShell(cmd.Cmd):
             split_count += 1
 
         for pic in self.state.pending_pictures:
-            base = self._picture_leaf_dir(pic["world"], pic["class"], pic.get("kind")) / pic["id"]
+            leaf_dir = self._picture_leaf_dir(pic["world"], pic["class"], pic.get("kind"))
+            base = leaf_dir / pic["id"]
             ensure_dir(base)
             if pic.get("group_mode") == "replace_group":
                 if base.exists():
@@ -926,8 +974,12 @@ class ToolShell(cmd.Cmd):
                     shutil.copy2(src_path, dst)
                     next_idx += 1
                     picture_count += 1
-            self._rebuild_picture_leaf_index(base)
-            changed_picture_dirs.add(base)
+            # 清理旧版工具误写入的按 ID 子目录 INDEX
+            legacy_index = base / "INDEX.json"
+            if legacy_index.exists():
+                legacy_index.unlink(missing_ok=True)
+            self._rebuild_picture_leaf_index(leaf_dir)
+            changed_picture_dirs.add(leaf_dir)
 
         for item in self.state.pending_delete:
             item_id = item["id"]
@@ -941,7 +993,18 @@ class ToolShell(cmd.Cmd):
                     affected_classes.add(p.relative_to(self.split_root).parts[1])
             for p in self.picture_root.rglob(item_id):
                 if p.is_dir():
+                    picture_leaf = p.parent
                     shutil.rmtree(p)
+                    changed_picture_dirs.add(picture_leaf)
+                    try:
+                        rel_parts = picture_leaf.relative_to(self.picture_root).parts
+                        if len(rel_parts) >= 2:
+                            changed_worlds.add(rel_parts[0])
+                            affected_classes.add(rel_parts[1])
+                            if len(rel_parts) >= 3:
+                                affected_kinds.add(rel_parts[2])
+                    except Exception:
+                        pass
                     removed = True
             if not removed:
                 self.state.warnings.append(f"Delete 目标不存在：{item_id}")
@@ -950,8 +1013,14 @@ class ToolShell(cmd.Cmd):
         for d in changed_split_dirs:
             ensure_dir(d)
             self._rebuild_leaf_index(d)
-        for world_dir_name in sorted(changed_worlds):
+        for d in changed_picture_dirs:
+            ensure_dir(d)
+            self._rebuild_picture_leaf_index(d)
+        split_worlds = sorted({d.relative_to(self.split_root).parts[0] for d in changed_split_dirs if d.exists() and len(d.relative_to(self.split_root).parts) >= 1})
+        picture_worlds = sorted({d.relative_to(self.picture_root).parts[0] for d in changed_picture_dirs if d.exists() and len(d.relative_to(self.picture_root).parts) >= 1})
+        for world_dir_name in split_worlds:
             self._bump_world_index(self.split_root, world_dir_name)
+        for world_dir_name in picture_worlds:
             self._bump_world_index(self.picture_root, world_dir_name)
         if changed_split_dirs:
             self._bump_root_index(self.split_root)
