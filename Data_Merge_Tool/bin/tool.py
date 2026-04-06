@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from archive_builder import build_zip, copy_tree_contents, prepare_archive_workspace, write_manifest
-from command_registry import ALIAS_TO_COMMAND, COMMAND_ALIASES, VALID_COMMANDS
+from command_registry import ALIAS_TO_COMMAND, COMMAND_ALIASES, COMMAND_DESCRIPTIONS, VALID_COMMANDS
 from env_check import run_env_checks
 from git_utils import (
     GitCommandError,
@@ -117,7 +117,7 @@ def merge_config(base: dict, override: dict) -> dict:
 
 
 class ToolShell(cmd.Cmd):
-    intro = "OpenRIAMap 数据维护工具 v5\n输入 help 或 hp 查看命令说明。"
+    intro = "OpenRIAMap 数据维护工具 v5.4\n输入 help 或 hp 查看命令说明。"
     prompt = "> "
 
     def __init__(self) -> None:
@@ -1554,7 +1554,8 @@ class ToolShell(cmd.Cmd):
     def do_help(self, arg):
         print("可用命令：")
         for cmd_name in VALID_COMMANDS:
-            print(f"  {cmd_name:<15} ({COMMAND_ALIASES[cmd_name]})")
+            desc = COMMAND_DESCRIPTIONS.get(cmd_name, "")
+            print(f"  {cmd_name:<15} ({COMMAND_ALIASES[cmd_name]})  {desc}")
         print("说明：load-json/load-image 支持手动叠加 staging；load-package 为独占模式。")
         return {"summary": "已显示 help"}
 

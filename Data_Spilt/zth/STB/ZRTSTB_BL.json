@@ -87,14 +87,6 @@
       "ID": "ZRTSTF_BL_04"
     }
   ],
-  "Stations": [
-    {
-      "ID": "ZRT1STA_13"
-    },
-    {
-      "ID": "ZRT4STA_10"
-    }
-  ],
   "Type": "Polygon",
   "Class": "STB",
   "World": 0,

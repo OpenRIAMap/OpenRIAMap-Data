@@ -3,9 +3,33 @@ from __future__ import annotations
 from pathlib import Path
 import os
 import shutil
+import socket
+from urllib import request
 
 from git_utils import get_current_branch, get_remote_url, git_status_porcelain
 from github_release_api import get_repo
+
+
+def _check_http_endpoint(url: str, timeout: float = 4.0) -> tuple[str, str]:
+    req = request.Request(url, method="HEAD")
+    try:
+        with request.urlopen(req, timeout=timeout) as resp:
+            return "PASS", f"HTTP {getattr(resp, 'status', 200)}"
+    except Exception as e:
+        try:
+            req = request.Request(url, method="GET")
+            with request.urlopen(req, timeout=timeout) as resp:
+                return "PASS", f"HTTP {getattr(resp, 'status', 200)}"
+        except Exception as e2:
+            return "WARN", f"{type(e2).__name__}: {e2}"
+
+
+def _check_dns(hostname: str) -> tuple[str, str]:
+    try:
+        ip = socket.gethostbyname(hostname)
+        return "PASS", ip
+    except Exception as e:
+        return "WARN", f"DNS 解析失败：{e}"
 
 
 def run_env_checks(repo_root: Path, tool_root: Path, config: dict) -> dict:
@@ -44,6 +68,18 @@ def run_env_checks(repo_root: Path, tool_root: Path, config: dict) -> dict:
         except Exception as e:
             add("工作区状态", "FAIL", str(e))
 
+    # GitHub 连通性轻量检查：优先 DNS + HTTPS，避免仅依赖系统 ping/ICMP。
+    for host in ["github.com", "api.github.com", "uploads.github.com"]:
+        status, detail = _check_dns(host)
+        add(f"GitHub DNS {host}", status, detail)
+    for label, url in [
+        ("GitHub 主站连通", "https://github.com/"),
+        ("GitHub API 连通", "https://api.github.com/"),
+        ("GitHub Upload 连通", "https://uploads.github.com/"),
+    ]:
+        status, detail = _check_http_endpoint(url)
+        add(label, status, detail)
+
     token_env = config.get("github", {}).get("cold_token_env", "OPENRIAMAP_COLD_PAT")
     token = os.environ.get(token_env, "")
     if token:
@@ -56,6 +92,17 @@ def run_env_checks(repo_root: Path, tool_root: Path, config: dict) -> dict:
             add("冷仓库访问", "FAIL", str(e))
     else:
         add("冷仓库令牌", "FAIL", f"缺少环境变量 {token_env}")
+
+    # Data 仓库远端与冷仓库目标的简单可达性提示
+    data_remote = config.get("github", {}).get("data_remote_url") or None
+    if not data_remote:
+        try:
+            if git_bin and (repo_root / ".git").exists():
+                data_remote = get_remote_url(repo_root)
+        except Exception:
+            data_remote = None
+    if data_remote:
+        add("Data 仓库远端", "PASS", data_remote)
 
     overall = "PASS"
     if any(x["status"] == "FAIL" for x in results):
