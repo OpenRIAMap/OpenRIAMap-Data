@@ -1,8 +1,9 @@
 {
-  "version": 5,
-  "itemCount": 3,
-  "updatedAt": "2026-04-07T05:01:09+08:00",
+  "version": 7,
+  "itemCount": 4,
+  "updatedAt": "2026-04-07T23:23:21+08:00",
   "items": [
+    "ZNGFLADISD_DTD",
     "ZNGFLADISD_GLLD",
     "ZNGFLADISD_TSND",
     "ZNGFLADISD_XTD"
@@ -12,8 +13,9 @@
   "chunks": [
     {
       "file": "chunk_001.json",
-      "itemCount": 3,
+      "itemCount": 4,
       "items": [
+        "ZNGFLADISD_DTD",
         "ZNGFLADISD_GLLD",
         "ZNGFLADISD_TSND",
         "ZNGFLADISD_XTD"
