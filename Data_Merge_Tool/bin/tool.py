@@ -25,6 +25,7 @@ from git_utils import (
     git_pull_rebase,
     git_push,
     git_status_porcelain,
+    remove_file_if_exists,
 )
 from github_release_api import (
     GitHubReleaseError,
@@ -43,7 +44,7 @@ TOOL_CONFIG_PATH = CONFIG_DIR / "tool_config.json"
 POLICY_CONFIG_PATH = CONFIG_DIR / "policy_config.json"
 TZ_8 = timezone(timedelta(hours=8))
 INVALID_WINDOWS_CHARS = set('\\/:*?"<>|')
-TOOL_VERSION = "v5.3"
+TOOL_VERSION = "v5.5-step1"
 
 DEFAULT_RUNTIME = {
     "github": {
@@ -117,7 +118,7 @@ def merge_config(base: dict, override: dict) -> dict:
 
 
 class ToolShell(cmd.Cmd):
-    intro = "OpenRIAMap 数据维护工具 v5.4\n输入 help 或 hp 查看命令说明。"
+    intro = "OpenRIAMap 数据维护工具 v5.5-step1\n输入 help 或 hp 查看命令说明。"
     prompt = "> "
 
     def __init__(self) -> None:
@@ -381,6 +382,79 @@ class ToolShell(cmd.Cmd):
         kind = normalize_text(get_field(obj, "Kind", "kind"))
         return {"id": item_id, "class": class_name, "world": world, "kind": kind, "obj": obj}
 
+    def _format_split_item_line(self, item: dict) -> str:
+        obj = item.get("obj", {})
+        item_id = item.get("id") or normalize_text(get_field(obj, "ID", "id")) or "-"
+        name = normalize_text(get_field(obj, "Name", "name")) or "-"
+        class_name = item.get("class") or normalize_text(get_field(obj, "Class", "class")) or "-"
+        kind = item.get("kind") or normalize_text(get_field(obj, "Kind", "kind")) or "-"
+        world_raw = item.get("world") if item.get("world") not in (None, "") else get_field(obj, "World", "world")
+        world = self.resolve_world_dir_name(world_raw if world_raw not in (None, "") else "-")
+        return f"- {item_id} | {name} | {class_name}/{kind} | world={world}"
+
+    def _format_delete_item_line(self, item: dict) -> str:
+        item_id = item.get("id") or item.get("ID") or "-"
+        name = item.get("Name") or item.get("name") or normalize_text(get_field(item.get("raw", {}), "Name", "name"))
+        if not name:
+            meta = self._lookup_feature_metadata(item_id)
+            if meta:
+                name = meta.get("name")
+        name = name or "-"
+        return f"- {item_id} | {name}"
+
+    def _format_picture_item_line(self, item: dict) -> str:
+        item_id = item.get("id") or "-"
+        files = item.get("files", []) or []
+        first_name = Path(files[0]).name if files else "-"
+        mode = item.get("group_mode") or item.get("mode") or "append"
+        if len(files) <= 1:
+            return f"- {item_id} | {first_name} | {mode}"
+        return f"- {item_id} | {first_name} 等 {len(files)} 项 | {mode}"
+
+    def _preview_detail_lines(self, title: str, items: list[str], limit: int = 20) -> list[str]:
+        lines = [f"{title}（{len(items)}）："]
+        if not items:
+            lines.append("  - 无")
+            return lines
+        for line in items[:limit]:
+            lines.append(f"  {line}")
+        if len(items) > limit:
+            lines.append(f"  - 其余 {len(items) - limit} 项未显示")
+        return lines
+
+    def _build_preview_text(self) -> str:
+        lines = [
+            "当前 staging 摘要：",
+            f"  staging_mode: {self.state.staging_mode}",
+            f"  loaded_sources: {len(self.state.loaded_sources)}",
+            f"  待写入 Split: {len(self.state.pending_split)}",
+            f"  待写入图片: {len(self.state.pending_pictures)}",
+            f"  待删除: {len(self.state.pending_delete)}",
+            f"  待重建 Merge: {len(self.state.pending_merge)}",
+            f"  warnings: {len(self.state.warnings)}",
+            f"  blocking: {len(self.state.blocking)}",
+        ]
+        if self.state.loaded_package_meta:
+            meta = self.state.loaded_package_meta
+            lines += [
+                "",
+                "标准包信息：",
+                f"  package_name: {self.state.loaded_package_name or '-'}",
+                f"  operator: {meta.get('operator', '-')}",
+                f"  note: {meta.get('note', '-')}",
+                f"  packageVersion: {meta.get('packageVersion', '-')}",
+                f"  exportedAt: {meta.get('exportedAt', '-')}",
+                f"  featureCount: {meta.get('featureCount', '-')}",
+                f"  pictureCount: {meta.get('pictureCount', '-')}",
+                f"  deleteCount: {meta.get('deleteCount', '-')}",
+            ]
+            if int(meta.get('pictureCount', 0) or 0) == 0 and len(self.state.pending_pictures) == 0:
+                lines.append("  图片状态: 本包未包含图片")
+        lines += ["", *self._preview_detail_lines("待部署要素", [self._format_split_item_line(x) for x in self.state.pending_split])]
+        lines += ["", *self._preview_detail_lines("待删除要素", [self._format_delete_item_line(x) for x in self.state.pending_delete])]
+        lines += ["", *self._preview_detail_lines("待添加图片", [self._format_picture_item_line(x) for x in self.state.pending_pictures])]
+        return "\n".join(lines)
+
     def _build_precheck_report(self, title):
         lines = [
             "# 预校验报告", "",
@@ -396,9 +470,25 @@ class ToolShell(cmd.Cmd):
             f"- 待重建 Merge：{len(self.state.pending_merge)}",
             f"- 警告：{len(self.state.warnings)}",
             f"- 阻断：{len(self.state.blocking)}",
-            "",
-            "## 已载入来源",
         ]
+        if self.state.loaded_package_meta:
+            meta = self.state.loaded_package_meta
+            lines += [
+                "", "## 标准包信息",
+                f"- package_name：{self.state.loaded_package_name or '-'}",
+                f"- schemaVersion：{meta.get('schemaVersion', '-')}",
+                f"- operator：{meta.get('operator', '-')}",
+                f"- note：{meta.get('note', '-')}",
+                f"- version：{meta.get('version', '-')}",
+                f"- packageVersion：{meta.get('packageVersion', '-')}",
+                f"- exportedAt：{meta.get('exportedAt', '-')}",
+                f"- featureCount：{meta.get('featureCount', '-')}",
+                f"- pictureCount：{meta.get('pictureCount', '-')}",
+                f"- deleteCount：{meta.get('deleteCount', '-')}",
+            ]
+            if int(meta.get('pictureCount', 0) or 0) == 0 and len(self.state.pending_pictures) == 0:
+                lines.append("- 图片状态：本包未包含图片")
+        lines += ["", "## 已载入来源"]
         lines += [f"- {x}" for x in self.state.loaded_sources] if self.state.loaded_sources else ["- 无"]
         if self.state.mode == "json":
             lines += ["", "## JSON 识别统计",
@@ -406,6 +496,12 @@ class ToolShell(cmd.Cmd):
                       f"- 成功识别候选要素：{self.state.stats['json_recognized_objects']}",
                       f"- 跳过对象数：{self.state.stats['json_skipped_objects']}",
                       f"- 同批重复 ID 数：{self.state.stats['json_duplicate_ids']}"]
+        lines += ["", "## 待部署要素明细"]
+        lines += [self._format_split_item_line(x) for x in self.state.pending_split] if self.state.pending_split else ["- 无"]
+        lines += ["", "## 待删除要素明细"]
+        lines += [self._format_delete_item_line(x) for x in self.state.pending_delete] if self.state.pending_delete else ["- 无"]
+        lines += ["", "## 待添加图片明细"]
+        lines += [self._format_picture_item_line(x) for x in self.state.pending_pictures] if self.state.pending_pictures else ["- 无"]
         lines += ["", "## 阻断问题"]
         lines += [f"- {x}" for x in self.state.blocking] if self.state.blocking else ["- 无"]
         lines += ["", "## 警告"]
@@ -546,10 +642,16 @@ class ToolShell(cmd.Cmd):
             if len(parts) >= 3:
                 world, class_name = parts[0], parts[1]
                 kind = parts[2] if self._is_special_class(class_name) and len(parts) >= 4 else None
-                return {"world": world, "class": class_name, "kind": kind}
+                name = None
+                try:
+                    name = normalize_text(get_field(read_json(p), "Name", "name"))
+                except Exception:
+                    name = None
+                return {"world": world, "class": class_name, "kind": kind, "name": name}
         for x in self.state.pending_split:
             if x.get("id") == item_id:
-                return {"world": self.resolve_world_dir_name(x.get("world")), "class": x.get("class"), "kind": x.get("kind")}
+                name = normalize_text(get_field(x.get("obj", {}), "Name", "name"))
+                return {"world": self.resolve_world_dir_name(x.get("world")), "class": x.get("class"), "kind": x.get("kind"), "name": name}
         return None
 
     def do_load_json(self, arg):
@@ -614,10 +716,11 @@ class ToolShell(cmd.Cmd):
         split_dir = package_dir / "Data_Spilt"
         picture_dir = package_dir / "Picture"
         delete_path = package_dir / "Delete.json"
+        package_meta = read_json(index_path) if index_path.exists() else {}
         if self._policy("scan_policy", "package_require_split_dir", True) and not split_dir.exists():
             raise RuntimeError(f"标准包缺少 Data_Spilt：{package_dir.name}")
-        if self._policy("scan_policy", "package_require_picture_dir", True) and not picture_dir.exists():
-            raise RuntimeError(f"标准包缺少 Picture：{package_dir.name}")
+        if not picture_dir.exists():
+            self.state.warnings.append(f"标准包未包含 Picture 目录，将按无图片包处理：{package_dir.name}")
 
         split_items = []
         id_seen = set()
@@ -694,14 +797,20 @@ class ToolShell(cmd.Cmd):
                 if item_id in seen_delete:
                     self.state.blocking.append(f"Delete.json 内重复 ID：{item_id}")
                 seen_delete.add(item_id)
-                delete_entries.append({"id": item_id, "raw": item})
+                item_name = normalize_text(get_field(item, "Name", "name"))
+                delete_entries.append({"id": item_id, "Name": item_name, "raw": item})
                 if item_id in id_seen:
                     self.state.blocking.append(f"包内同一 ID 同时出现在 Split 与 Delete：{item_id}")
 
+        if picture_dir.exists() and not picture_entries:
+            self.state.warnings.append(f"标准包 Picture 目录存在但未检测到图片：{package_dir.name}")
+        if isinstance(package_meta, dict) and int(package_meta.get("pictureCount", 0) or 0) > 0 and not picture_entries:
+            self.state.warnings.append(f"标准包头 pictureCount 与实际图片不一致：{package_dir.name}")
         overwrite_existing = sum(1 for x in split_items if any(self.split_root.rglob(f"{x['id']}.json")))
         delete_missing = sum(1 for x in delete_entries if not any(self.split_root.rglob(f"{x['id']}.json")))
         return {
             "package_name": package_dir.name,
+            "package_meta": package_meta if isinstance(package_meta, dict) else {},
             "split_count": len(split_items),
             "picture_group_count": len(picture_entries),
             "picture_file_count": sum(len(x.get("files", [])) for x in picture_entries),
@@ -752,6 +861,8 @@ class ToolShell(cmd.Cmd):
         self.state.pending_split.extend(summary["split_items"])
         self.state.pending_pictures.extend(summary["picture_entries"])
         self.state.pending_delete.extend(summary["delete_entries"])
+        self.state.loaded_package_name = summary["package_name"]
+        self.state.loaded_package_meta = summary.get("package_meta", {}) if isinstance(summary.get("package_meta", {}), dict) else {}
         self.state.register_loaded_source("package", summary["package_name"], {
             "split_count": summary["split_count"],
             "picture_group_count": summary["picture_group_count"],
@@ -890,15 +1001,7 @@ class ToolShell(cmd.Cmd):
 
     # ---------- preview/report/status ----------
     def do_preview(self, arg):
-        print("当前 staging 摘要：")
-        print(f"  staging_mode: {self.state.staging_mode}")
-        print(f"  loaded_sources: {len(self.state.loaded_sources)}")
-        print(f"  待写入 Split: {len(self.state.pending_split)}")
-        print(f"  待写入图片: {len(self.state.pending_pictures)}")
-        print(f"  待删除: {len(self.state.pending_delete)}")
-        print(f"  待重建 Merge: {len(self.state.pending_merge)}")
-        print(f"  warnings: {len(self.state.warnings)}")
-        print(f"  blocking: {len(self.state.blocking)}")
+        print(self._build_preview_text())
         return {"summary": "已输出 staging 摘要"}
 
     def do_report(self, arg):
@@ -926,6 +1029,8 @@ class ToolShell(cmd.Cmd):
         print(f"  阻断数量: {len(self.state.blocking)}")
         print(f"  当前 session_id: {self.state.session_id}")
         print(f"  当前 World 映射数量: {len(self.world_map)}")
+        pcs = self.state.push_cycle_summary
+        print(f"  push 周期累计: Split={pcs.get('split_written', 0)} Picture={pcs.get('picture_written', 0)} Delete={pcs.get('delete_applied', 0)} Merge={pcs.get('merge_outputs_written', 0)}")
         print(f"  当前特殊类数量: {len(self.special_class_set)}")
         return {"summary": "已输出 status"}
 
@@ -1129,6 +1234,7 @@ class ToolShell(cmd.Cmd):
         commit_log_path = self.log_manager.write_commit_log(summary)
         self.state.register_commit_log(str(commit_log_path))
         self.state.last_commit_summary = summary
+        self.state.accumulate_commit_summary(summary)
         self.state.last_commit_change_stats = {
             "split_dirs": len(source_stats["changed_split_dirs"]),
             "picture_dirs": len(source_stats["changed_picture_dirs"]),
@@ -1234,6 +1340,7 @@ class ToolShell(cmd.Cmd):
             "source_data": source_summary,
             "logs": log_summary,
             "last_commit_summary": self.state.last_commit_summary,
+            "push_cycle_summary": self.state.push_cycle_summary,
             "last_commit_change_stats": self.state.last_commit_change_stats,
         }
 

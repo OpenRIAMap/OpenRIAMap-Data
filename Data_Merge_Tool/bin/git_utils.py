@@ -57,3 +57,9 @@ def get_current_branch(repo_root: Path) -> str:
 
 def get_remote_url(repo_root: Path, remote: str = "origin") -> str:
     return run_git(repo_root, ["remote", "get-url", remote]).stdout.strip()
+
+
+def remove_file_if_exists(path: str | Path) -> None:
+    p = Path(path)
+    if p.exists():
+        p.unlink()

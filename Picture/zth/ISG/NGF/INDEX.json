@@ -1,7 +1,7 @@
 {
-  "version": 12,
-  "itemCount": 4,
-  "updatedAt": "2026-04-07T23:23:02+08:00",
+  "version": 14,
+  "itemCount": 3,
+  "updatedAt": "2026-04-09T21:42:24+08:00",
   "mapping": {
     "ZNGFLADISD_DTD": [
       "ZNGFLADISD_DTD/ZNGFLADISD_DTD_1.png"
@@ -10,9 +10,6 @@
       "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_1.png",
       "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_2.png",
       "ZNGFLADISD_GLLD/ZNGFLADISD_GLLD_3.png"
-    ],
-    "ZNGFLADISD_TSND": [
-      "ZNGFLADISD_TSND/ZNGFLADISD_TSND_1.png"
     ],
     "ZNGFLADISD_XTD": [
       "ZNGFLADISD_XTD/ZNGFLADISD_XTD_1.png"

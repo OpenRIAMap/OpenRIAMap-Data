@@ -85,3 +85,33 @@ class RuntimeLogManager:
         ]
         path.write_text("\n".join(lines), encoding="utf-8")
         return path
+
+
+def build_frozen_push_log_text(self, summary: dict) -> str:
+    summary = _json_safe(summary)
+    lines = [
+        "==== OpenRIAMap Data Push Log ====",
+        f"Session-Id: {self.session_id}",
+        f"Created-At: {datetime.now().isoformat(timespec='seconds')}",
+    ]
+    for key, value in summary.items():
+        if isinstance(value, (dict, list)):
+            lines.append(f"{key}: {json.dumps(_json_safe(value), ensure_ascii=False)}")
+        else:
+            lines.append(f"{key}: {value}")
+    lines += [
+        "",
+        "[Intent]",
+        "This log is generated before git commit/pull/push and is intended to be committed together with this push operation.",
+        "If the push workflow fails before a valid data push is formed, this log should be removed locally.",
+        "",
+        "Final-State: INTENDED_FOR_THIS_PUSH",
+        "=================================",
+        "",
+    ]
+    return "\n".join(lines)
+
+def create_pending_push_log(self, summary: dict) -> Path:
+    path = self.push_root / f"push_{self._ts()}.log"
+    path.write_text(self.build_frozen_push_log_text(summary), encoding="utf-8")
+    return path

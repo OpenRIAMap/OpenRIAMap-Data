@@ -26,6 +26,19 @@ class SessionState:
     last_commit_summary: Dict[str, Any] = field(default_factory=dict)
     last_commit_change_stats: Dict[str, Any] = field(default_factory=dict)
     last_push_summary: Dict[str, Any] = field(default_factory=dict)
+    loaded_package_meta: Dict[str, Any] = field(default_factory=dict)
+    loaded_package_name: Optional[str] = None
+    push_cycle_summary: Dict[str, Any] = field(default_factory=lambda: {
+        "split_written": 0,
+        "picture_written": 0,
+        "picture_group_replaced": 0,
+        "delete_applied": 0,
+        "merge_targets": 0,
+        "merge_outputs_written": 0,
+        "affected_worlds": [],
+        "affected_classes": [],
+        "affected_kinds": [],
+    })
     current_session_log_path: Optional[str] = None
     current_commit_log_paths: List[str] = field(default_factory=list)
     current_push_log_paths: List[str] = field(default_factory=list)
@@ -57,6 +70,8 @@ class SessionState:
             "json_duplicate_ids": 0,
         }
         self.conflict_details.clear()
+        self.loaded_package_meta.clear()
+        self.loaded_package_name = None
 
     def clear_command_context(self) -> None:
         self.mode = None
@@ -94,6 +109,30 @@ class SessionState:
             "name": source_name,
             "meta": meta or {},
         })
+
+
+    def reset_push_cycle_summary(self) -> None:
+        self.push_cycle_summary = {
+            "split_written": 0,
+            "picture_written": 0,
+            "picture_group_replaced": 0,
+            "delete_applied": 0,
+            "merge_targets": 0,
+            "merge_outputs_written": 0,
+            "affected_worlds": [],
+            "affected_classes": [],
+            "affected_kinds": [],
+        }
+
+    def accumulate_commit_summary(self, summary: Dict[str, Any]) -> None:
+        for key in ["split_written", "picture_written", "picture_group_replaced", "delete_applied", "merge_targets", "merge_outputs_written"]:
+            self.push_cycle_summary[key] = int(self.push_cycle_summary.get(key, 0)) + int(summary.get(key, 0) or 0)
+        for key in ["affected_worlds", "affected_classes", "affected_kinds"]:
+            current = list(self.push_cycle_summary.get(key, []))
+            for value in summary.get(key, []) or []:
+                if value not in current:
+                    current.append(value)
+            self.push_cycle_summary[key] = current
 
     def register_commit_log(self, path: str) -> None:
         self.current_commit_log_paths.append(path)
