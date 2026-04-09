@@ -63,3 +63,25 @@ def remove_file_if_exists(path: str | Path) -> None:
     p = Path(path)
     if p.exists():
         p.unlink()
+
+
+def git_add_path(repo_root: Path, path: str | Path, force: bool = False) -> None:
+    args = ["add"]
+    if force:
+        args.append("-f")
+    args.append(str(path))
+    run_git(repo_root, args)
+
+
+def git_diff_cached_names(repo_root: Path) -> list[str]:
+    out = run_git(repo_root, ["diff", "--cached", "--name-only"]).stdout
+    return [x.strip() for x in out.splitlines() if x.strip()]
+
+
+def git_path_in_ref(repo_root: Path, ref: str, rel_path: str | Path) -> bool:
+    rel = str(rel_path).replace("\\", "/")
+    proc = run_git(repo_root, ["ls-tree", "-r", "--name-only", ref, "--", rel], check=False)
+    if proc.returncode != 0:
+        return False
+    names = [x.strip() for x in (proc.stdout or "").splitlines() if x.strip()]
+    return rel in names

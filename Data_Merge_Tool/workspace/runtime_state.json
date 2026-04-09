@@ -1,0 +1,21 @@
+{
+  "push_cycle_summary": {
+    "split_written": 2,
+    "picture_written": 0,
+    "picture_group_replaced": 0,
+    "delete_applied": 0,
+    "merge_targets": 2,
+    "merge_outputs_written": 0,
+    "affected_worlds": [
+      "zth"
+    ],
+    "affected_classes": [
+      "ISG"
+    ],
+    "affected_kinds": [
+      "NGF"
+    ]
+  },
+  "dirty_merge_targets": [],
+  "last_source_commit_dirty_merge_targets": []
+}

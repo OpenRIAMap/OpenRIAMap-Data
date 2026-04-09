@@ -21,7 +21,10 @@ from git_utils import (
     get_git_head_hash,
     get_remote_url,
     git_add_all,
+    git_add_path,
     git_commit,
+    git_diff_cached_names,
+    git_path_in_ref,
     git_pull_rebase,
     git_push,
     git_status_porcelain,
@@ -44,7 +47,7 @@ TOOL_CONFIG_PATH = CONFIG_DIR / "tool_config.json"
 POLICY_CONFIG_PATH = CONFIG_DIR / "policy_config.json"
 TZ_8 = timezone(timedelta(hours=8))
 INVALID_WINDOWS_CHARS = set('\\/:*?"<>|')
-TOOL_VERSION = "v5.5-step1"
+TOOL_VERSION = "v5.6-step2"
 
 DEFAULT_RUNTIME = {
     "github": {
@@ -152,9 +155,11 @@ class ToolShell(cmd.Cmd):
         self.state = SessionState(session_id=session_id, session_started_at=datetime.now(TZ_8))
         self.log_manager = RuntimeLogManager(self.logs, session_id)
         self.report_manager = ReportManager(self.reports_root)
+        self.runtime_state_path = self.workspace / "runtime_state.json"
         self.state.current_session_log_path = str(self.log_manager.open_session_log(TOOL_VERSION, str(self.repo_root)))
         self._new_session_dir()
         self.command_handlers = self._build_command_registry()
+        self._load_runtime_state()
 
     # ---------- base properties ----------
     @property
@@ -190,6 +195,90 @@ class ToolShell(cmd.Cmd):
             "check-env": self.do_check_env,
             "exit": self.do_exit,
         }
+
+    def _rel_repo_path(self, path: Path | str) -> str:
+        try:
+            return str(Path(path).resolve().relative_to(self.repo_root.resolve())).replace("\\", "/")
+        except Exception:
+            return str(Path(path)).replace("\\", "/")
+
+    def _normalize_runtime_target(self, target: dict) -> dict:
+        return {
+            "world": target.get("world"),
+            "class": target.get("class"),
+            "kind": target.get("kind") or None,
+        }
+
+    def _runtime_state_payload(self) -> dict:
+        return {
+            "push_cycle_summary": dict(self.state.push_cycle_summary or {}),
+            "dirty_merge_targets": [self._normalize_runtime_target(x) for x in (self.state.dirty_merge_targets or [])],
+            "last_source_commit_dirty_merge_targets": [self._normalize_runtime_target(x) for x in (self.state.last_source_commit_dirty_merge_targets or [])],
+        }
+
+    def _save_runtime_state(self) -> None:
+        write_json(self.runtime_state_path, self._runtime_state_payload())
+
+    def _load_runtime_state(self) -> None:
+        try:
+            if not self.runtime_state_path.exists():
+                return
+            obj = read_json(self.runtime_state_path)
+            if not isinstance(obj, dict):
+                return
+            pcs = obj.get("push_cycle_summary", {})
+            if isinstance(pcs, dict):
+                merged = dict(self.state.push_cycle_summary)
+                for key in ["split_written", "picture_written", "picture_group_replaced", "delete_applied", "merge_targets", "merge_outputs_written"]:
+                    merged[key] = int(pcs.get(key, merged.get(key, 0)) or 0)
+                for key in ["affected_worlds", "affected_classes", "affected_kinds"]:
+                    vals = pcs.get(key, merged.get(key, []))
+                    merged[key] = list(vals) if isinstance(vals, list) else list(merged.get(key, []))
+                self.state.push_cycle_summary = merged
+            dirty = obj.get("dirty_merge_targets", [])
+            if isinstance(dirty, list):
+                self.state.dirty_merge_targets = [self._normalize_runtime_target(x) for x in dirty if isinstance(x, dict)]
+            last_dirty = obj.get("last_source_commit_dirty_merge_targets", [])
+            if isinstance(last_dirty, list):
+                self.state.last_source_commit_dirty_merge_targets = [self._normalize_runtime_target(x) for x in last_dirty if isinstance(x, dict)]
+        except Exception as e:
+            self.log_manager.write_session_event("(runtime-state)", "runtime-state", "", False, f"加载 runtime_state 失败：{e}", 0)
+
+    def _target_from_split_leaf_dir(self, leaf_dir: Path) -> dict | None:
+        try:
+            rel = leaf_dir.relative_to(self.split_root)
+            parts = rel.parts
+            if len(parts) < 2:
+                return None
+            world = parts[0]
+            class_name = parts[1]
+            kind = parts[2] if self._is_special_class(class_name) and len(parts) >= 3 else None
+            return {"world": world, "class": class_name, "kind": kind}
+        except Exception:
+            return None
+
+    def _build_merge_chunk_payload(self, split_leaf: Path, chunk_size: int) -> list[list[dict]]:
+        items = []
+        if split_leaf.exists():
+            for p in self._collect_leaf_jsons(split_leaf):
+                try:
+                    obj = read_json(p)
+                    if isinstance(obj, dict):
+                        items.append(obj)
+                except Exception:
+                    self.state.warnings.append(f"重建时跳过非法 JSON：{p}")
+        return [items[i:i + chunk_size] for i in range(0, len(items), chunk_size)]
+
+    def _read_existing_merge_chunks(self, merge_leaf: Path) -> list[list[dict]]:
+        chunks = []
+        if merge_leaf.exists():
+            for p in sorted(merge_leaf.glob("chunk_*.json")):
+                try:
+                    data = read_json(p)
+                    chunks.append(data if isinstance(data, list) else [])
+                except Exception:
+                    chunks.append([])
+        return chunks
 
     def parseline(self, line: str):
         cmd_name, arg, line = super().parseline(line)
@@ -995,19 +1084,11 @@ class ToolShell(cmd.Cmd):
 
     def _resolve_rebuild_targets(self, arg):
         if arg == "--all":
-            targets = []
-            for idx in self.split_root.rglob("INDEX.json"):
-                if idx.parent == self.split_root:
-                    continue
-                rel = idx.parent.relative_to(self.split_root)
-                parts = rel.parts
-                if len(parts) < 2:
-                    continue
-                world, class_name = parts[0], parts[1]
-                kind = parts[2] if self._is_special_class(class_name) and len(parts) >= 3 else None
-                targets.append((world, class_name, kind))
-            for world, class_name, kind in targets:
-                self._queue_rebuild_target(world, class_name, kind)
+            targets = list(self.state.dirty_merge_targets or [])
+            if not targets:
+                return 0
+            for target in targets:
+                self._queue_rebuild_target(target.get("world"), target.get("class"), target.get("kind"))
             return len(targets)
         parts = arg.split()
         if len(parts) == 2:
@@ -1061,6 +1142,7 @@ class ToolShell(cmd.Cmd):
         changed_worlds = set()
         affected_classes = set()
         affected_kinds = set()
+        dirty_merge_targets = []
         split_count = picture_count = picture_group_replaced = delete_count = 0
 
         for item in self.state.pending_split:
@@ -1072,6 +1154,7 @@ class ToolShell(cmd.Cmd):
             affected_classes.add(item["class"])
             if item.get("kind"):
                 affected_kinds.add(item.get("kind"))
+            dirty_merge_targets.append({"world": self.resolve_world_dir_name(item["world"]), "class": item["class"], "kind": item.get("kind")})
             split_count += 1
 
         for pic in self.state.pending_pictures:
@@ -1099,7 +1182,6 @@ class ToolShell(cmd.Cmd):
                     shutil.copy2(src_path, dst)
                     next_idx += 1
                     picture_count += 1
-            # 清理旧版工具误写入的按 ID 子目录 INDEX
             legacy_index = base / "INDEX.json"
             if legacy_index.exists():
                 legacy_index.unlink(missing_ok=True)
@@ -1113,9 +1195,14 @@ class ToolShell(cmd.Cmd):
                 p.unlink(missing_ok=True)
                 removed = True
                 changed_split_dirs.add(p.parent)
+                target = self._target_from_split_leaf_dir(p.parent)
+                if target:
+                    dirty_merge_targets.append(target)
                 if len(p.relative_to(self.split_root).parts) >= 2:
                     changed_worlds.add(p.relative_to(self.split_root).parts[0])
                     affected_classes.add(p.relative_to(self.split_root).parts[1])
+                    if len(p.relative_to(self.split_root).parts) >= 3:
+                        affected_kinds.add(p.relative_to(self.split_root).parts[2])
             for p in self.picture_root.rglob(item_id):
                 if p.is_dir():
                     picture_leaf = p.parent
@@ -1152,12 +1239,16 @@ class ToolShell(cmd.Cmd):
         if changed_picture_dirs:
             self._bump_root_index(self.picture_root)
 
+        dirty_merge_targets = [t for t in (self._normalize_runtime_target(x) for x in dirty_merge_targets) if t.get("world") and t.get("class")]
+        self.state.set_last_source_commit_dirty_merge_targets(dirty_merge_targets)
+
         return {
             "changed_split_dirs": changed_split_dirs,
             "changed_picture_dirs": changed_picture_dirs,
             "changed_worlds": changed_worlds,
             "affected_classes": affected_classes,
             "affected_kinds": affected_kinds,
+            "dirty_merge_targets": dirty_merge_targets,
             "split_written_count": split_count,
             "picture_written_count": picture_count,
             "picture_group_replaced_count": picture_group_replaced,
@@ -1171,32 +1262,29 @@ class ToolShell(cmd.Cmd):
         affected_classes = set()
         affected_kinds = set()
         output_count = 0
+        processed_targets = []
         for target in self.state.pending_merge:
             leaf = self._split_leaf_dir(target["world"], target["class"], target.get("kind"))
             mleaf = self._merge_leaf_dir(target["world"], target["class"], target.get("kind"))
             ensure_dir(mleaf)
+            new_chunks = self._build_merge_chunk_payload(leaf, chunk_size)
+            old_chunks = self._read_existing_merge_chunks(mleaf)
+            processed_targets.append({"world": self.resolve_world_dir_name(target["world"]), "class": target["class"], "kind": target.get("kind")})
+            if old_chunks == new_chunks:
+                continue
             for p in mleaf.glob("chunk_*.json"):
                 p.unlink(missing_ok=True)
-            items = []
-            if leaf.exists():
-                for p in self._collect_leaf_jsons(leaf):
-                    try:
-                        obj = read_json(p)
-                        if isinstance(obj, dict):
-                            items.append(obj)
-                    except Exception:
-                        self.state.warnings.append(f"重建时跳过非法 JSON：{p}")
-            if items:
-                for i in range(0, len(items), chunk_size):
-                    fname = f"chunk_{(i // chunk_size) + 1:03d}.json"
-                    write_json(mleaf / fname, items[i:i + chunk_size])
-                    output_count += 1
+            for i, chunk in enumerate(new_chunks, start=1):
+                fname = f"chunk_{i:03d}.json"
+                write_json(mleaf / fname, chunk)
+                output_count += 1
             self._rebuild_merge_index(mleaf, chunk_size)
             changed_dirs.add(mleaf)
             changed_worlds.add(self.resolve_world_dir_name(target["world"]))
             affected_classes.add(target["class"])
             if target.get("kind"):
                 affected_kinds.add(target.get("kind"))
+        self.state.clear_processed_dirty_merge_targets(processed_targets)
         if changed_dirs:
             self._bump_root_index(self.merge_root)
             for world_dir_name in sorted(changed_worlds):
@@ -1206,7 +1294,7 @@ class ToolShell(cmd.Cmd):
             "changed_worlds": changed_worlds,
             "affected_classes": affected_classes,
             "affected_kinds": affected_kinds,
-            "merge_target_count": len(self.state.pending_merge),
+            "merge_target_count": len(processed_targets),
             "merge_output_file_count": output_count,
         }
 
@@ -1260,6 +1348,7 @@ class ToolShell(cmd.Cmd):
             "picture_dirs": len(source_stats["changed_picture_dirs"]),
             "merge_dirs": len(merge_stats["changed_merge_dirs"]),
         }
+        self._save_runtime_state()
         for temp in list(self.state.current_temp_paths):
             try:
                 tp = Path(temp)
@@ -1276,6 +1365,9 @@ class ToolShell(cmd.Cmd):
         self.state.mode = "rebuild"
         added = self._resolve_rebuild_targets(arg.strip())
         report = self._write_precheck(f"已登记 rebuild 目标：{arg.strip()}")
+        if arg.strip() == "--all" and added == 0:
+            print(f"当前无待重建的世界目录；未登记任何 Merge 目标。报告：{report}")
+            return {"summary": "当前无待重建目录"}
         print(f"已登记待重建目标 {added} 个。报告：{report}")
         return {"summary": f"已登记 rebuild {added} 个"}
 
@@ -1550,10 +1642,21 @@ class ToolShell(cmd.Cmd):
             "repo_head_before": get_git_head_hash(self.repo_root),
         }
         pending_push_log = self.log_manager.create_pending_push_log(frozen_summary)
+        rel_push_log = self._rel_repo_path(pending_push_log)
         commit_hash = ""
         try:
             git_add_all(self.repo_root)
+            staged = set(git_diff_cached_names(self.repo_root))
+            if rel_push_log not in staged:
+                git_add_path(self.repo_root, rel_push_log, force=True)
+                staged = set(git_diff_cached_names(self.repo_root))
+            if rel_push_log not in staged and not git_path_in_ref(self.repo_root, "HEAD", rel_push_log):
+                raise RuntimeError(f"push log 未能进入暂存区：{rel_push_log}")
             commit_hash = git_commit(self.repo_root, message)
+            if not commit_hash:
+                raise RuntimeError("git commit 未生成新的提交，已取消本次 push")
+            if not git_path_in_ref(self.repo_root, "HEAD", rel_push_log):
+                raise RuntimeError(f"push log 未被写入本地提交：{rel_push_log}")
             git_pull_rebase(self.repo_root, self.tool_config["github"]["data_remote_name"], self.tool_config["github"]["data_branch"])
             git_push(self.repo_root, self.tool_config["github"]["data_remote_name"], self.tool_config["github"]["data_branch"])
         except Exception:
@@ -1573,6 +1676,7 @@ class ToolShell(cmd.Cmd):
         self.state.register_push_log(str(pending_push_log))
         self.state.last_push_summary = summary
         self.state.reset_push_cycle_summary()
+        self._save_runtime_state()
         push_report = [
             "# Push 报告", "",
             f"时间：{now_iso()}",
@@ -1640,8 +1744,19 @@ class ToolShell(cmd.Cmd):
                 "repo_head_before": get_git_head_hash(self.repo_root),
             }
             pending_push_log = self.log_manager.create_pending_push_log(frozen_summary)
+            rel_push_log = self._rel_repo_path(pending_push_log)
             git_add_all(self.repo_root)
+            staged = set(git_diff_cached_names(self.repo_root))
+            if rel_push_log not in staged:
+                git_add_path(self.repo_root, rel_push_log, force=True)
+                staged = set(git_diff_cached_names(self.repo_root))
+            if rel_push_log not in staged and not git_path_in_ref(self.repo_root, "HEAD", rel_push_log):
+                raise RuntimeError(f"push log 未能进入暂存区：{rel_push_log}")
             commit_hash = git_commit(self.repo_root, message)
+            if not commit_hash:
+                raise RuntimeError("git commit 未生成新的提交，已取消本次 push")
+            if not git_path_in_ref(self.repo_root, "HEAD", rel_push_log):
+                raise RuntimeError(f"push log 未被写入本地提交：{rel_push_log}")
             state = "P7"
             git_pull_rebase(self.repo_root, self.tool_config["github"]["data_remote_name"], self.tool_config["github"]["data_branch"])
             state = "P8"

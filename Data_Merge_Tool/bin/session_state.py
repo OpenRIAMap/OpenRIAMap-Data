@@ -39,6 +39,8 @@ class SessionState:
         "affected_classes": [],
         "affected_kinds": [],
     })
+    dirty_merge_targets: List[Dict[str, Any]] = field(default_factory=list)
+    last_source_commit_dirty_merge_targets: List[Dict[str, Any]] = field(default_factory=list)
     current_session_log_path: Optional[str] = None
     current_commit_log_paths: List[str] = field(default_factory=list)
     current_push_log_paths: List[str] = field(default_factory=list)
@@ -133,6 +135,48 @@ class SessionState:
                 if value not in current:
                     current.append(value)
             self.push_cycle_summary[key] = current
+
+
+    def _normalize_merge_target(self, target: Dict[str, Any]) -> Dict[str, Any]:
+        return {
+            "world": target.get("world"),
+            "class": target.get("class"),
+            "kind": target.get("kind") or None,
+        }
+
+    def _merge_target_key(self, target: Dict[str, Any]) -> tuple:
+        t = self._normalize_merge_target(target)
+        return (str(t.get("world")), str(t.get("class")), str(t.get("kind") or ""))
+
+    def set_last_source_commit_dirty_merge_targets(self, targets: List[Dict[str, Any]]) -> None:
+        normalized: List[Dict[str, Any]] = []
+        seen = set()
+        for t in targets or []:
+            nt = self._normalize_merge_target(t)
+            key = self._merge_target_key(nt)
+            if key in seen:
+                continue
+            seen.add(key)
+            normalized.append(nt)
+        self.last_source_commit_dirty_merge_targets = normalized
+        self.mark_merge_targets_dirty(normalized)
+
+    def mark_merge_targets_dirty(self, targets: List[Dict[str, Any]]) -> None:
+        current = list(self.dirty_merge_targets)
+        seen = {self._merge_target_key(x) for x in current}
+        for t in targets or []:
+            nt = self._normalize_merge_target(t)
+            key = self._merge_target_key(nt)
+            if key in seen:
+                continue
+            seen.add(key)
+            current.append(nt)
+        self.dirty_merge_targets = current
+
+    def clear_processed_dirty_merge_targets(self, targets: List[Dict[str, Any]]) -> None:
+        remove_keys = {self._merge_target_key(t) for t in (targets or [])}
+        self.dirty_merge_targets = [x for x in self.dirty_merge_targets if self._merge_target_key(x) not in remove_keys]
+        self.last_source_commit_dirty_merge_targets = [x for x in self.last_source_commit_dirty_merge_targets if self._merge_target_key(x) not in remove_keys]
 
     def register_commit_log(self, path: str) -> None:
         self.current_commit_log_paths.append(path)
