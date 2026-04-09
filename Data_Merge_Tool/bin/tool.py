@@ -822,6 +822,22 @@ class ToolShell(cmd.Cmd):
             "delete_entries": delete_entries,
         }
 
+    def _select_package_entry(self, entries):
+        print("检测到以下标准包：")
+        for i, e in enumerate(entries, start=1):
+            print(f"  [{i}] {e['relative']}")
+        choice = input("请输入编号或包名（留空取消）：\n> ").strip()
+        if not choice:
+            return None
+        if choice.isdigit():
+            idx = int(choice)
+            if 1 <= idx <= len(entries):
+                return entries[idx - 1]["path"]
+        for e in entries:
+            if e["relative"] == choice or e["path"].name == choice:
+                return e["path"]
+        raise RuntimeError(f"未找到指定标准包：{choice}")
+
     def do_load_package(self, arg):
         self.state.mode = "package"
         if not self.state.enter_package_mode():
@@ -837,10 +853,14 @@ class ToolShell(cmd.Cmd):
                 if e["relative"] == choice or e["path"].name == choice:
                     target = e["path"]
                     break
+            if target is None:
+                raise RuntimeError(f"未找到指定标准包：{choice}")
         else:
-            target = entries[0]["path"]
-        if target is None:
-            raise RuntimeError(f"未找到指定标准包：{choice}")
+            target = self._select_package_entry(entries)
+            if target is None:
+                print("已取消标准包载入。")
+                self.state.clear()
+                return {"summary": "已取消标准包载入"}
         temp_extracted = None
         temp_root = None
         if target.suffix.lower() == ".zip":
@@ -1397,12 +1417,13 @@ class ToolShell(cmd.Cmd):
 
     def _build_data_repo_commit_message(self, cold_archive_summary: dict | None = None):
         ts = datetime.now(TZ_8).strftime("%Y-%m-%d %H:%M")
-        summary = self.state.last_commit_summary or {}
-        split_n = summary.get("split_written", 0)
-        pic_n = summary.get("picture_written", 0)
-        merge_n = summary.get("merge_outputs_written", 0)
+        summary = self.state.push_cycle_summary or {}
+        split_n = int(summary.get("split_written", 0) or 0)
+        pic_n = int(summary.get("picture_written", 0) or 0)
+        delete_n = int(summary.get("delete_applied", 0) or 0)
+        merge_n = int(summary.get("merge_outputs_written", 0) or 0)
         archive_n = 1 if cold_archive_summary else 0
-        return f"数据仓库更新：新增/覆盖数据、重建 Merge、写入归档日志（{ts}）[Split {split_n} | Picture {pic_n} | Merge {merge_n} | Archive {archive_n}]"
+        return f"数据仓库更新：新增/覆盖数据、重建 Merge、写入归档日志（{ts}）[Split {split_n} | Picture {pic_n} | Delete {delete_n} | Merge {merge_n} | Archive {archive_n}]"
 
     def _cleanup_local_runtime_after_cold_push(self, archive_ctx: dict, archive_zip: Path | None, log_summary: dict):
         warnings = []
@@ -1520,11 +1541,25 @@ class ToolShell(cmd.Cmd):
 
     def do_push_data(self, arg):
         before = self._count_repo_files_snapshot()
-        git_add_all(self.repo_root)
         message = self._build_data_repo_commit_message(None)
-        commit_hash = git_commit(self.repo_root, message)
-        git_pull_rebase(self.repo_root, self.tool_config["github"]["data_remote_name"], self.tool_config["github"]["data_branch"])
-        git_push(self.repo_root, self.tool_config["github"]["data_remote_name"], self.tool_config["github"]["data_branch"])
+        frozen_summary = {
+            "mode": "data_only",
+            "message": message,
+            "push_cycle_summary": dict(self.state.push_cycle_summary or {}),
+            "before": before,
+            "repo_head_before": get_git_head_hash(self.repo_root),
+        }
+        pending_push_log = self.log_manager.create_pending_push_log(frozen_summary)
+        commit_hash = ""
+        try:
+            git_add_all(self.repo_root)
+            commit_hash = git_commit(self.repo_root, message)
+            git_pull_rebase(self.repo_root, self.tool_config["github"]["data_remote_name"], self.tool_config["github"]["data_branch"])
+            git_push(self.repo_root, self.tool_config["github"]["data_remote_name"], self.tool_config["github"]["data_branch"])
+        except Exception:
+            if not commit_hash:
+                remove_file_if_exists(pending_push_log)
+            raise
         after = self._count_repo_files_snapshot()
         summary = {
             "mode": "data_only",
@@ -1532,18 +1567,23 @@ class ToolShell(cmd.Cmd):
             "commit_hash": commit_hash or get_git_head_hash(self.repo_root),
             "before": before,
             "after": after,
+            "push_cycle_summary": dict(self.state.push_cycle_summary or {}),
+            "push_log": str(pending_push_log),
         }
-        push_log = self.log_manager.write_push_log(summary)
+        self.state.register_push_log(str(pending_push_log))
+        self.state.last_push_summary = summary
+        self.state.reset_push_cycle_summary()
         push_report = [
             "# Push 报告", "",
             f"时间：{now_iso()}",
             f"模式：data_only",
             f"commit：{summary['commit_hash']}",
             f"message：{message}",
+            f"push log：{pending_push_log}",
         ]
         latest, _ = self.report_manager.write_push_report("\n".join(push_report))
         self.state.last_push_report_path = str(latest)
-        print(f"Data 仓库 push 完成。push log：{push_log}")
+        print(f"Data 仓库 push 完成。push log：{pending_push_log}")
         return {"summary": "push-data 完成"}
 
     def do_push(self, arg):
@@ -1553,6 +1593,8 @@ class ToolShell(cmd.Cmd):
         archive_zip = None
         cleanup = {"warnings": []}
         cold_summary = None
+        pending_push_log = None
+        commit_hash = ""
         try:
             state = "P1"
             archive_ctx = prepare_archive_workspace(self.workspace)
@@ -1588,8 +1630,17 @@ class ToolShell(cmd.Cmd):
             cleanup = self._cleanup_local_runtime_after_cold_push(archive_ctx, archive_zip, log_summary)
             state = "P6"
             before = self._count_repo_files_snapshot()
-            git_add_all(self.repo_root)
             message = self._build_data_repo_commit_message(cold_summary)
+            frozen_summary = {
+                "mode": "full",
+                "cold_archive": cold_summary,
+                "message": message,
+                "push_cycle_summary": dict(self.state.push_cycle_summary or {}),
+                "before": before,
+                "repo_head_before": get_git_head_hash(self.repo_root),
+            }
+            pending_push_log = self.log_manager.create_pending_push_log(frozen_summary)
+            git_add_all(self.repo_root)
             commit_hash = git_commit(self.repo_root, message)
             state = "P7"
             git_pull_rebase(self.repo_root, self.tool_config["github"]["data_remote_name"], self.tool_config["github"]["data_branch"])
@@ -1606,40 +1657,40 @@ class ToolShell(cmd.Cmd):
                 "message": message,
                 "cleanup_warnings": cleanup.get("warnings", []),
                 "state": state,
+                "push_cycle_summary": dict(self.state.push_cycle_summary or {}),
+                "push_log": str(pending_push_log),
             }
-            push_log = self.log_manager.write_push_log(summary)
-            self.state.register_push_log(str(push_log))
-            report_lines = [
-                "# Push 报告", "",
+            self.state.register_push_log(str(pending_push_log))
+            self.state.last_push_summary = summary
+            self.state.reset_push_cycle_summary()
+            latest, _ = self.report_manager.write_push_report("\n".join([
+                "# Push 报告",
+                "",
                 f"时间：{now_iso()}",
-                f"模式：full",
-                f"冷仓库：{cold_summary['cold_repo']}",
-                f"Release：{cold_summary['release_tag']}",
-                f"Asset：{cold_summary['asset_name']}",
+                "模式：full",
                 f"commit：{summary['commit_hash']}",
                 f"message：{message}",
+                f"冷归档：{cold_summary['asset_name']}",
+                f"push log：{pending_push_log}",
                 f"清理警告：{'; '.join(cleanup.get('warnings', [])) or '无'}",
-            ]
-            latest, _ = self.report_manager.write_push_report("\n".join(report_lines))
+            ]))
             self.state.last_push_report_path = str(latest)
-            print(f"push 完成。push log：{push_log}")
-            if cleanup.get("warnings"):
-                print("push 已完成，但本地运行产物清理存在警告，请查看 push log。")
+            print(f"push 完成。冷归档：{cold_summary['asset_name']}；push log：{pending_push_log}")
             return {"summary": "push 完成"}
         except Exception as e:
-            if state in {"P1", "P2"}:
-                if archive_ctx:
-                    shutil.rmtree(archive_ctx["root"], ignore_errors=True)
-                print("push 执行失败，已恢复到执行前状态。")
+            if pending_push_log and not commit_hash:
+                remove_file_if_exists(pending_push_log)
+            if state in {"P1", "P2"} and archive_ctx:
+                shutil.rmtree(archive_ctx["root"], ignore_errors=True)
+                print("push 执行失败：归档准备/打包阶段出错，已恢复到执行前状态。")
             elif state in {"P3", "P4"}:
                 if archive_ctx:
                     shutil.rmtree(archive_ctx["root"], ignore_errors=True)
-                print("push 执行失败：冷存储阶段出错。本地已恢复；如远端存在异常资产，请人工检查。")
+                print("push 执行失败：冷存储上传或校验未通过。本地已执行恢复；如远端产生异常资产，请人工检查冷仓库。")
             elif state in {"P6", "P7", "P8", "P9"}:
                 print("冷存储归档已完成，但 Data 仓库后续流程失败。请检查当前 git 状态并执行 push-data。")
             raise RuntimeError(str(e))
 
-    # ---------- clear/discard/help/exit ----------
     def do_discard(self, arg):
         for temp in list(self.state.current_temp_paths):
             try:
