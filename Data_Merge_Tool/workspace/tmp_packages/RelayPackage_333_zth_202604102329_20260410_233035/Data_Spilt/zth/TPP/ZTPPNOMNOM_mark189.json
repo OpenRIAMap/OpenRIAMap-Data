@@ -1,0 +1,29 @@
+{
+  "ID": "ZTPPNOMNOM_mark189",
+  "Name": "地标传送-朝阳工业",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "TGTWarp": "zygy朝阳工业",
+  "elevation": 65,
+  "TGTcoordinate": {
+    "x": 0,
+    "z": 0,
+    "y": 0
+  },
+  "TGTelevation": 0,
+  "hub": undefined,
+  "tags": {},
+  "extensions": {},
+  "Type": "Points",
+  "Class": "TPP",
+  "World": 0,
+  "CreateTime": "20260203",
+  "CreateBy": "Aut_moon_white",
+  "ModifityTime": undefined,
+  "ModifityBy": undefined,
+  "coordinate": {
+    "x": -714.5,
+    "z": -1500.5,
+    "y": 65
+  }
+}
