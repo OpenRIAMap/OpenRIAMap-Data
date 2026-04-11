@@ -1,10 +1,6 @@
 {
-  "version": 6,
-  "itemCount": 1,
-  "updatedAt": "2026-04-11T22:49:02+08:00",
-  "mapping": {
-    "ZBUD_TSM_NDTSG": [
-      "ZBUD_TSM_NDTSG/ZBUD_TSM_NDTSG_1.png"
-    ]
-  }
+  "version": 7,
+  "itemCount": 0,
+  "updatedAt": "2026-04-11T23:59:29+08:00",
+  "mapping": {}
 }

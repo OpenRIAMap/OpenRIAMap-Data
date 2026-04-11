@@ -1,22 +1,24 @@
 {
   "push_cycle_summary": {
-    "split_written": 3,
-    "picture_written": 2,
-    "picture_group_replaced": 2,
-    "delete_applied": 1,
-    "merge_targets": 3,
-    "merge_outputs_written": 3,
+    "split_written": 6,
+    "picture_written": 6,
+    "picture_group_replaced": 4,
+    "delete_applied": 2,
+    "merge_targets": 7,
+    "merge_outputs_written": 6,
     "affected_worlds": [
       "zth"
     ],
     "affected_classes": [
       "BUD",
-      "ISG"
+      "ISG",
+      "TRP"
     ],
     "affected_kinds": [
       "NGF",
       "ZBUD_TS_NDLIB.json",
-      "NOM"
+      "NOM",
+      "ZBUD_TSM_NDTSG.json"
     ]
   },
   "dirty_merge_targets": [],

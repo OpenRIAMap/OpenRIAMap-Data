@@ -7,11 +7,6 @@
     "Interaction": "右键点击",
     "Situation": "ON",
     "elevation": 71,
-    "coordinate": {
-      "x": -766,
-      "z": -1570,
-      "y": 71
-    },
     "Trade": [
       {
         "TradeNum": 1,
@@ -84,6 +79,13 @@
     "Class": "TRP",
     "World": 0,
     "CreateTime": "20260208",
-    "CreateBy": "639"
+    "CreateBy": "639",
+    "ModifityTime": "20260411",
+    "ModifityBy": "639",
+    "coordinate": {
+      "x": -766,
+      "z": -1570,
+      "y": 71
+    }
   }
 ]

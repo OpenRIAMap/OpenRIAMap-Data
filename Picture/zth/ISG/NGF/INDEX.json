@@ -1,7 +1,7 @@
 {
-  "version": 17,
-  "itemCount": 3,
-  "updatedAt": "2026-04-11T04:55:10+08:00",
+  "version": 19,
+  "itemCount": 4,
+  "updatedAt": "2026-04-11T23:59:29+08:00",
   "mapping": {
     "ZNGFLADISD_DTD": [
       "ZNGFLADISD_DTD/ZNGFLADISD_DTD_1.png"
@@ -13,6 +13,10 @@
     ],
     "ZNGFLADISD_TNP": [
       "ZNGFLADISD_TNP/ZNGFLADISD_TNP_1.png"
+    ],
+    "ZNGFLADISD_TSND": [
+      "ZNGFLADISD_TSND/ZNGFLADISD_TSND_1.png",
+      "ZNGFLADISD_TSND/ZNGFLADISD_TSND_2.png"
     ]
   }
 }
