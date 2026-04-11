@@ -1,10 +1,11 @@
 {
   "ID": "ZRT7STA_06",
   "Name": "溯东站",
-  "coordinate": {
-    "x": 5465.5,
-    "z": 4851.5
-  },
+  "STBuilding": [
+    {
+      "ID": "ZRTSTB_SUD"
+    }
+  ],
   "platforms": [
     {
       "ID": "ZRT7PLF_06_D"
@@ -16,5 +17,10 @@
   "Type": "Points",
   "Class": "STA",
   "World": 0,
-  "CreateTime": "20251225"
+  "CreateTime": "20251225",
+  "coordinate": {
+    "x": 5465.5,
+    "z": 4851.5,
+    "y": 0
+  }
 }

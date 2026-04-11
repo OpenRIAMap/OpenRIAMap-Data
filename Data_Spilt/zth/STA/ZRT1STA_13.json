@@ -1,10 +1,11 @@
 {
   "ID": "ZRT1STA_13",
   "Name": "白霖站",
-  "coordinate": {
-    "x": 4930.5,
-    "z": 4624.5
-  },
+  "STBuilding": [
+    {
+      "ID": "ZRTSTB_BL"
+    }
+  ],
   "platforms": [
     {
       "ID": "ZRT1PLF_13_D"
@@ -16,5 +17,10 @@
   "Type": "Points",
   "Class": "STA",
   "World": 0,
-  "CreateTime": "20251225"
+  "CreateTime": "20251225",
+  "coordinate": {
+    "x": 4930.5,
+    "z": 4624.5,
+    "y": 0
+  }
 }

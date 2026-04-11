@@ -413,10 +413,11 @@
   {
     "ID": "ZRT1STA_13",
     "Name": "白霖站",
-    "coordinate": {
-      "x": 4930.5,
-      "z": 4624.5
-    },
+    "STBuilding": [
+      {
+        "ID": "ZRTSTB_BL"
+      }
+    ],
     "platforms": [
       {
         "ID": "ZRT1PLF_13_D"
@@ -428,7 +429,12 @@
     "Type": "Points",
     "Class": "STA",
     "World": 0,
-    "CreateTime": "20251225"
+    "CreateTime": "20251225",
+    "coordinate": {
+      "x": 4930.5,
+      "z": 4624.5,
+      "y": 0
+    }
   },
   {
     "ID": "ZRT1STA_14",
@@ -533,10 +539,11 @@
   {
     "ID": "ZRT1STA_19",
     "Name": "溯东站",
-    "coordinate": {
-      "x": 5468.5,
-      "z": 4896.5
-    },
+    "STBuilding": [
+      {
+        "ID": "ZRTSTB_SUD"
+      }
+    ],
     "platforms": [
       {
         "ID": "ZRT1PLF_19_D"
@@ -549,7 +556,12 @@
     "Class": "STA",
     "World": 0,
     "CreateTime": "20251225",
-    "CreateBy": "639"
+    "CreateBy": "639",
+    "coordinate": {
+      "x": 5468.5,
+      "z": 4896.5,
+      "y": 0
+    }
   },
   {
     "ID": "ZRT1STA_20",
@@ -803,10 +815,11 @@
   {
     "ID": "ZRT4STA_10",
     "Name": "白霖站",
-    "coordinate": {
-      "x": 4913.5,
-      "z": 4615.5
-    },
+    "STBuilding": [
+      {
+        "ID": "ZRTSTB_BL"
+      }
+    ],
     "platforms": [
       {
         "ID": "ZRT4PLF_10_D"
@@ -819,7 +832,12 @@
     "Class": "STA",
     "World": 0,
     "CreateTime": "20251225",
-    "CreateBy": "639"
+    "CreateBy": "639",
+    "coordinate": {
+      "x": 4913.5,
+      "z": 4615.5,
+      "y": 0
+    }
   },
   {
     "ID": "ZRT4STA_11",
@@ -1199,10 +1217,11 @@
   {
     "ID": "ZRT7STA_06",
     "Name": "溯东站",
-    "coordinate": {
-      "x": 5465.5,
-      "z": 4851.5
-    },
+    "STBuilding": [
+      {
+        "ID": "ZRTSTB_SUD"
+      }
+    ],
     "platforms": [
       {
         "ID": "ZRT7PLF_06_D"
@@ -1214,7 +1233,12 @@
     "Type": "Points",
     "Class": "STA",
     "World": 0,
-    "CreateTime": "20251225"
+    "CreateTime": "20251225",
+    "coordinate": {
+      "x": 5465.5,
+      "z": 4851.5,
+      "y": 0
+    }
   },
   {
     "ID": "ZRT7STA_07",

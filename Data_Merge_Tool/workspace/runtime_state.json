@@ -1,18 +1,19 @@
 {
   "push_cycle_summary": {
-    "split_written": 1,
+    "split_written": 5,
     "picture_written": 0,
     "picture_group_replaced": 0,
     "delete_applied": 2,
-    "merge_targets": 3,
-    "merge_outputs_written": 2,
+    "merge_targets": 4,
+    "merge_outputs_written": 3,
     "affected_worlds": [
       "zth"
     ],
     "affected_classes": [
       "BUD",
       "ISG",
-      "RLE"
+      "RLE",
+      "STA"
     ],
     "affected_kinds": [
       "NGF",
