@@ -1,9 +1,8 @@
 {
-  "version": 8,
-  "itemCount": 2,
-  "updatedAt": "2026-04-11T23:59:29+08:00",
+  "version": 9,
+  "itemCount": 1,
+  "updatedAt": "2026-04-12T00:20:04+08:00",
   "items": [
-    "Test1",
-    "ZBUD_TS_XCG"
+    "Test1"
   ]
 }

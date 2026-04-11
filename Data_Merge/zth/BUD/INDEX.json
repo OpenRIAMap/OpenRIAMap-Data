@@ -1,20 +1,18 @@
 {
-  "version": 15,
-  "itemCount": 2,
-  "updatedAt": "2026-04-12T00:00:03+08:00",
+  "version": 16,
+  "itemCount": 1,
+  "updatedAt": "2026-04-12T00:20:21+08:00",
   "items": [
-    "Test1",
-    "ZBUD_TS_XCG"
+    "Test1"
   ],
   "chunkSize": 200,
   "chunkCount": 1,
   "chunks": [
     {
       "file": "chunk_001.json",
-      "itemCount": 2,
+      "itemCount": 1,
       "items": [
-        "Test1",
-        "ZBUD_TS_XCG"
+        "Test1"
       ]
     }
   ]

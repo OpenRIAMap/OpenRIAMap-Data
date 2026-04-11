@@ -1,12 +1,11 @@
 {
-  "version": 14,
-  "itemCount": 6,
-  "updatedAt": "2026-04-12T00:00:03+08:00",
+  "version": 15,
+  "itemCount": 5,
+  "updatedAt": "2026-04-12T00:20:21+08:00",
   "items": [
     "ZNGFLADISD_DTD",
     "ZNGFLADISD_GLLD",
     "ZNGFLADISD_TNP",
-    "ZNGFLADISD_TSND",
     "ZNGFLISPLN_TSBY",
     "ZNGFWTBSEA_SUDB"
   ],
@@ -15,12 +14,11 @@
   "chunks": [
     {
       "file": "chunk_001.json",
-      "itemCount": 6,
+      "itemCount": 5,
       "items": [
         "ZNGFLADISD_DTD",
         "ZNGFLADISD_GLLD",
         "ZNGFLADISD_TNP",
-        "ZNGFLADISD_TSND",
         "ZNGFLISPLN_TSBY",
         "ZNGFWTBSEA_SUDB"
       ]

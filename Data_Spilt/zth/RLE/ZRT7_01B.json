@@ -7,6 +7,11 @@
   "direction": 3,
   "startplf": "溯东",
   "endplf": "快镇花机",
+  "Type": "Polyline",
+  "Class": "RLE",
+  "World": 0,
+  "CreateTime": "20251223",
+  "CreateBy": "639",
   "PLpoints": [
     [
       5465.5,
@@ -168,10 +173,5 @@
       69,
       6686.5
     ]
-  ],
-  "Type": "Polyline",
-  "Class": "RLE",
-  "World": 0,
-  "CreateTime": "20251223",
-  "CreateBy": "639"
+  ]
 }
