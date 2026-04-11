@@ -1,11 +1,11 @@
 {
   "push_cycle_summary": {
-    "split_written": 5,
+    "split_written": 9,
     "picture_written": 0,
     "picture_group_replaced": 0,
     "delete_applied": 2,
-    "merge_targets": 4,
-    "merge_outputs_written": 3,
+    "merge_targets": 5,
+    "merge_outputs_written": 4,
     "affected_worlds": [
       "zth"
     ],

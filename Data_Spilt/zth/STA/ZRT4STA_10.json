@@ -1,11 +1,7 @@
 {
   "ID": "ZRT4STA_10",
   "Name": "白霖站",
-  "STBuilding": [
-    {
-      "ID": "ZRTSTB_BL"
-    }
-  ],
+  "STBuilding": "ZRTSTB_BL",
   "platforms": [
     {
       "ID": "ZRT4PLF_10_D"

@@ -1,11 +1,7 @@
 {
   "ID": "ZRT7STA_06",
   "Name": "溯东站",
-  "STBuilding": [
-    {
-      "ID": "ZRTSTB_SUD"
-    }
-  ],
+  "STBuilding": "ZRTSTB_SUD",
   "platforms": [
     {
       "ID": "ZRT7PLF_06_D"

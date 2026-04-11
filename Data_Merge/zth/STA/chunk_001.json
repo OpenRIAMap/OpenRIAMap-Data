@@ -413,11 +413,7 @@
   {
     "ID": "ZRT1STA_13",
     "Name": "白霖站",
-    "STBuilding": [
-      {
-        "ID": "ZRTSTB_BL"
-      }
-    ],
+    "STBuilding": "ZRTSTB_BL",
     "platforms": [
       {
         "ID": "ZRT1PLF_13_D"
@@ -539,11 +535,7 @@
   {
     "ID": "ZRT1STA_19",
     "Name": "溯东站",
-    "STBuilding": [
-      {
-        "ID": "ZRTSTB_SUD"
-      }
-    ],
+    "STBuilding": "ZRTSTB_SUD",
     "platforms": [
       {
         "ID": "ZRT1PLF_19_D"
@@ -815,11 +807,7 @@
   {
     "ID": "ZRT4STA_10",
     "Name": "白霖站",
-    "STBuilding": [
-      {
-        "ID": "ZRTSTB_BL"
-      }
-    ],
+    "STBuilding": "ZRTSTB_BL",
     "platforms": [
       {
         "ID": "ZRT4PLF_10_D"
@@ -1217,11 +1205,7 @@
   {
     "ID": "ZRT7STA_06",
     "Name": "溯东站",
-    "STBuilding": [
-      {
-        "ID": "ZRTSTB_SUD"
-      }
-    ],
+    "STBuilding": "ZRTSTB_SUD",
     "platforms": [
       {
         "ID": "ZRT7PLF_06_D"
