@@ -1,102 +1,124 @@
-# RelayPackage 与新数据仓库规范（Phase 0 协议冻结版）
+# OpenRIAMap-Data
 
-> 版本：v1  
-> 状态：Phase 0 冻结协议  
-> 范围：仓库结构、RelayPackage 结构、INDEX / Delete 格式、图片命名、Merge 分片、校验规则、组件职责边界
-
----
-
-## 1. 目的
-
-本规范用于定义新数据仓库体系与 RelayPackage 工作流的冻结协议。
-
-它是以下部分共享的统一基线：
-
-- 正式数据仓库
-- RelayPackage
-- RelayPackage Refresh Component（包刷新组件）
-- Data_Merge_Tool
-- 前端图层管理 / 工作流导出逻辑
-
-本规范的目标是标准化：
-
-- 要素的 **新增 / 覆盖 / 删除**
-- 基于 **ID** 的要素与图片绑定关系
-- 基于包的传递、校验、入库与 Merge 重建流程
+> 当前工具版本：v5.7  
+> 当前状态：正式维护版数据仓库  
+> 适用范围：`Data_Spilt` / `Data_Merge` / `Picture` / `Data_Merge_Tool` / `RelayPackage` / 冷归档工作流
 
 ---
 
-## 2. 核心语义
+## 1. 仓库定位
 
-### 2.1 要素状态
+`OpenRIAMap-Data` 是 OpenRIAMap 的正式数据仓库，用于维护：
 
-系统中只允许存在三种操作状态：
+- `Data_Spilt`：单要素源数据层
+- `Data_Merge`：Web 侧读取层
+- `Picture`：按要素 ID 管理的图片资源层
+- `Data_Merge_Tool`：正式的数据维护、校验、重建、归档与推送工具
 
-- **新增**
-- **覆盖**
-- **删除**
-
-定义如下：
-
-- 一个新出现的要素 JSON = **新增**
-- 一个已有要素 JSON 被替换 = **覆盖**
-- 一个已有要素的图片集合被替换、增加或重排 = **覆盖**
-- 将一个已有要素 ID 从系统中移除 = **删除**
+当前仓库已经不是单纯的协议草案仓库，而是 **“协议已经落地、工具已正式参与维护流程”** 的运行版仓库。
 
 ---
 
-### 2.2 图片语义
-
-图片不作为独立业务对象处理。
-
-图片始终被视为：
-
-**从属于某个要素 ID 的附属资源**
-
-因此：
-
-- 图片更新不作为第四种操作类型
-- 所有图片更新统一并入要素的 **覆盖**
-
----
-
-### 2.3 主键
-
-要素的唯一主键为：
-
-- **ID**
-
-要素与图片之间的绑定关系仅依赖：
-
-- **ID**
-
----
-
-## 3. 正式仓库结构
-
-### 3.1 顶层仓库结构
+## 2. 顶层目录结构
 
 ```text
 /Data_Spilt
 /Data_Merge
 /Picture
 /Data_Merge_Tool
+/docs
+/README.md
 ```
 
-该顶层结构在正式仓库中冻结。
+### 2.1 目录职责
+
+#### `Data_Spilt`
+- 正式源数据层
+- 单要素单文件存储
+- 允许作为正式维护结果存在于仓库中
+- 是 `Data_Merge` 的唯一重建来源
+
+#### `Data_Merge`
+- Web 运行读取层
+- 以分片 `chunk_xxx.json` 形式存储
+- 只能由 `Data_Merge_Tool` 重建
+- 不应人工直接编辑
+
+#### `Picture`
+- 要素图片资源层
+- 图片始终附属于某个要素 ID
+- 与 `Data_Spilt` 的目录层级保持一致
+
+#### `Data_Merge_Tool`
+- 正式维护入口
+- 负责：
+  - 载入 JSON / 图片 / RelayPackage
+  - 预校验
+  - 写入 `Data_Spilt` / `Picture` / 删除结果
+  - 登记并提交 `Data_Merge` 重建
+  - 冷归档与 Git 推送
+
+#### `docs`
+- 补充说明与历史协议文档
+- 其中旧的 Phase 0 文档可作为语义来源参考
+- 当前仓库行为以本 README 与 Tool 实际实现为准
 
 ---
 
-### 3.2 Data_Spilt
+## 3. 核心语义
+
+### 3.1 三种正式操作
+
+系统中正式承认三种维护动作：
+
+- 新增
+- 覆盖
+- 删除
+
+含义如下：
+
+- 新出现的要素 JSON：新增
+- 已有要素 JSON 被替换：覆盖
+- 已有要素图片集合被整体替换或补充：覆盖
+- 已有要素 ID 从系统中移除：删除
+
+### 3.2 图片不是独立业务对象
+
+图片不作为独立业务类型单独管理。
+
+图片始终被视为：
+
+**某个要素 ID 的附属资源**
+
+因此：
+
+- 图片更新不被视为第四种操作类型
+- 图片更新统一并入要素覆盖语义
+
+### 3.3 主键与绑定关系
+
+唯一主键为：
+
+- `ID`
+
+要素与图片之间的绑定关系也仅依赖：
+
+- `ID`
+
+---
+
+## 4. 正式数据层结构规则
+
+### 4.1 `Data_Spilt`
 
 #### 用途
 - 源数据层
-- 人工可维护层
-- 单要素单文件存储层
+- 单要素单文件层
+- `Data_Merge` 的唯一重建来源
 
 #### 目录规则
 - 普通类：`world/class/id.json`
-- 特殊类（`ISG / ISL / ISP`）：`world/class/kind/id.json`
+- 特殊类（如 `ISG / ISL / ISP`）：`world/class/kind/id.json`
 
 #### 示例
 ```text
@@ -114,16 +136,16 @@ Data_Spilt/
 
 ---
 
-### 3.3 Data_Merge
+### 4.2 `Data_Merge`
 
 #### 用途
-- 网站运行读取层
-- 分片存储层
-- 由 Tool 自动生成的层
+- Web 端运行读取层
+- 分片缓存层
+- 由 Tool 自动生成
 
 #### 目录规则
 - 结构与 `Data_Spilt` 镜像一致
-- 数据文件采用固定长度分片：`chunk_xxx.json`
+- 数据文件命名为：`chunk_xxx.json`
 
 #### 示例
 ```text
@@ -141,20 +163,20 @@ Data_Merge/
 ```
 
 #### 强制规则
-- `Data_Merge` 不允许人工编辑
-- `Data_Merge` 只能由正式 Tool 重建
+- 不允许人工直接编辑 `Data_Merge`
+- `Data_Merge` 只能由 `Data_Merge_Tool` 重建并提交
 
 ---
 
-### 3.4 Picture
+### 4.3 `Picture`
 
 #### 用途
-- 要素附属图片资源层
+- 要素图片资源层
 
 #### 目录规则
 - 与 `Data_Spilt` 使用相同层级结构
 - 图片目录名 = 要素 ID
-- 图片文件名 = `ID_n.ext`
+- 图片文件名建议为：`ID_n.ext`
 
 #### 示例
 ```text
@@ -175,9 +197,9 @@ Picture/
 
 ---
 
-## 4. RelayPackage 结构
+## 5. RelayPackage 结构与定位
 
-### 4.1 RelayPackage 顶层结构
+### 5.1 顶层结构
 
 ```text
 RelayPackage/
@@ -187,532 +209,606 @@ RelayPackage/
   Picture/
 ```
 
-#### 强制规则
-- RelayPackage 中不得包含 `Data_Merge`
-- RelayPackage 只承载增量内容
-- RelayPackage 允许人工编辑，但最终是否合法以刷新组件 / Tool 校验结果为准
+### 5.2 语义
 
----
-
-### 4.2 RelayPackage 语义
-
-- `Data_Spilt/`：本次 **新增** 或 **覆盖** 的要素 JSON
-- `Picture/`：本次 **新增** 或 **覆盖** 的图片文件
-- `Delete.json`：待删除的要素 ID
+- `Data_Spilt/`：本次新增或覆盖的要素 JSON
+- `Picture/`：本次新增或覆盖的图片
+- `Delete.json`：待删除的要素 ID 列表
 - `INDEX.json`：包摘要与元信息
 
----
+### 5.3 强制规则
 
-## 5. INDEX 规范
-
-### 5.1 Data_Spilt 分类目录 INDEX
-
-#### 适用位置
-- `Data_Spilt/{world}/{class}/INDEX.json`
-- `Data_Spilt/{world}/{class}/{kind}/INDEX.json`
-
-#### 固定字段
-```json
-{
-  "version": 12,
-  "itemCount": 358,
-  "updatedAt": "2026-03-21T15:42:00+08:00",
-  "items": [
-    "RLE_0001",
-    "RLE_0002",
-    "RLE_0003"
-  ]
-}
-```
-
-#### 字段定义
-- `version`：该分类目录版本号
-- `itemCount`：该目录中要素总数
-- `updatedAt`：最近更新时间
-- `items`：该目录下全部要素 ID 列表
+- RelayPackage 中不得包含 `Data_Merge`
+- RelayPackage 只承载本次要传递的增量内容
+- 最终是否可入库，以 Tool 校验结果为准
 
 ---
 
-### 5.2 Data_Merge 分类目录 INDEX
+## 6. INDEX 与删除信息
 
-#### 适用位置
-- `Data_Merge/{world}/{class}/INDEX.json`
-- `Data_Merge/{world}/{class}/{kind}/INDEX.json`
+### 6.1 INDEX 的作用
 
-#### 固定字段
-```json
-{
-  "version": 12,
-  "itemCount": 358,
-  "updatedAt": "2026-03-21T15:42:00+08:00",
-  "items": [
-    "RLE_0001",
-    "RLE_0002"
-  ],
-  "chunkSize": 200,
-  "chunkCount": 2,
-  "chunks": [
-    {
-      "file": "chunk_001.json",
-      "itemCount": 200,
-      "items": [
-        "RLE_0001",
-        "RLE_0002"
-      ]
-    },
-    {
-      "file": "chunk_002.json",
-      "itemCount": 158,
-      "items": [
-        "RLE_0201",
-        "RLE_0202"
-      ]
-    }
-  ]
-}
-```
+`INDEX.json` 用于描述目录层统计与更新时间，主要用于：
 
-#### 字段定义
-- `version`
-- `itemCount`
-- `updatedAt`
-- `items`
-- `chunkSize`
-- `chunkCount`
-- `chunks`
+- 快速核对目录内容
+- 标记版本变化
+- 供工具或后续检查流程使用
 
-其中 `chunks` 的每个条目必须包含：
-- `file`
-- `itemCount`
-- `items`
+### 6.2 当前维护原则
+
+- 分类叶子目录会维护自己的 `INDEX.json`
+- world 层目录会维护自己的 `INDEX.json`
+- 根目录也会维护自己的 `INDEX.json`
+- `Data_Merge_Tool` 在正式写库后会同步更新受影响目录的索引
+
+### 6.3 删除信息
+
+删除通过 `Delete.json` 或会话中的删除 staging 表达。
+
+其语义是：
+
+- 删除某个 ID 对应的要素
+- 同时删除其关联图片目录
+- 后续重建 Merge 时，不再包含该要素
 
 ---
 
-### 5.3 Data_Spilt / Data_Merge 根目录 INDEX
-
-#### 适用位置
-- `Data_Spilt/INDEX.json`
-- `Data_Merge/INDEX.json`
-
-#### 固定字段
-```json
-{
-  "version": 7,
-  "updatedAt": "2026-03-21T15:42:00+08:00"
-}
-```
-
-#### 字段定义
-- `version`
-- `updatedAt`
-
-根 INDEX 不承载明细列表。
-
----
-
-### 5.4 Picture 分类目录 INDEX
-
-#### 适用位置
-- `Picture/{world}/{class}/INDEX.json`
-- `Picture/{world}/{class}/{kind}/INDEX.json`
-
-#### 固定字段
-```json
-{
-  "version": 12,
-  "itemCount": 120,
-  "updatedAt": "2026-03-21T15:42:00+08:00",
-  "mapping": {
-    "RLE_0001": [
-      "RLE_0001/RLE_0001_1.jpg",
-      "RLE_0001/RLE_0001_2.jpg"
-    ],
-    "RLE_0002": [
-      "RLE_0002/RLE_0002_1.png"
-    ]
-  }
-}
-```
-
-#### 字段定义
-- `version`
-- `itemCount`
-- `updatedAt`
-- `mapping`
-
-其中：
-- `itemCount` = 有图片记录的要素 ID 数量
-- `mapping` = `ID -> 图片相对路径列表`
-
----
-
-### 5.5 Picture 根目录 INDEX
-
-#### 适用位置
-- `Picture/INDEX.json`
-
-#### 固定字段
-```json
-{
-  "version": 7,
-  "updatedAt": "2026-03-21T15:42:00+08:00"
-}
-```
-
----
-
-### 5.6 RelayPackage INDEX
-
-#### 固定字段
-```json
-{
-  "version": 1,
-  "packageId": "PKG_20260321_1542_001",
-  "createdAt": "2026-03-21T15:42:00+08:00",
-  "operator": "Yiqi Zhu",
-  "splitFileCount": 12,
-  "pictureFileCount": 27,
-  "deleteCount": 3,
-  "toolVersion": "1.0",
-  "note": "zth RLE and STA update"
-}
-```
-
-#### 字段定义
-- `version`
-- `packageId`
-- `createdAt`
-- `operator`
-- `splitFileCount`
-- `pictureFileCount`
-- `deleteCount`
-- `toolVersion`
-- `note`
-
-说明：
-- `note` 为可选字段
-- 其余字段建议视为必填
-
----
-
-## 6. Delete 规范
-
-### 6.1 固定字段
-```json
-{
-  "markedAt": "2026-03-21T15:42:00+08:00",
-  "items": [
-    "RLE_0001",
-    "RLE_0002",
-    "STA_0103"
-  ]
-}
-```
-
-### 6.2 字段定义
-- `markedAt`：删除标记生成时间
-- `items`：待删除要素 ID 列表
-
-### 6.3 删除语义
-正式 Tool 执行删除时，必须：
-
-1. 删除 `Data_Spilt` 中对应 JSON
-2. 删除 `Picture` 中对应 ID 图片目录
-3. 重建受影响的 `Data_Merge`
-4. 更新受影响的 `INDEX` 文件
-
-删除策略冻结为：
-
-- **物理删除**
-
----
-
-## 7. 图片命名规则
-
-### 7.1 目录命名
-图片目录名必须为：
-
-- `ID`
-
-示例：
-```text
-RLE_0001/
-```
-
-### 7.2 文件命名
-图片文件名必须为：
-
-- `ID_n.ext`
-
-示例：
-```text
-RLE_0001_1.jpg
-RLE_0001_2.jpg
-```
-
-### 7.3 冻结规则
-- 不设置封面图概念
-- 图片顺序完全由 `_n` 表示
-- 前端上传时必须自动重命名
-- Tool / Refresh Component 按此规则校验
-
----
-
-## 8. Merge 分片规则
-
-### 8.1 分片策略
-- 分片长度为**固定全局值**
-- v1 不支持按类配置不同分片长度
-- v1 不支持直接对 chunk 内局部编辑
-- v1 以**受影响目录级**重建 `Data_Merge`
-
-### 8.2 分片文件名
-chunk 文件统一使用：
+## 7. Data_Merge_Tool 的目录结构
 
 ```text
-chunk_001.json
-chunk_002.json
+Data_Merge_Tool/
+  README.md
+  launch_tool.bat
+  bin/
+  config/
+  logs/
+  reports/
+  samples/
+  source_data/
+  web_schema/
+  workspace/
 ```
 
-### 8.3 分片元数据
-`Data_Merge/INDEX.json` 必须记录：
-- `chunkSize`
-- `chunkCount`
-- `chunks[].file`
-- `chunks[].itemCount`
-- `chunks[].items`
+### 7.1 关键子目录职责
 
----
+#### `bin/`
+工具主代码目录。`tool.py` 为主入口。
 
-## 9. 时间、排序与版本规则
+#### `config/`
+配置目录，包括运行配置和策略配置。
 
-### 9.1 时间格式
-所有时间戳字段统一使用：
-
-- **ISO 8601**
-- **UTC+8**
-- 建议精确到分钟或秒
-- 推荐格式：`2026-03-21T15:42:00+08:00`
-
-适用字段：
-- `updatedAt`
-- `createdAt`
-- `markedAt`
-
----
-
-### 9.2 稳定排序
-以下 `items` 列表建议以稳定的字符串升序写出：
-
-- `Data_Spilt INDEX.items`
-- `Data_Merge INDEX.items`
-- `Data_Merge INDEX.chunks[].items`
-- `Delete.json.items`
-
-冻结原则：
-- Tool 输出必须稳定
-- Refresh Component 输出必须稳定
-
----
-
-### 9.3 版本规则
-- Tool 每次成功写入一个受影响分类目录时，该目录 `version + 1`
-- Tool 每次成功写入一个根目录时，根目录 `version + 1`
-- Refresh Component 的重建不改变 `RelayPackage/INDEX.json.version` 的 schema 含义
-- `RelayPackage/INDEX.json.version` 表示**结构版本**，不是包内容修订号
-
----
-
-## 10. RelayPackage Refresh Component
-
-### 10.1 定位
-刷新组件只处理：
-
-- **当前 RelayPackage 本身**
-
-不得直接修改正式仓库。
-
----
-
-### 10.2 职责
-刷新组件必须：
-
-1. 扫描当前包内容
-2. 重建包级 `INDEX.json`
-3. 执行包内预校验
-4. 输出高可读报告
-5. 可选重新打包为 zip
-
----
-
-### 10.3 输入
-- 当前 RelayPackage 目录
-
-### 10.4 输出
-- 更新后的 `RelayPackage/INDEX.json`
-- `check_report.md`
-- 可选 `check_report.json`
-- 可选 zip 包
-
-### 10.5 部署原则
-冻结为：
-- 外部统一维护程序
-- 包内只可包含启动入口
-- 不将完整正式可执行程序复制进每个包
-
----
-
-## 11. 正式 Tool 边界
-
-### 11.1 正式 Tool 负责
-1. 读取包
-2. 预校验
-3. 应用新增 / 覆盖
-4. 执行删除
-5. 重建 Merge
-6. 更新 INDEX 文件
-7. 输出正式报告
-
-### 11.2 正式 Tool 不负责
-- 前端缓存管理
-- 手工编辑 UI 逻辑
-- 网站 UI 渲染
-- 包内图片排序交互
-
----
-
-## 12. 校验与冲突检测
-
-### 12.1 问题分级
-预校验问题冻结为两级：
-
-- **阻断型**
-- **警告型**
-
----
-
-### 12.2 阻断型问题
-默认必须阻止直接应用：
-
-- JSON 非法
-- 目录层级错误
-- 文件名与内部 ID 不一致
-- 图片文件名不符合 `ID_n`
-- 同一包内同 ID 冲突且无法判定
-- 缺失必需包文件
-
----
-
-### 12.3 警告型问题
-可以提示后允许继续：
-
-- 图片编号不连续
-- 覆盖已有要素
-- 覆盖已有图片
-- 删除目标不存在
-- 图片目录为空
-- 包内 INDEX 与实际文件不一致但可重建
-
----
-
-### 12.4 报告格式
-冻结的人类可读主报告为：
-
-- `check_report.md`
-
-可选附加输出：
-- `check_report.json`
-
----
-
-## 13. 前端导出职责边界
-
-### 13.1 前端职责
-前端图层管理 / 工作流端后续必须支持：
-
-- 新增 / 覆盖 JSON 的本地缓存
-- 图片本地缓存
-- 图片自动重命名为 `ID_n.ext`
-- 删除标记列表维护
-- 自动导出 RelayPackage
-- 自动生成 `RelayPackage/INDEX.json`
-- 自动生成 `Delete.json`
-
-### 13.2 前端不得直接处理
-- 正式仓库写入
-- 正式 Merge 重建
-- 正式 INDEX 重建
-
-这些职责冻结为 Tool 侧。
-
----
-
-## 14. Phase 0 完成标准
-
-当以下内容全部确认后，Phase 0 视为完成：
-
-1. 正式仓库顶层结构
-2. RelayPackage 结构
-3. 全部 INDEX schema
-4. Delete schema
-5. 图片命名规则
-6. Merge 分片规则
-7. Refresh Component 职责
-8. 正式 Tool 边界
-9. 校验问题分级
-10. 时间 / 排序 / 版本规则
-
----
-
-## 15. Phase 0 之后固定开发顺序
-
-协议冻结后，推荐顺序固定为：
-
-1. **Phase 1：建立新仓库骨架**
-2. **Phase 2：实现 Data_Merge_Tool**
-3. **Phase 3：实现 RelayPackage Refresh Component**
-4. **Phase 4：准备并测试样例包**
-5. **Phase 5：接入前端图层管理 / 工作流导出**
-
----
-
-## 16. 建议的最小示例布局
+#### `source_data/`
+运行期输入目录：
 
 ```text
-Data_Spilt/
-  INDEX.json
-  zth/
-    RLE/
-      INDEX.json
-      RLE_0001.json
+source_data/
+  json_inputs/
+  image_inputs/
+  relay_packages/
+```
 
-Data_Merge/
-  INDEX.json
-  zth/
-    RLE/
-      INDEX.json
-      chunk_001.json
+#### `reports/`
+报告目录，包括 `latest` 与归档报告。
 
-Picture/
-  INDEX.json
-  zth/
-    RLE/
-      INDEX.json
-      RLE_0001/
-        RLE_0001_1.jpg
+#### `logs/`
+运行日志目录。
 
-RelayPackage/
-  INDEX.json
-  Delete.json
-  Data_Spilt/
-  Picture/
+#### `workspace/`
+运行期临时目录，用于：
+
+- zip 解压
+- 临时包构造
+- 运行态缓存文件
+
+#### `web_schema/`
+Web schema 同步目录，包括 source 与 cache。
+
+---
+
+## 8. Tool 的两种正式载入模式
+
+当前工具支持两种正式输入模式。
+
+### 8.1 手动叠加模式
+
+命令：
+
+- `load-json` / `lj`
+- `load-image` / `li`
+
+特点：
+
+- 可多次执行
+- 内容叠加到当前 staging
+- 适合手动整理一批 JSON + 图片后再统一提交
+
+典型流程：
+
+```text
+lj all
+li all
+pv
+rp
+cm
+rb --all
+cm
+ps
 ```
 
 ---
 
-## 17. 备注
+### 8.2 package 独占模式
 
-- 本规范中继续使用 `Data_Spilt` 这一拼写，以保持与当前协议一致。
-- 如果未来仓库决定将 `Data_Spilt` 更名为 `Data_Split`，应视为一个独立的协议变更与迁移步骤，而不是在 Phase 0 内隐式调整。
+命令：
+
+- `load-package` / `lp`
+
+特点：
+
+- package 会独占当前 staging
+- staging 非空时不可执行 `lp`
+- 适合直接使用标准 RelayPackage 入库
+
+典型流程：
+
+```text
+lp package_20260411.zip
+pv
+rp
+cm
+rb --all
+cm
+ps
+```
 
 ---
+
+### 8.3 二者互斥规则
+
+- 当当前 staging 为 package 模式时，不允许再执行 `lj` / `li`
+- 当当前 staging 已有手动叠加内容时，不允许再执行 `lp`
+- 若要切换模式，应先 `commit` 或 `discard`
+
+---
+
+## 9. 完整数据维护流程
+
+当前正式维护流程如下。
+
+### 9.1 第一步：先做 Git 同步
+
+先在仓库根目录执行：
+
+```bash
+git pull --rebase origin main
+```
+
+这一步是 **Git 操作**，不是 Tool 内部命令。
+
+它的目的，是先把远端主线同步到本地，避免后续写库和推送时遇到远端提交冲突。
+
+---
+
+### 9.2 第二步：启动 Tool
+
+可通过以下任一方式启动：
+
+```bat
+launch_tool.bat
+```
+
+或：
+
+```bat
+Data_Merge_Tool\launch_tool.bat
+```
+
+或直接执行：
+
+```bat
+python Data_Merge_Tool\bin\tool.py
+```
+
+---
+
+### 9.3 第三步：载入数据
+
+二选一：
+
+#### 方式 A：手动叠加
+```text
+lj all
+li all
+```
+
+#### 方式 B：标准包独占
+```text
+lp xxx.zip
+```
+
+---
+
+### 9.4 第四步：检查 staging
+
+常用命令：
+
+- `pv`：查看当前 staging 摘要
+- `rp`：查看最近一次报告
+- `st`：查看当前会话状态
+
+---
+
+### 9.5 第五步：第一次 commit
+
+执行：
+
+```text
+cm
+```
+
+这一步会把 source staging 正式写入：
+
+- `Data_Spilt`
+- `Picture`
+- 删除结果
+
+并更新受影响目录的 `INDEX.json`。
+
+---
+
+### 9.6 第六步：登记 Merge 重建目标
+
+执行：
+
+```text
+rb --all
+```
+
+或指定目录：
+
+```text
+rb zth RLE
+rb zth ISG station
+```
+
+**注意：当前实现中，`rebuild` 只是登记待重建目标，并不会立即写入 `Data_Merge`。**
+
+---
+
+### 9.7 第七步：第二次 commit
+
+再次执行：
+
+```text
+cm
+```
+
+这一步才会真正把登记过的目标重建写入：
+
+- `Data_Merge`
+
+也就是说，当前正式语义是：
+
+```text
+source commit  ->  rebuild register  ->  merge commit
+```
+
+---
+
+### 9.8 第八步：推送
+
+根据需要选择：
+
+- `ps`：完整冷归档 + Data 仓库推送
+- `pc`：只做冷归档
+- `pd`：只做 Data 仓库推送
+
+---
+
+## 10. pull 与 push 的真实语义
+
+### 10.1 pull 会下载什么
+
+这里所说的 pull 是：
+
+```bash
+git pull --rebase origin main
+```
+
+它会下载并同步：
+
+- 远端 Data 仓库中已被 Git 跟踪的文件
+- 包括 `Data_Spilt`、`Data_Merge`、`Picture`
+- 包括 `Data_Merge_Tool` 的代码、配置与文档
+- 包括根 `README.md` 与 `docs`
+
+### 10.2 pull 不会下载什么
+
+不会自动下载：
+
+- `ColdToolArchive` Release 里的归档 zip
+- 本地未被 Git 跟踪的临时文件
+- workspace 运行期缓存
+
+### 10.3 push 的三种模式
+
+#### `push` / `ps`
+完整流程：
+
+1. 冷归档打包
+2. 上传到冷仓库 Release
+3. 清理本地运行期 source_data / workspace / 部分 latest 内容
+4. 生成 push log
+5. `git add` / `git commit`
+6. `git pull --rebase`
+7. `git push`
+
+#### `push-cold` / `pc`
+只执行：
+
+- 冷归档打包与上传
+- 本地运行期清理
+- push log 记录
+
+不执行：
+
+- Data 仓库 git 推送
+
+#### `push-data` / `pd`
+只执行：
+
+- Data 仓库提交与推送
+- push log 进入 Git 提交
+
+不执行：
+
+- 冷归档上传
+
+---
+
+## 11. 命令总览
+
+### 基础命令
+- `help` / `hp`：查看命令说明
+- `status` / `st`：查看当前会话状态
+- `preview` / `pv`：查看 staging 摘要
+- `report` / `rp`：查看最近一次报告
+- `check-env` / `ce`：检查运行环境
+- `exit` / `ex`：退出工具
+
+### 输入相关
+- `load-package` / `lp`
+- `load-json` / `lj`
+- `load-image` / `li`
+
+### 写库相关
+- `commit` / `cm`
+- `rebuild` / `rb`
+- `discard` / `dc`
+- `clear` / `cl`
+- `sync-web-schema` / `sw`
+
+### 推送相关
+- `push` / `ps`
+- `push-data` / `pd`
+- `push-cold` / `pc`
+
+### 新帮助模式
+当前版本支持：
+
+```text
+hp
+hp <command>
+hp all
+```
+
+例如：
+
+```text
+hp rebuild
+hp rb
+hp push
+hp lp
+```
+
+---
+
+## 12. rebuild / commit 的双阶段语义
+
+这是当前实现中最需要明确的一点。
+
+### 当前真实行为
+
+- `rebuild`：登记待重建目标
+- `commit`：真正写入 Merge
+
+### 不要误解为
+
+- `rebuild` 一执行就完成了 Merge 文件重建
+
+### 推荐理解方式
+
+把它理解为：
+
+- `rebuild`：把待重建目录加入任务列表
+- `commit`：执行这些重建任务并写入仓库
+
+---
+
+## 13. 报告、日志与冷归档
+
+### 13.1 报告
+
+报告主要存放在：
+
+- `Data_Merge_Tool/reports/latest`
+- `Data_Merge_Tool/reports/archive`
+
+常见报告包括：
+
+- 预校验报告
+- commit 报告
+- push 报告
+- 环境检查报告
+
+### 13.2 运行日志
+
+日志主要在：
+
+- `logs/session_*`
+- `logs/push`
+
+### 13.3 冷归档内容
+
+冷归档通常包含：
+
+- 当前 `source_data` 内容
+- 当前运行日志
+- 归档 manifest
+
+### 13.4 push log 的特殊性
+
+普通运行日志不一定进入 Data 仓库，但 push log 在当前实现中会被强制纳入 Git 提交，以便保留：
+
+- 本次推送摘要
+- 冷归档信息
+- 提交与推送记录
+
+这意味着：
+
+- 以后再次 `git pull` 时，已提交的 push log 也会被拉到本地
+
+---
+
+## 14. Web schema 同步
+
+当前 Tool 支持通过：
+
+```text
+sw
+```
+
+同步 Web schema 缓存。
+
+### 当前同步逻辑
+
+优先读取：
+
+- `Data_Merge_Tool/web_schema/source/data_tool_schema.json`
+
+若该文件不存在，再回退解析：
+
+- `featureFormats.ts`
+
+同步结果会更新：
+
+- `world_map.json`
+- `special_class_rules.json`
+- `feature_classes.json`
+- `workflow_kind_registry.json`
+
+这一步的作用，是让 Tool 的：
+
+- world 目录映射
+- 特殊类判断
+- feature class 识别
+
+与 Web 端保持同步。
+
+---
+
+## 15. 常见问题
+
+### Q1. 当前流程里有 `pull` 指令吗？
+没有。
+
+当前 `pull` 指的是 Git 命令：
+
+```bash
+git pull --rebase origin main
+```
+
+它不是 Tool 内部命令。
+
+---
+
+### Q2. 为什么 `rebuild` 后还要再 `commit` 一次？
+因为当前实现中：
+
+- `rebuild` 只登记目标
+- 真正写入 Merge 发生在后续 `commit`
+
+---
+
+### Q3. `lp` 和 `lj/li` 为什么不能混用？
+因为当前 staging 机制分为：
+
+- 手动叠加模式
+- package 独占模式
+
+二者互斥，避免来源混杂、覆盖语义不清。
+
+---
+
+### Q4. `push` 和 `push-data` 有什么区别？
+
+- `push`：冷归档 + Data 仓库推送
+- `push-data`：仅 Data 仓库推送
+
+---
+
+### Q5. pull 之后为什么拿不到冷归档 zip？
+因为冷归档 zip 在冷仓库 Release 中，不在当前 Data 仓库的 Git tree 里。
+
+---
+
+### Q6. 图片为什么按 ID 目录管理？
+因为图片不是独立业务对象，而是某个要素 ID 的附属资源。按 ID 分组最符合：
+
+- 覆盖语义
+- 删除语义
+- 包内整体替换语义
+
+---
+
+## 16. 当前版本说明
+
+### 16.1 当前版本口径
+
+- 当前 Tool 版本：`v5.7`
+- 当前 README 描述的是 **当前实现口径**，不是仅限 Phase 0 草案口径
+
+### 16.2 历史协议文档的地位
+
+`docs/` 中保留的旧协议文档仍然是重要的语义来源，但若其描述与当前工具行为存在差异，应以：
+
+1. 当前 Tool 实现
+2. 本 README 的当前流程描述
+
+为准。
+
+---
+
+## 17. 建议的日常使用顺序
+
+推荐维护顺序如下：
+
+```text
+git pull --rebase origin main
+启动 Tool
+载入数据（lj/li 或 lp）
+preview / report 检查
+commit
+rebuild
+commit
+push
+```
+
+若只想拆分执行，可使用：
+
+```text
+push-cold
+push-data
+```
+
+分别完成冷归档与 Data 仓库推送。

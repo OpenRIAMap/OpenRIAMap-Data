@@ -13,7 +13,14 @@ from pathlib import Path
 from typing import Any
 
 from archive_builder import build_zip, copy_tree_contents, prepare_archive_workspace, write_manifest
-from command_registry import ALIAS_TO_COMMAND, COMMAND_ALIASES, COMMAND_DESCRIPTIONS, VALID_COMMANDS
+from command_registry import (
+    ALIAS_TO_COMMAND,
+    COMMAND_ALIASES,
+    COMMAND_DESCRIPTIONS,
+    COMMAND_HELP_DETAILS,
+    VALID_COMMANDS,
+    resolve_command_name,
+)
 from env_check import run_env_checks
 from git_utils import (
     GitCommandError,
@@ -47,7 +54,7 @@ TOOL_CONFIG_PATH = CONFIG_DIR / "tool_config.json"
 POLICY_CONFIG_PATH = CONFIG_DIR / "policy_config.json"
 TZ_8 = timezone(timedelta(hours=8))
 INVALID_WINDOWS_CHARS = set('\\/:*?"<>|')
-TOOL_VERSION = "v5.6-step2"
+TOOL_VERSION = "v5.7"
 
 DEFAULT_RUNTIME = {
     "github": {
@@ -121,7 +128,7 @@ def merge_config(base: dict, override: dict) -> dict:
 
 
 class ToolShell(cmd.Cmd):
-    intro = "OpenRIAMap 数据维护工具 v5.5-step1\n输入 help 或 hp 查看命令说明。"
+    intro = f"OpenRIAMap 数据维护工具 {TOOL_VERSION}\n输入 help、hp、help <command> 或 hp <command> 查看命令说明。"
     prompt = "> "
 
     def __init__(self) -> None:
@@ -295,7 +302,7 @@ class ToolShell(cmd.Cmd):
             cmd_name = ALIAS_TO_COMMAND[cmd_name]
         if cmd_name in self.command_handlers:
             return self._dispatch_command(cmd_name, args, raw_command=line.strip())
-        print(f"未知指令：{line.strip()}。输入 help / hp 查看可用命令。")
+        print(f"未知指令：{line.strip()}。输入 help、hp 或 hp <command> 查看命令说明。")
 
     def onecmd(self, line: str):
         if not line.strip():
@@ -1824,13 +1831,92 @@ class ToolShell(cmd.Cmd):
         print("当前命令上下文已清空；当前 staging 与会话记录保持不变。")
         return {"summary": "已 clear command context"}
 
-    def do_help(self, arg):
+    def _resolve_help_topic(self, arg: str):
+        topic = (arg or "").strip()
+        if not topic:
+            return "overview", None
+        if topic in {"all", "--all"}:
+            return "all", None
+        cmd_name = resolve_command_name(topic)
+        if cmd_name:
+            return "command", cmd_name
+        return "unknown", topic
+
+    def _print_help_overview(self):
         print("可用命令：")
         for cmd_name in VALID_COMMANDS:
             desc = COMMAND_DESCRIPTIONS.get(cmd_name, "")
             print(f"  {cmd_name:<15} ({COMMAND_ALIASES[cmd_name]})  {desc}")
         print("说明：load-json/load-image 支持手动叠加 staging；load-package 为独占模式。")
-        return {"summary": "已显示 help"}
+        print("提示：输入 hp <command> 查看单命令详细说明；输入 hp all 查看全部详细帮助。")
+        print("补充：pull 为 Git 仓库操作，不是 Tool 内部命令。")
+
+    def _print_help_detail(self, cmd_name: str):
+        detail = COMMAND_HELP_DETAILS.get(cmd_name, {})
+        alias = COMMAND_ALIASES.get(cmd_name, "-")
+        print(f"命令：{cmd_name} ({alias})")
+        summary = detail.get("summary") or COMMAND_DESCRIPTIONS.get(cmd_name, "")
+        if summary:
+            print(f"说明：{summary}")
+
+        usage = detail.get("usage", [])
+        if usage:
+            print("\n可用写法：")
+            for item in usage:
+                syntax = item.get("syntax", "")
+                desc = item.get("desc", "")
+                if syntax:
+                    print(f"  {syntax}")
+                if desc:
+                    print(f"    {desc}")
+
+        arguments = detail.get("arguments", [])
+        if arguments:
+            print("\n参数说明：")
+            for item in arguments:
+                name = item.get("name", "")
+                desc = item.get("desc", "")
+                print(f"  {name}")
+                if desc:
+                    print(f"    {desc}")
+
+        notes = detail.get("notes", [])
+        if notes:
+            print("\n注意：")
+            for note in notes:
+                print(f"  - {note}")
+
+        examples = detail.get("examples", [])
+        if examples:
+            print("\n示例：")
+            for ex in examples:
+                print(f"  {ex}")
+
+        related = detail.get("related", [])
+        if related:
+            print("\n相关命令：")
+            items = []
+            for name in related:
+                alias_name = COMMAND_ALIASES.get(name)
+                items.append(f"{name} ({alias_name})" if alias_name else name)
+            print(f"  {', '.join(items)}")
+
+    def do_help(self, arg):
+        mode, payload = self._resolve_help_topic(arg)
+        if mode == "overview":
+            self._print_help_overview()
+            return {"summary": "已显示 help 总览"}
+        if mode == "all":
+            for index, cmd_name in enumerate(VALID_COMMANDS):
+                if index > 0:
+                    print("\n" + "-" * 64)
+                self._print_help_detail(cmd_name)
+            return {"summary": "已显示全部详细帮助"}
+        if mode == "command":
+            self._print_help_detail(payload)
+            return {"summary": f"已显示 {payload} 帮助"}
+        print(f"未知帮助主题：{payload}。输入 hp 查看命令总览。")
+        return {"summary": "未知帮助主题"}
 
     def do_exit(self, arg):
         if self.state.has_pending_changes():

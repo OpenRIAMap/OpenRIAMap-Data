@@ -1,11 +1,11 @@
 {
   "push_cycle_summary": {
-    "split_written": 2,
-    "picture_written": 1,
-    "picture_group_replaced": 1,
+    "split_written": 3,
+    "picture_written": 2,
+    "picture_group_replaced": 2,
     "delete_applied": 1,
-    "merge_targets": 2,
-    "merge_outputs_written": 2,
+    "merge_targets": 3,
+    "merge_outputs_written": 3,
     "affected_worlds": [
       "zth"
     ],
@@ -15,7 +15,8 @@
     ],
     "affected_kinds": [
       "NGF",
-      "ZBUD_TS_NDLIB.json"
+      "ZBUD_TS_NDLIB.json",
+      "NOM"
     ]
   },
   "dirty_merge_targets": [],

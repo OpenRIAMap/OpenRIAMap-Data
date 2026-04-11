@@ -1,45 +1,112 @@
-# Data_Merge_Tool v2（World 映射 / 冲突报告 / 进度提示版）
+# OpenRIAMap Data_Merge_Tool v5.7
 
-本版本基于 `Data_Merge_Tool_v2_realwrite_zh_autobind` 继续增强。
+本目录是 `OpenRIAMap-Data` 的正式工具子目录，用于完成：
 
-## 主要新增
+- JSON / 图片 / RelayPackage 载入
+- 预校验与报告输出
+- `Data_Spilt` / `Picture` / 删除结果写入
+- `Data_Merge` 重建登记与正式写入
+- 冷归档与 Data 仓库推送
 
-- 公共策略配置文件 `config/policy_config.json`
-- 本地 Web 规则目录 `web_schema/`
-- 写库目录通过 `world_map.json` 解析，不再直接把 `World` 数值当目录名
-- JSON 重复 ID 冲突详情增强
-- 统一终端分隔线与进度提示
-- `sync-web-schema` 命令
-- 新增文件均带中文注释，便于后续手动修改
+## 当前定位
+
+从本版本开始，**完整架构、维护流程与命令说明请以仓库根目录 `README.md` 为准**。  
+本文件只保留 Tool 目录层面的快速说明。
 
 ## 运行方式
 
 双击：
-- `launch_tool.bat`
+
+```bat
+launch_tool.bat
+```
 
 或命令行执行：
+
 ```bat
 python bin\tool.py
 ```
 
+## 当前命令帮助方式
 
-## 本次增量修复
+工具内支持：
 
-- 提交 Split / Picture / Merge 后，会同步更新对应 world 层级的 `INDEX.json`
-- world 层级 `INDEX.json` 格式为：
-
-```json
-{
-  "version": 1,
-  "updatedAt": "2026-03-26T22:12:18+08:00"
-}
+```text
+hp
+hp <command>
+hp all
 ```
 
+例如：
 
-## 本次增量修复
+```text
+hp rebuild
+hp rb
+hp push
+hp lp
+```
 
-- `load-package` 现在会跳过包内各级 `INDEX.json`，避免把索引文件误判成图片路径错误。
-- 标准包中的图片会按 `world + class + kind + id` 聚合成图片组，并以“整体覆盖”语义 staged。
-- `commit` 时，若包中明确包含某个 ID 的图片组，则会先删除旧图片目录，再按新包顺序整体重建。
-- `report` 在存在阻断问题时，会优先显示 `precheck_report.md`，避免被 `preview_report.md` 覆盖。
-- `sync-web-schema` 现在会优先读取 `web_schema/source/data_tool_schema.json`，缺失时再回退解析 `featureFormats.ts`。
+## 目录说明
+
+```text
+Data_Merge_Tool/
+  README.md
+  launch_tool.bat
+  bin/
+  config/
+  logs/
+  reports/
+  samples/
+  source_data/
+  web_schema/
+  workspace/
+```
+
+### `source_data/`
+运行期输入目录：
+
+```text
+source_data/
+  json_inputs/
+  image_inputs/
+  relay_packages/
+```
+
+### `reports/`
+输出预校验、commit、push 与环境检查报告。
+
+### `logs/`
+保存 session 日志与 push 日志。
+
+### `workspace/`
+保存 zip 解压、临时归档构造与运行态缓存。
+
+### `web_schema/`
+保存 Web schema source 与 cache，用于 world 映射和规则同步。
+
+## 当前维护流程摘要
+
+推荐顺序：
+
+```text
+lj / li 或 lp
+pv / rp / st
+cm
+rb --all
+cm
+ps
+```
+
+补充说明：
+
+- `rebuild` 当前只登记 Merge 目标
+- 真正写入 `Data_Merge` 发生在后续 `commit`
+- `pull` 是 Git 操作，不是 Tool 内部命令
+
+## 版本说明
+
+当前 Tool 版本统一为：
+
+- `v5.7`
+
+若根目录 README 与本文件存在描述重复，以根目录 `README.md` 为主。
