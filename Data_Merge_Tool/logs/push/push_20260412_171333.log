@@ -1,0 +1,16 @@
+==== OpenRIAMap Data Push Log ====
+Session-Id: S20260412-171311-001
+Created-At: 2026-04-12T17:13:33
+mode: full
+cold_archive: {"cold_repo": "OpenRIAMap/ColdToolArchive", "release_tag": "2026-04", "asset_name": "OpenRIAMap_DataTool_Archive_20260412_171328.zip", "asset_url": "https://github.com/OpenRIAMap/ColdToolArchive/releases/download/2026-04/OpenRIAMap_DataTool_Archive_20260412_171328.zip"}
+message: 数据仓库更新：新增/覆盖数据、重建 Merge、写入归档日志（2026-04-12 17:13）[Split 10 | Picture 0 | Delete 2 | Merge 5 | Archive 1]
+push_cycle_summary: {"split_written": 10, "picture_written": 0, "picture_group_replaced": 0, "delete_applied": 2, "merge_targets": 6, "merge_outputs_written": 5, "affected_worlds": ["zth"], "affected_classes": ["BUD", "ISG", "RLE", "STA"], "affected_kinds": ["NGF", "ZBUD_TS_XCG.json"]}
+before: {"total_files": 1275, "Data_Spilt": 973, "Data_Merge": 163, "Picture": 127, "Data_Merge_Tool\\logs\\push": 12}
+repo_head_before: cdb59d9a687b67bb1748c170e4074106daaf1ce0
+
+[Intent]
+This log is generated before git commit/pull/push and is intended to be committed together with this push operation.
+If the push workflow fails before a valid data push is formed, this log should be removed locally.
+
+Final-State: INTENDED_FOR_THIS_PUSH
+=================================
