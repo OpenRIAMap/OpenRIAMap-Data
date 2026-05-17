@@ -1,0 +1,54 @@
+{
+  "ID": "ZBUD_aunst_island_moderato_cafe",
+  "Name": "中板咖啡厅",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "Aunst",
+    "Pop": "Aunst"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260412",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260412",
+  "ModifityBy": "Aunst",
+  "Conpoints": [
+    [
+      -4415,
+      -63,
+      -7827
+    ],
+    [
+      -4415,
+      -63,
+      -7833
+    ],
+    [
+      -4414,
+      -63,
+      -7834
+    ],
+    [
+      -4414,
+      -63,
+      -7837
+    ],
+    [
+      -4404,
+      -63,
+      -7837
+    ],
+    [
+      -4404,
+      -63,
+      -7828
+    ],
+    [
+      -4405,
+      -63,
+      -7827
+    ]
+  ]
+}

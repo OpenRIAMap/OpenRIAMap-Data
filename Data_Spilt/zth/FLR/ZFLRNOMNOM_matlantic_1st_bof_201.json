@@ -1,0 +1,61 @@
+{
+  "ID": "ZFLRNOMNOM_matlantic_1st_bof_201",
+  "Name": "30266 201房",
+  "NofFloor": "3",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "BuildingID": "ZBUD_matlantic_1st_block_of_flats",
+  "tags": {
+    "nomenclator": "30266",
+    "Pop": "30266"
+  },
+  "Type": "Polygon",
+  "Class": "FLR",
+  "World": 0,
+  "CreateTime": "20260511",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260511",
+  "ModifityBy": "Aunst",
+  "Flrpoints": [
+    [
+      -5206,
+      -63,
+      -7909
+    ],
+    [
+      -5217,
+      -63,
+      -7909
+    ],
+    [
+      -5217,
+      -63,
+      -7915
+    ],
+    [
+      -5219,
+      -63,
+      -7915
+    ],
+    [
+      -5219,
+      -63,
+      -7920
+    ],
+    [
+      -5217,
+      -63,
+      -7920
+    ],
+    [
+      -5217,
+      -63,
+      -7926
+    ],
+    [
+      -5206,
+      -63,
+      -7926
+    ]
+  ]
+}

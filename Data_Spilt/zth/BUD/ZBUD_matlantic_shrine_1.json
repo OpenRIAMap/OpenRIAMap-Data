@@ -1,0 +1,39 @@
+{
+  "ID": "ZBUD_matlantic_shrine_1",
+  "Name": "抹兰神社",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "Miksa12138",
+    "Pop": "Miksa12138"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260514",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260514",
+  "ModifityBy": "Aunst",
+  "Conpoints": [
+    [
+      -5100,
+      -63,
+      -8058
+    ],
+    [
+      -5100,
+      -63,
+      -8041
+    ],
+    [
+      -5075,
+      -63,
+      -8041
+    ],
+    [
+      -5075,
+      -63,
+      -8058
+    ]
+  ]
+}

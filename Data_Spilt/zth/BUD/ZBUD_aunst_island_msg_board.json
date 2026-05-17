@@ -1,0 +1,38 @@
+{
+  "ID": "ZBUD_aunst_island_msg_board",
+  "Name": "留言板",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "Aunst",
+    "Land": "ZNGFLADISD_aunst_island",
+    "Pop": "Aunst"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260511",
+  "CreateBy": "Aunst",
+  "Conpoints": [
+    [
+      -4431,
+      -63,
+      -7865
+    ],
+    [
+      -4431,
+      -63,
+      -7851
+    ],
+    [
+      -4430,
+      -63,
+      -7851
+    ],
+    [
+      -4430,
+      -63,
+      -7865
+    ]
+  ]
+}

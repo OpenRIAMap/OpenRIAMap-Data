@@ -1,0 +1,57 @@
+{
+  "ID": "ZBUD_matlantic_fishing_cottage",
+  "Name": "渔屋",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "Potato_duang",
+    "Pop": "Potato_duang"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260514",
+  "CreateBy": "Aunst",
+  "Conpoints": [
+    [
+      -5149,
+      -63,
+      -8065
+    ],
+    [
+      -5149,
+      -63,
+      -8051
+    ],
+    [
+      -5130,
+      -63,
+      -8051
+    ],
+    [
+      -5130,
+      -63,
+      -8065
+    ],
+    [
+      -5137,
+      -63,
+      -8065
+    ],
+    [
+      -5137,
+      -63,
+      -8066
+    ],
+    [
+      -5142,
+      -63,
+      -8066
+    ],
+    [
+      -5142,
+      -63,
+      -8065
+    ]
+  ]
+}

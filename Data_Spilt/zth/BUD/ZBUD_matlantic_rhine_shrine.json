@@ -1,0 +1,37 @@
+{
+  "ID": "ZBUD_matlantic_rhine_shrine",
+  "Name": "莱茵神社",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "Moy_zake",
+    "Pop": "Moy_zake"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260514",
+  "CreateBy": "Aunst",
+  "Conpoints": [
+    [
+      -5125,
+      -63,
+      -8056
+    ],
+    [
+      -5102,
+      -63,
+      -8056
+    ],
+    [
+      -5102,
+      -63,
+      -8035
+    ],
+    [
+      -5125,
+      -63,
+      -8035
+    ]
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "ID": "ZFLRNOMNOM_matlantic_1st_bof_302",
+  "Name": "sunnyyang 302房",
+  "NofFloor": "4",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "BuildingID": "ZBUD_matlantic_1st_block_of_flats",
+  "tags": {
+    "nomenclator": "sunnyyang",
+    "Pop": "sunnyyang"
+  },
+  "Type": "Polygon",
+  "Class": "FLR",
+  "World": 0,
+  "CreateTime": "20260511",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260511",
+  "Flrpoints": [
+    [
+      -5206,
+      -63,
+      -7902
+    ],
+    [
+      -5206,
+      -63,
+      -7885
+    ],
+    [
+      -5217,
+      -63,
+      -7885
+    ],
+    [
+      -5217,
+      -63,
+      -7891
+    ],
+    [
+      -5219,
+      -63,
+      -7891
+    ],
+    [
+      -5219,
+      -63,
+      -7896
+    ],
+    [
+      -5217,
+      -63,
+      -7896
+    ],
+    [
+      -5217,
+      -63,
+      -7902
+    ]
+  ]
+}

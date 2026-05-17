@@ -1,0 +1,39 @@
+{
+  "ID": "ZBUD_matlantic_1st_block_of_flats",
+  "Name": "抹岚1号公寓",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "GHZCreeper",
+    "Pop": "GHZCreeper"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260511",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260511",
+  "ModifityBy": "Aunst",
+  "Conpoints": [
+    [
+      -5204,
+      -63,
+      -7883
+    ],
+    [
+      -5219,
+      -63,
+      -7883
+    ],
+    [
+      -5219,
+      -63,
+      -7928
+    ],
+    [
+      -5204,
+      -63,
+      -7928
+    ]
+  ]
+}

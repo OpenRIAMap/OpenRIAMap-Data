@@ -1,0 +1,38 @@
+{
+  "ID": "ZBUD_aunst_island_shrine_chouzuya",
+  "Name": "水手舍",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "Aunst",
+    "Land": "ZNGFLADISD_aunst_island",
+    "Pop": "Aunst"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260512",
+  "CreateBy": "Aunst",
+  "Conpoints": [
+    [
+      -4425,
+      -63,
+      -7834
+    ],
+    [
+      -4425,
+      -63,
+      -7829
+    ],
+    [
+      -4423,
+      -63,
+      -7829
+    ],
+    [
+      -4423,
+      -63,
+      -7834
+    ]
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "ID": "ZBUD_matlantic_sandou_park",
+  "Name": "参道公园",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "30266"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260514",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260514",
+  "ModifityBy": "Aunst",
+  "Conpoints": [
+    [
+      -5090,
+      -63,
+      -8036
+    ],
+    [
+      -5090,
+      -63,
+      -8009
+    ],
+    [
+      -5063,
+      -63,
+      -8009
+    ],
+    [
+      -5063,
+      -63,
+      -8035
+    ],
+    [
+      -5072,
+      -63,
+      -8035
+    ],
+    [
+      -5072,
+      -63,
+      -8036
+    ]
+  ]
+}

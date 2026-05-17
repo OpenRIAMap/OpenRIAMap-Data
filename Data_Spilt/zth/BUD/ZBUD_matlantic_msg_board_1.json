@@ -1,0 +1,37 @@
+{
+  "ID": "ZBUD_matlantic_msg_board_1",
+  "Name": "留言板",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "GHZCreeper",
+    "Pop": "GHZCreeper"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260514",
+  "CreateBy": "Aunst",
+  "Conpoints": [
+    [
+      -5075,
+      -63,
+      -8040
+    ],
+    [
+      -5075,
+      -63,
+      -8041
+    ],
+    [
+      -5097,
+      -63,
+      -8041
+    ],
+    [
+      -5097,
+      -63,
+      -8040
+    ]
+  ]
+}

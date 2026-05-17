@@ -1,0 +1,37 @@
+{
+  "ID": "ZBUD_matlantic_stage_warehouse",
+  "Name": "抹岚仓库",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "GHZCreeper",
+    "Pop": "GHZCreeper"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260514",
+  "CreateBy": "Aunst",
+  "Conpoints": [
+    [
+      -5125,
+      -63,
+      -8027
+    ],
+    [
+      -5125,
+      -63,
+      -8052
+    ],
+    [
+      -5156,
+      -63,
+      -8052
+    ],
+    [
+      -5156,
+      -63,
+      -8027
+    ]
+  ]
+}

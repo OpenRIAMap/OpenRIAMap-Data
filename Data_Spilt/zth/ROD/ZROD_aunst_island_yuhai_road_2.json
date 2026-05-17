@@ -1,0 +1,47 @@
+{
+  "ID": "ZROD_aunst_island_yuhai_road_2",
+  "Name": "玉海路/玉海地下街",
+  "Kind": "NOM",
+  "Level": -1,
+  "Oneway": false,
+  "Enter": true,
+  "Exit": true,
+  "SelfJunction": false,
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260412",
+  "CreateBy": "Aunst",
+  "Linepoints": [
+    [
+      -4427,
+      -64,
+      -7839
+    ],
+    [
+      -4390,
+      53,
+      -7839
+    ],
+    [
+      -4380,
+      53,
+      -7837
+    ],
+    [
+      -4369,
+      53,
+      -7822
+    ],
+    [
+      -4368,
+      53,
+      -7817
+    ],
+    [
+      -4368,
+      -64,
+      -7774
+    ]
+  ]
+}

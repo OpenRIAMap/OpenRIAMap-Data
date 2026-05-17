@@ -1,0 +1,37 @@
+{
+  "ID": "ZBUD_aunst_island_farmhouse",
+  "Name": "农舍",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "Aunst",
+    "Pop": "Aunst"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260413",
+  "CreateBy": "Aunst",
+  "Conpoints": [
+    [
+      -4350,
+      -63,
+      -7801
+    ],
+    [
+      -4350,
+      -63,
+      -7795
+    ],
+    [
+      -4341,
+      -63,
+      -7795
+    ],
+    [
+      -4341,
+      -63,
+      -7801
+    ]
+  ]
+}

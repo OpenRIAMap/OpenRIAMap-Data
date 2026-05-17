@@ -1,0 +1,38 @@
+{
+  "ID": "ZBUD_aunst_island_shrine_torii",
+  "Name": "鸟居",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "Aunst",
+    "Land": "ZNGFLADISD_aunst_island",
+    "Pop": "Aunst"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260511",
+  "CreateBy": "Aunst",
+  "Conpoints": [
+    [
+      -4443,
+      -63,
+      -7835
+    ],
+    [
+      -4443,
+      -63,
+      -7834
+    ],
+    [
+      -4434,
+      -63,
+      -7834
+    ],
+    [
+      -4434,
+      -63,
+      -7835
+    ]
+  ]
+}

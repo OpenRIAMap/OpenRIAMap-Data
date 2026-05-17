@@ -197,5 +197,1507 @@
     "World": 0,
     "CreateTime": "20251231",
     "CreateBy": "639"
+  },
+  {
+    "ID": "ZBUD_aunst_island_aunst_acacia_house",
+    "Name": "Aunst的金合欢屋",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Pop": "A_lavender; Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260412",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -4420,
+        -63,
+        -7872
+      ],
+      [
+        -4423,
+        -63,
+        -7870
+      ],
+      [
+        -4427,
+        -63,
+        -7870
+      ],
+      [
+        -4427,
+        -63,
+        -7867
+      ],
+      [
+        -4429,
+        -63,
+        -7865
+      ],
+      [
+        -4429,
+        -63,
+        -7862
+      ],
+      [
+        -4428,
+        -63,
+        -7861
+      ],
+      [
+        -4428,
+        -63,
+        -7849
+      ],
+      [
+        -4422,
+        -63,
+        -7849
+      ],
+      [
+        -4415,
+        -63,
+        -7846
+      ],
+      [
+        -4411,
+        -63,
+        -7846
+      ],
+      [
+        -4409,
+        -63,
+        -7849
+      ],
+      [
+        -4411,
+        -63,
+        -7859
+      ],
+      [
+        -4411,
+        -63,
+        -7862
+      ],
+      [
+        -4410,
+        -63,
+        -7863
+      ],
+      [
+        -4407,
+        -63,
+        -7863
+      ],
+      [
+        -4407,
+        -63,
+        -7866
+      ],
+      [
+        -4411,
+        -63,
+        -7866
+      ],
+      [
+        -4411,
+        -63,
+        -7868
+      ],
+      [
+        -4416,
+        -63,
+        -7872
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_aunst_birch_house",
+    "Name": "Aunst的白桦屋",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260412",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -4422,
+        -63,
+        -7935
+      ],
+      [
+        -4422,
+        -63,
+        -7929
+      ],
+      [
+        -4417,
+        -63,
+        -7929
+      ],
+      [
+        -4417,
+        -63,
+        -7927
+      ],
+      [
+        -4411,
+        -63,
+        -7927
+      ],
+      [
+        -4411,
+        -63,
+        -7935
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_farmhouse",
+    "Name": "农舍",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260413",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -4350,
+        -63,
+        -7801
+      ],
+      [
+        -4350,
+        -63,
+        -7795
+      ],
+      [
+        -4341,
+        -63,
+        -7795
+      ],
+      [
+        -4341,
+        -63,
+        -7801
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_library",
+    "Name": "金岛图书馆",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Land": "ZNGFLADISD_aunst_island",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260511",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -4353,
+        -63,
+        -7800
+      ],
+      [
+        -4351,
+        -63,
+        -7800
+      ],
+      [
+        -4349,
+        -63,
+        -7798
+      ],
+      [
+        -4347,
+        -63,
+        -7795
+      ],
+      [
+        -4360,
+        -63,
+        -7790
+      ],
+      [
+        -4360,
+        -63,
+        -7786
+      ],
+      [
+        -4363,
+        53,
+        -7785
+      ],
+      [
+        -4363,
+        55,
+        -7774
+      ],
+      [
+        -4365,
+        55,
+        -7770
+      ],
+      [
+        -4370,
+        55,
+        -7768
+      ],
+      [
+        -4379,
+        55,
+        -7767
+      ],
+      [
+        -4379,
+        55,
+        -7773
+      ],
+      [
+        -4375,
+        55,
+        -7777
+      ],
+      [
+        -4373,
+        55,
+        -7780
+      ],
+      [
+        -4374,
+        55,
+        -7783
+      ],
+      [
+        -4378,
+        55,
+        -7786
+      ],
+      [
+        -4374,
+        -63,
+        -7791
+      ],
+      [
+        -4370,
+        -63,
+        -7788
+      ],
+      [
+        -4365,
+        -63,
+        -7788
+      ],
+      [
+        -4365,
+        -63,
+        -7795
+      ],
+      [
+        -4354,
+        -63,
+        -7796
+      ],
+      [
+        -4353,
+        -63,
+        -7797
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_mine",
+    "Name": "矿井",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260412",
+    "CreateBy": "Aunst",
+    "ModifityTime": "20260511",
+    "ModifityBy": "Aunst",
+    "Conpoints": [
+      [
+        -4409,
+        -63,
+        -7957
+      ],
+      [
+        -4409,
+        -63,
+        -7949
+      ],
+      [
+        -4401,
+        -63,
+        -7949
+      ],
+      [
+        -4401,
+        -63,
+        -7957
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_moderato_cafe",
+    "Name": "中板咖啡厅",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260412",
+    "CreateBy": "Aunst",
+    "ModifityTime": "20260412",
+    "ModifityBy": "Aunst",
+    "Conpoints": [
+      [
+        -4415,
+        -63,
+        -7827
+      ],
+      [
+        -4415,
+        -63,
+        -7833
+      ],
+      [
+        -4414,
+        -63,
+        -7834
+      ],
+      [
+        -4414,
+        -63,
+        -7837
+      ],
+      [
+        -4404,
+        -63,
+        -7837
+      ],
+      [
+        -4404,
+        -63,
+        -7828
+      ],
+      [
+        -4405,
+        -63,
+        -7827
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_msg_board",
+    "Name": "留言板",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Land": "ZNGFLADISD_aunst_island",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260511",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -4431,
+        -63,
+        -7865
+      ],
+      [
+        -4431,
+        -63,
+        -7851
+      ],
+      [
+        -4430,
+        -63,
+        -7851
+      ],
+      [
+        -4430,
+        -63,
+        -7865
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_observatory",
+    "Name": "金岛天文台",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260412",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -4377,
+        0,
+        -7788
+      ],
+      [
+        -4376.1,
+        0,
+        -7791.9
+      ],
+      [
+        -4373.6,
+        0,
+        -7795
+      ],
+      [
+        -4370,
+        0,
+        -7796.8
+      ],
+      [
+        -4366,
+        0,
+        -7796.8
+      ],
+      [
+        -4362.4,
+        0,
+        -7795
+      ],
+      [
+        -4359.9,
+        0,
+        -7791.9
+      ],
+      [
+        -4359,
+        0,
+        -7788
+      ],
+      [
+        -4359.9,
+        0,
+        -7784.1
+      ],
+      [
+        -4362.4,
+        0,
+        -7781
+      ],
+      [
+        -4366,
+        0,
+        -7779.2
+      ],
+      [
+        -4370,
+        0,
+        -7779.2
+      ],
+      [
+        -4373.6,
+        0,
+        -7781
+      ],
+      [
+        -4376.1,
+        0,
+        -7784.1
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_rest_point_under_station",
+    "Name": "站下休息处",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Land": "ZNGFLADISD_aunst_island",
+      "Pop": "xiaonier"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260513",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -4384,
+        -63,
+        -7834
+      ],
+      [
+        -4389,
+        -63,
+        -7834
+      ],
+      [
+        -4389,
+        -63,
+        -7830
+      ],
+      [
+        -4384,
+        -63,
+        -7830
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_shrine",
+    "Name": "金岛神社",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260412",
+    "CreateBy": "Aunst",
+    "ModifityTime": "20260412",
+    "ModifityBy": "Aunst",
+    "Conpoints": [
+      [
+        -4443,
+        -63,
+        -7835
+      ],
+      [
+        -4444,
+        -63,
+        -7835
+      ],
+      [
+        -4444,
+        -63,
+        -7832
+      ],
+      [
+        -4445,
+        -63,
+        -7831
+      ],
+      [
+        -4445,
+        -63,
+        -7818
+      ],
+      [
+        -4442,
+        -63,
+        -7815
+      ],
+      [
+        -4442,
+        -63,
+        -7811
+      ],
+      [
+        -4440,
+        -63,
+        -7809
+      ],
+      [
+        -4428,
+        -63,
+        -7809
+      ],
+      [
+        -4426,
+        -63,
+        -7807
+      ],
+      [
+        -4416,
+        -63,
+        -7802
+      ],
+      [
+        -4412,
+        -63,
+        -7802
+      ],
+      [
+        -4408,
+        -63,
+        -7798
+      ],
+      [
+        -4407,
+        -63,
+        -7798
+      ],
+      [
+        -4407,
+        -63,
+        -7820
+      ],
+      [
+        -4409,
+        -63,
+        -7821
+      ],
+      [
+        -4411,
+        -63,
+        -7824
+      ],
+      [
+        -4416,
+        -63,
+        -7824
+      ],
+      [
+        -4417,
+        -63,
+        -7825
+      ],
+      [
+        -4420,
+        -63,
+        -7829
+      ],
+      [
+        -4422,
+        -63,
+        -7829
+      ],
+      [
+        -4422,
+        -63,
+        -7834
+      ],
+      [
+        -4425,
+        -63,
+        -7835
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_shrine_chouzuya",
+    "Name": "水手舍",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Land": "ZNGFLADISD_aunst_island",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260512",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -4425,
+        -63,
+        -7834
+      ],
+      [
+        -4425,
+        -63,
+        -7829
+      ],
+      [
+        -4423,
+        -63,
+        -7829
+      ],
+      [
+        -4423,
+        -63,
+        -7834
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_shrine_emakake",
+    "Name": "绘马挂",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Land": "ZNGFLADISD_aunst_island",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260512",
+    "CreateBy": "Aunst",
+    "ModifityTime": "20260512",
+    "ModifityBy": "Aunst",
+    "Conpoints": [
+      [
+        -4426,
+        -63,
+        -7827
+      ],
+      [
+        -4426,
+        -63,
+        -7826
+      ],
+      [
+        -4431,
+        -63,
+        -7826
+      ],
+      [
+        -4431,
+        -63,
+        -7827
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_shrine_shinden",
+    "Name": "神殿",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Land": "ZNGFLADISD_aunst_island",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260511",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -4441,
+        -63,
+        -7825
+      ],
+      [
+        -4441,
+        -63,
+        -7820
+      ],
+      [
+        -4436,
+        -63,
+        -7820
+      ],
+      [
+        -4436,
+        -63,
+        -7825
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_aunst_island_shrine_torii",
+    "Name": "鸟居",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Aunst",
+      "Land": "ZNGFLADISD_aunst_island",
+      "Pop": "Aunst"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260511",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -4443,
+        -63,
+        -7835
+      ],
+      [
+        -4443,
+        -63,
+        -7834
+      ],
+      [
+        -4434,
+        -63,
+        -7834
+      ],
+      [
+        -4434,
+        -63,
+        -7835
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_matlantic_1st_block_of_flats",
+    "Name": "抹岚1号公寓",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "GHZCreeper",
+      "Pop": "GHZCreeper"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260511",
+    "CreateBy": "Aunst",
+    "ModifityTime": "20260511",
+    "ModifityBy": "Aunst",
+    "Conpoints": [
+      [
+        -5204,
+        -63,
+        -7883
+      ],
+      [
+        -5219,
+        -63,
+        -7883
+      ],
+      [
+        -5219,
+        -63,
+        -7928
+      ],
+      [
+        -5204,
+        -63,
+        -7928
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_matlantic_dove_building",
+    "Name": "鸽子楼",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "GHZCreeper",
+      "Pop": "GHZCreeper; WZHSlime; EnderJam_SKQ; Aunst; tong_24"
+    },
+    "extensions": {
+      "character": {
+        "brief": "鸽子楼是抹岚留存至今的，历史最久的建筑。鸽子楼可能在2021年1月12日建设了第1到第3层，也许在3月建设了第4层，2022年建设了第5层。"
+      }
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260514",
+    "CreateBy": "Aunst",
+    "ModifityTime": "20260515",
+    "ModifityBy": "Aunst",
+    "Conpoints": [
+      [
+        -5083,
+        -63,
+        -7996
+      ],
+      [
+        -5089,
+        -63,
+        -7996
+      ],
+      [
+        -5092,
+        -63,
+        -7995
+      ],
+      [
+        -5092,
+        -63,
+        -7990
+      ],
+      [
+        -5095,
+        -63,
+        -7990
+      ],
+      [
+        -5095,
+        -63,
+        -7987
+      ],
+      [
+        -5092,
+        -63,
+        -7987
+      ],
+      [
+        -5091,
+        -63,
+        -7986
+      ],
+      [
+        -5083,
+        -63,
+        -7986
+      ],
+      [
+        -5082,
+        -63,
+        -7989
+      ],
+      [
+        -5082,
+        -63,
+        -7994
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_matlantic_fishing_cottage",
+    "Name": "渔屋",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Potato_duang",
+      "Pop": "Potato_duang"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260514",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -5149,
+        -63,
+        -8065
+      ],
+      [
+        -5149,
+        -63,
+        -8051
+      ],
+      [
+        -5130,
+        -63,
+        -8051
+      ],
+      [
+        -5130,
+        -63,
+        -8065
+      ],
+      [
+        -5137,
+        -63,
+        -8065
+      ],
+      [
+        -5137,
+        -63,
+        -8066
+      ],
+      [
+        -5142,
+        -63,
+        -8066
+      ],
+      [
+        -5142,
+        -63,
+        -8065
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_matlantic_market",
+    "Name": "集市",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "GHZCreeper",
+      "Pop": "GHZCreeper; Potato_duang"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260514",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -5116,
+        0,
+        -7935
+      ],
+      [
+        -5128,
+        0,
+        -7935
+      ],
+      [
+        -5128,
+        0,
+        -7981
+      ],
+      [
+        -5118,
+        0,
+        -7981
+      ],
+      [
+        -5113,
+        0,
+        -7986
+      ],
+      [
+        -5113,
+        0,
+        -7990
+      ],
+      [
+        -5118,
+        0,
+        -7990
+      ],
+      [
+        -5118,
+        0,
+        -8005
+      ],
+      [
+        -5135,
+        0,
+        -8005
+      ],
+      [
+        -5135,
+        0,
+        -8007
+      ],
+      [
+        -5142,
+        0,
+        -8007
+      ],
+      [
+        -5142,
+        0,
+        -8016
+      ],
+      [
+        -5140,
+        0,
+        -8016
+      ],
+      [
+        -5140,
+        0,
+        -8019
+      ],
+      [
+        -5121,
+        0,
+        -8019
+      ],
+      [
+        -5119,
+        0,
+        -8022
+      ],
+      [
+        -5114,
+        0,
+        -8024
+      ],
+      [
+        -5094,
+        0,
+        -8024
+      ],
+      [
+        -5094,
+        0,
+        -8003
+      ],
+      [
+        -5097,
+        0,
+        -8003
+      ],
+      [
+        -5097,
+        0,
+        -7988
+      ],
+      [
+        -5094,
+        0,
+        -7988
+      ],
+      [
+        -5093,
+        0,
+        -7987
+      ],
+      [
+        -5087,
+        0,
+        -7987
+      ],
+      [
+        -5087,
+        0,
+        -7985
+      ],
+      [
+        -5094,
+        0,
+        -7980
+      ],
+      [
+        -5095,
+        0,
+        -7976
+      ],
+      [
+        -5095,
+        0,
+        -7969
+      ],
+      [
+        -5098,
+        0,
+        -7969
+      ],
+      [
+        -5098,
+        0,
+        -7965
+      ],
+      [
+        -5097,
+        0,
+        -7964
+      ],
+      [
+        -5097,
+        0,
+        -7951
+      ],
+      [
+        -5099,
+        0,
+        -7949
+      ],
+      [
+        -5102,
+        0,
+        -7948
+      ],
+      [
+        -5106,
+        0,
+        -7948
+      ],
+      [
+        -5111,
+        0,
+        -7944
+      ],
+      [
+        -5113,
+        0,
+        -7941
+      ],
+      [
+        -5116,
+        0,
+        -7941
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_matlantic_msg_board_1",
+    "Name": "留言板",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "GHZCreeper",
+      "Pop": "GHZCreeper"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260514",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -5075,
+        -63,
+        -8040
+      ],
+      [
+        -5075,
+        -63,
+        -8041
+      ],
+      [
+        -5097,
+        -63,
+        -8041
+      ],
+      [
+        -5097,
+        -63,
+        -8040
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_matlantic_rhine_shrine",
+    "Name": "莱茵神社",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Moy_zake",
+      "Pop": "Moy_zake"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260514",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -5125,
+        -63,
+        -8056
+      ],
+      [
+        -5102,
+        -63,
+        -8056
+      ],
+      [
+        -5102,
+        -63,
+        -8035
+      ],
+      [
+        -5125,
+        -63,
+        -8035
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_matlantic_sandou_park",
+    "Name": "参道公园",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "30266"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260514",
+    "CreateBy": "Aunst",
+    "ModifityTime": "20260514",
+    "ModifityBy": "Aunst",
+    "Conpoints": [
+      [
+        -5090,
+        -63,
+        -8036
+      ],
+      [
+        -5090,
+        -63,
+        -8009
+      ],
+      [
+        -5063,
+        -63,
+        -8009
+      ],
+      [
+        -5063,
+        -63,
+        -8035
+      ],
+      [
+        -5072,
+        -63,
+        -8035
+      ],
+      [
+        -5072,
+        -63,
+        -8036
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_matlantic_shrine_1",
+    "Name": "抹兰神社",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "Miksa12138",
+      "Pop": "Miksa12138"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260514",
+    "CreateBy": "Aunst",
+    "ModifityTime": "20260514",
+    "ModifityBy": "Aunst",
+    "Conpoints": [
+      [
+        -5100,
+        -63,
+        -8058
+      ],
+      [
+        -5100,
+        -63,
+        -8041
+      ],
+      [
+        -5075,
+        -63,
+        -8041
+      ],
+      [
+        -5075,
+        -63,
+        -8058
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_matlantic_stage_warehouse",
+    "Name": "抹岚仓库",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "GHZCreeper",
+      "Pop": "GHZCreeper"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260514",
+    "CreateBy": "Aunst",
+    "Conpoints": [
+      [
+        -5125,
+        -63,
+        -8027
+      ],
+      [
+        -5125,
+        -63,
+        -8052
+      ],
+      [
+        -5156,
+        -63,
+        -8052
+      ],
+      [
+        -5156,
+        -63,
+        -8027
+      ]
+    ]
+  },
+  {
+    "ID": "ZBUD_matlantic_xinghuo_stamp_library",
+    "Name": "红色公益书屋",
+    "Kind": "NOM",
+    "SKind": "NOM",
+    "tags": {
+      "nomenclator": "GHZCreepe",
+      "Pop": "GHZCreeper"
+    },
+    "Type": "Polygon",
+    "Class": "BUD",
+    "World": 0,
+    "CreateTime": "20260514",
+    "CreateBy": "Aunst",
+    "ModifityTime": "20260515",
+    "ModifityBy": "Aunst",
+    "Conpoints": [
+      [
+        -5157,
+        -63,
+        -8027
+      ],
+      [
+        -5157,
+        -63,
+        -8042
+      ],
+      [
+        -5169,
+        -63,
+        -8042
+      ],
+      [
+        -5169,
+        -63,
+        -8036
+      ],
+      [
+        -5175,
+        -63,
+        -8036
+      ],
+      [
+        -5175,
+        -63,
+        -8027
+      ]
+    ]
   }
 ]

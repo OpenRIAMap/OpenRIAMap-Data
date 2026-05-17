@@ -1,0 +1,41 @@
+{
+  "ID": "ZFLRNOMNOM_matlantic_1st_bof_sare",
+  "Name": "Sare家",
+  "NofFloor": "1",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "BuildingID": "ZBUD_matlantic_1st_block_of_flats",
+  "tags": {
+    "nomenclator": "Sare",
+    "Pop": "Sare"
+  },
+  "Type": "Polygon",
+  "Class": "FLR",
+  "World": 0,
+  "CreateTime": "20260511",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260511",
+  "ModifityBy": "Aunst",
+  "Flrpoints": [
+    [
+      -5218,
+      -63,
+      -7903
+    ],
+    [
+      -5218,
+      -63,
+      -7908
+    ],
+    [
+      -5210,
+      -63,
+      -7908
+    ],
+    [
+      -5210,
+      -63,
+      -7903
+    ]
+  ]
+}

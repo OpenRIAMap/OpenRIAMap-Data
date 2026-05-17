@@ -1,0 +1,79 @@
+{
+  "ID": "ZBUD_matlantic_dove_building",
+  "Name": "鸽子楼",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "GHZCreeper",
+    "Pop": "GHZCreeper; WZHSlime; EnderJam_SKQ; Aunst; tong_24"
+  },
+  "extensions": {
+    "character": {
+      "brief": "鸽子楼是抹岚留存至今的，历史最久的建筑。鸽子楼可能在2021年1月12日建设了第1到第3层，也许在3月建设了第4层，2022年建设了第5层。"
+    }
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260514",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260515",
+  "ModifityBy": "Aunst",
+  "Conpoints": [
+    [
+      -5083,
+      -63,
+      -7996
+    ],
+    [
+      -5089,
+      -63,
+      -7996
+    ],
+    [
+      -5092,
+      -63,
+      -7995
+    ],
+    [
+      -5092,
+      -63,
+      -7990
+    ],
+    [
+      -5095,
+      -63,
+      -7990
+    ],
+    [
+      -5095,
+      -63,
+      -7987
+    ],
+    [
+      -5092,
+      -63,
+      -7987
+    ],
+    [
+      -5091,
+      -63,
+      -7986
+    ],
+    [
+      -5083,
+      -63,
+      -7986
+    ],
+    [
+      -5082,
+      -63,
+      -7989
+    ],
+    [
+      -5082,
+      -63,
+      -7994
+    ]
+  ]
+}

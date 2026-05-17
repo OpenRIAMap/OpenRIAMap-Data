@@ -1,11 +1,11 @@
 {
   "push_cycle_summary": {
-    "split_written": 10,
-    "picture_written": 0,
-    "picture_group_replaced": 0,
+    "split_written": 88,
+    "picture_written": 2,
+    "picture_group_replaced": 2,
     "delete_applied": 2,
-    "merge_targets": 6,
-    "merge_outputs_written": 5,
+    "merge_targets": 10,
+    "merge_outputs_written": 9,
     "affected_worlds": [
       "zth"
     ],
@@ -13,11 +13,14 @@
       "BUD",
       "ISG",
       "RLE",
-      "STA"
+      "STA",
+      "FLR",
+      "ROD"
     ],
     "affected_kinds": [
       "NGF",
-      "ZBUD_TS_XCG.json"
+      "ZBUD_TS_XCG.json",
+      "NOM"
     ]
   },
   "dirty_merge_targets": [],

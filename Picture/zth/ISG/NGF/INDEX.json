@@ -1,8 +1,11 @@
 {
-  "version": 20,
-  "itemCount": 3,
-  "updatedAt": "2026-04-12T00:20:04+08:00",
+  "version": 24,
+  "itemCount": 4,
+  "updatedAt": "2026-05-17T19:25:10+08:00",
   "mapping": {
+    "ZNGFLADISD_aunst_island": [
+      "ZNGFLADISD_aunst_island/ZNGFLADISD_aunst_island_1.webp"
+    ],
     "ZNGFLADISD_DTD": [
       "ZNGFLADISD_DTD/ZNGFLADISD_DTD_1.png"
     ],

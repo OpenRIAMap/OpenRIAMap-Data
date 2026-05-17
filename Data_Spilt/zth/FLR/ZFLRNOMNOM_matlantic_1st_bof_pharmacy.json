@@ -1,0 +1,61 @@
+{
+  "ID": "ZFLRNOMNOM_matlantic_1st_bof_pharmacy",
+  "Name": "抹岚药店",
+  "NofFloor": "1",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "BuildingID": "ZBUD_matlantic_1st_block_of_flats",
+  "tags": {
+    "nomenclator": "Sare",
+    "Pop": "Sare"
+  },
+  "Type": "Polygon",
+  "Class": "FLR",
+  "World": 0,
+  "CreateTime": "20260511",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260511",
+  "ModifityBy": "Aunst",
+  "Flrpoints": [
+    [
+      -5218,
+      -63,
+      -7902
+    ],
+    [
+      -5218,
+      -63,
+      -7897
+    ],
+    [
+      -5217,
+      -63,
+      -7897
+    ],
+    [
+      -5217,
+      -63,
+      -7888
+    ],
+    [
+      -5200,
+      -63,
+      -7888
+    ],
+    [
+      -5200,
+      -63,
+      -7907
+    ],
+    [
+      -5205,
+      -63,
+      -7907
+    ],
+    [
+      -5205,
+      -63,
+      -7902
+    ]
+  ]
+}

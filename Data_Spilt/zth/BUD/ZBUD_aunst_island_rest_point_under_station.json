@@ -1,0 +1,38 @@
+{
+  "ID": "ZBUD_aunst_island_rest_point_under_station",
+  "Name": "站下休息处",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "Aunst",
+    "Land": "ZNGFLADISD_aunst_island",
+    "Pop": "xiaonier"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260513",
+  "CreateBy": "Aunst",
+  "Conpoints": [
+    [
+      -4384,
+      -63,
+      -7834
+    ],
+    [
+      -4389,
+      -63,
+      -7834
+    ],
+    [
+      -4389,
+      -63,
+      -7830
+    ],
+    [
+      -4384,
+      -63,
+      -7830
+    ]
+  ]
+}

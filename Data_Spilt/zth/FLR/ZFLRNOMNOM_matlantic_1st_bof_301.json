@@ -1,0 +1,60 @@
+{
+  "ID": "ZFLRNOMNOM_matlantic_1st_bof_301",
+  "Name": "Goodn1ght 301房",
+  "NofFloor": "4",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "BuildingID": "ZBUD_matlantic_1st_block_of_flats",
+  "tags": {
+    "nomenclator": "Goodn1ght",
+    "Pop": "Goodn1ght"
+  },
+  "Type": "Polygon",
+  "Class": "FLR",
+  "World": 0,
+  "CreateTime": "20260511",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260511",
+  "Flrpoints": [
+    [
+      -5206,
+      -63,
+      -7926
+    ],
+    [
+      -5206,
+      -63,
+      -7909
+    ],
+    [
+      -5217,
+      -63,
+      -7909
+    ],
+    [
+      -5217,
+      -63,
+      -7915
+    ],
+    [
+      -5219,
+      -63,
+      -7915
+    ],
+    [
+      -5219,
+      -63,
+      -7920
+    ],
+    [
+      -5217,
+      -63,
+      -7920
+    ],
+    [
+      -5217,
+      -63,
+      -7926
+    ]
+  ]
+}

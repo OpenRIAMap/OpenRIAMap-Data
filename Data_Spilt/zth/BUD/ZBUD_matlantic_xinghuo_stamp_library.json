@@ -1,0 +1,49 @@
+{
+  "ID": "ZBUD_matlantic_xinghuo_stamp_library",
+  "Name": "红色公益书屋",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "GHZCreepe",
+    "Pop": "GHZCreeper"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260514",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260515",
+  "ModifityBy": "Aunst",
+  "Conpoints": [
+    [
+      -5157,
+      -63,
+      -8027
+    ],
+    [
+      -5157,
+      -63,
+      -8042
+    ],
+    [
+      -5169,
+      -63,
+      -8042
+    ],
+    [
+      -5169,
+      -63,
+      -8036
+    ],
+    [
+      -5175,
+      -63,
+      -8036
+    ],
+    [
+      -5175,
+      -63,
+      -8027
+    ]
+  ]
+}

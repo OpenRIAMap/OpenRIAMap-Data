@@ -1,5 +1,414 @@
 [
   {
+    "ID": "ZROD_aunst_island_jinzhan_road",
+    "Name": "金盏路",
+    "Kind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Enter": true,
+    "Exit": true,
+    "SelfJunction": false,
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260412",
+    "CreateBy": "Aunst",
+    "Linepoints": [
+      [
+        -4405.5,
+        -64,
+        -7948.5
+      ],
+      [
+        -4405.5,
+        -64,
+        -7947.5
+      ],
+      [
+        -4418.5,
+        -64,
+        -7943.5
+      ],
+      [
+        -4424.5,
+        -64,
+        -7939.5
+      ],
+      [
+        -4426.5,
+        -64,
+        -7934.5
+      ],
+      [
+        -4426.5,
+        -64,
+        -7904.5
+      ],
+      [
+        -4418.5,
+        -64,
+        -7893.5
+      ],
+      [
+        -4418.5,
+        -64,
+        -7874.5
+      ],
+      [
+        -4421.5,
+        -64,
+        -7874.5
+      ],
+      [
+        -4433.5,
+        -64,
+        -7869.5
+      ],
+      [
+        -4433.5,
+        -64,
+        -7850.5
+      ],
+      [
+        -4429.5,
+        -64,
+        -7847.5
+      ],
+      [
+        -4429.5,
+        -64,
+        -7844.5
+      ],
+      [
+        -4426.5,
+        -64,
+        -7844.5
+      ],
+      [
+        -4416.5,
+        -64,
+        -7839.5
+      ],
+      [
+        -4401.5,
+        -64,
+        -7839.5
+      ],
+      [
+        -4396.5,
+        -64,
+        -7834.5
+      ],
+      [
+        -4396.5,
+        -64,
+        -7831.5
+      ],
+      [
+        -4385.5,
+        -64,
+        -7831.5
+      ]
+    ]
+  },
+  {
+    "ID": "ZROD_aunst_island_library_connect_lane",
+    "Name": "图书馆连接道",
+    "Kind": "NOM",
+    "Level": -1,
+    "Oneway": false,
+    "Enter": true,
+    "Exit": true,
+    "SelfJunction": false,
+    "tags": {
+      "nomenclator": "Aunst",
+      "Land": "ZNGFLADISD_aunst_island"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260511",
+    "CreateBy": "Aunst",
+    "Linepoints": [
+      [
+        -4353,
+        -64,
+        -7798.5
+      ],
+      [
+        -4368,
+        -64,
+        -7798.5
+      ]
+    ]
+  },
+  {
+    "ID": "ZROD_aunst_island_yuhai_road_1",
+    "Name": "玉海路",
+    "Kind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Enter": true,
+    "Exit": true,
+    "SelfJunction": false,
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260412",
+    "CreateBy": "Aunst",
+    "Linepoints": [
+      [
+        -4429.5,
+        -64,
+        -7844.5
+      ],
+      [
+        -4437.5,
+        -64,
+        -7844.5
+      ],
+      [
+        -4438.5,
+        -64,
+        -7843.5
+      ],
+      [
+        -4438.5,
+        -64,
+        -7840.5
+      ],
+      [
+        -4437.5,
+        -64,
+        -7839.5
+      ],
+      [
+        -4433.5,
+        -64,
+        -7839.5
+      ],
+      [
+        -4431,
+        -64,
+        -7839
+      ],
+      [
+        -4427,
+        -64,
+        -7839
+      ]
+    ]
+  },
+  {
+    "ID": "ZROD_aunst_island_yuhai_road_2",
+    "Name": "玉海路/玉海地下街",
+    "Kind": "NOM",
+    "Level": -1,
+    "Oneway": false,
+    "Enter": true,
+    "Exit": true,
+    "SelfJunction": false,
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260412",
+    "CreateBy": "Aunst",
+    "Linepoints": [
+      [
+        -4427,
+        -64,
+        -7839
+      ],
+      [
+        -4390,
+        53,
+        -7839
+      ],
+      [
+        -4380,
+        53,
+        -7837
+      ],
+      [
+        -4369,
+        53,
+        -7822
+      ],
+      [
+        -4368,
+        53,
+        -7817
+      ],
+      [
+        -4368,
+        -64,
+        -7774
+      ]
+    ]
+  },
+  {
+    "ID": "ZROD_aunst_island_yuhai_road_3",
+    "Name": "玉海路",
+    "Kind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Enter": true,
+    "Exit": true,
+    "SelfJunction": false,
+    "tags": {
+      "nomenclator": "Aunst"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260412",
+    "CreateBy": "Aunst",
+    "Linepoints": [
+      [
+        -4368,
+        -64,
+        -7774
+      ],
+      [
+        -4368,
+        -64,
+        -7772
+      ],
+      [
+        -4366.5,
+        -64,
+        -7770.5
+      ],
+      [
+        -4356.5,
+        -64,
+        -7770.5
+      ],
+      [
+        -4356.5,
+        -64,
+        -7775.5
+      ],
+      [
+        -4358.5,
+        -64,
+        -7778.5
+      ],
+      [
+        -4358.5,
+        -64,
+        -7788.5
+      ]
+    ]
+  },
+  {
+    "ID": "ZROD_matlantic_shrine_front_road",
+    "Name": "神社前路",
+    "Kind": "NOM",
+    "Level": 0,
+    "Oneway": false,
+    "Enter": true,
+    "Exit": true,
+    "SelfJunction": false,
+    "tags": {
+      "nomenclator": "30266"
+    },
+    "Type": "Polyline",
+    "Class": "ROD",
+    "World": 0,
+    "CreateTime": "20260514",
+    "CreateBy": "Aunst",
+    "ModifityTime": "20260514",
+    "ModifityBy": "Aunst",
+    "Linepoints": [
+      [
+        -5068.5,
+        -64,
+        -8037.5
+      ],
+      [
+        -5069,
+        -64,
+        -8038
+      ],
+      [
+        -5092,
+        -64,
+        -8038
+      ],
+      [
+        -5092,
+        -64,
+        -8032
+      ],
+      [
+        -5095,
+        -64,
+        -8029
+      ],
+      [
+        -5100,
+        -64,
+        -8026
+      ],
+      [
+        -5117,
+        -64,
+        -8026
+      ],
+      [
+        -5125.5,
+        -64,
+        -8021.5
+      ],
+      [
+        -5177.5,
+        -64,
+        -8021.5
+      ],
+      [
+        -5186.5,
+        -64,
+        -8018.5
+      ],
+      [
+        -5191.5,
+        -64,
+        -8013.5
+      ],
+      [
+        -5194.5,
+        -64,
+        -8011.5
+      ],
+      [
+        -5194.5,
+        -64,
+        -8006.5
+      ],
+      [
+        -5199.5,
+        -64,
+        -8006.5
+      ],
+      [
+        -5211.5,
+        -64,
+        -7997.5
+      ],
+      [
+        -5214.5,
+        -64,
+        -7995.5
+      ],
+      [
+        -5214.5,
+        -64,
+        -7990.5
+      ]
+    ]
+  },
+  {
     "ID": "ZRODNOMNOM_BLBHDA",
     "Name": "滨海大道",
     "Kind": "NOM",

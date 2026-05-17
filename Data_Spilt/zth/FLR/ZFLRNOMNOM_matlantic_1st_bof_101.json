@@ -1,0 +1,61 @@
+{
+  "ID": "ZFLRNOMNOM_matlantic_1st_bof_101",
+  "Name": "TGPastor 101房",
+  "NofFloor": "2",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "BuildingID": "ZBUD_matlantic_1st_block_of_flats",
+  "tags": {
+    "nomenclator": "TGPastor",
+    "Pop": "TGPastor"
+  },
+  "Type": "Polygon",
+  "Class": "FLR",
+  "World": 0,
+  "CreateTime": "20260511",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260511",
+  "ModifityBy": "Aunst",
+  "Flrpoints": [
+    [
+      -5206,
+      71,
+      -7909
+    ],
+    [
+      -5206,
+      -63,
+      -7926
+    ],
+    [
+      -5217,
+      -63,
+      -7926
+    ],
+    [
+      -5217,
+      -63,
+      -7920
+    ],
+    [
+      -5219,
+      -63,
+      -7920
+    ],
+    [
+      -5219,
+      -63,
+      -7915
+    ],
+    [
+      -5217,
+      -63,
+      -7915
+    ],
+    [
+      -5217,
+      -63,
+      -7909
+    ]
+  ]
+}

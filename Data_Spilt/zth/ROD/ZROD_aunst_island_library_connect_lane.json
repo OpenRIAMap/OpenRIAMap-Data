@@ -1,0 +1,31 @@
+{
+  "ID": "ZROD_aunst_island_library_connect_lane",
+  "Name": "图书馆连接道",
+  "Kind": "NOM",
+  "Level": -1,
+  "Oneway": false,
+  "Enter": true,
+  "Exit": true,
+  "SelfJunction": false,
+  "tags": {
+    "nomenclator": "Aunst",
+    "Land": "ZNGFLADISD_aunst_island"
+  },
+  "Type": "Polyline",
+  "Class": "ROD",
+  "World": 0,
+  "CreateTime": "20260511",
+  "CreateBy": "Aunst",
+  "Linepoints": [
+    [
+      -4353,
+      -64,
+      -7798.5
+    ],
+    [
+      -4368,
+      -64,
+      -7798.5
+    ]
+  ]
+}

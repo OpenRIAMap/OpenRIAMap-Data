@@ -1,0 +1,40 @@
+{
+  "ID": "ZBUD_aunst_island_shrine_emakake",
+  "Name": "绘马挂",
+  "Kind": "NOM",
+  "SKind": "NOM",
+  "tags": {
+    "nomenclator": "Aunst",
+    "Land": "ZNGFLADISD_aunst_island",
+    "Pop": "Aunst"
+  },
+  "Type": "Polygon",
+  "Class": "BUD",
+  "World": 0,
+  "CreateTime": "20260512",
+  "CreateBy": "Aunst",
+  "ModifityTime": "20260512",
+  "ModifityBy": "Aunst",
+  "Conpoints": [
+    [
+      -4426,
+      -63,
+      -7827
+    ],
+    [
+      -4426,
+      -63,
+      -7826
+    ],
+    [
+      -4431,
+      -63,
+      -7826
+    ],
+    [
+      -4431,
+      -63,
+      -7827
+    ]
+  ]
+}
